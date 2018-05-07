@@ -2,6 +2,11 @@ language: php
 sudo: required
 services:
   - docker
+addons:
+  apt:
+    packages:
+    - coreutils
+    - realpath
 php:
   - 5.6
   - 7.0
