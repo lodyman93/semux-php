@@ -1,0 +1,37 @@
+{
+    "homepage": "https://github.com/semuxproject",
+    "name": "semuxproject/semux-php-sdk",
+    "description": "Semux PHP SDK",
+    "keywords": ["semux", "cryptocurrency"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cryptokat",
+            "email": "crypto.kat@semux.io",
+            "homepage": "https://github.com/cryptokat"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "~1.12"
+    },
+    "autoload": {
+        "psr-4": { "Semux\\Client\\" : "client/src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Semux\\Client\\" : "client/test/" }
+    },
+    "scripts": {
+        "generate": "swagger-codegen-cli generate -i semux/src/main/resources/org/semux/api/v2_0_0/swagger.json -c .swagger-codegen/config.json -l php -o ."
+    }
+}

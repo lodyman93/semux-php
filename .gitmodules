@@ -1,0 +1,3 @@
+[submodule "semux"]
+	path = semux
+	url = https://github.com/semuxproject/semux.git

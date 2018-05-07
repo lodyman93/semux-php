@@ -1,0 +1,15 @@
+version: '3'
+services:
+  semux:
+    build: ../semux
+    ports:
+      - "5171:5171"
+    volumes:
+      - ./semux.properties:/semux/config/semux.properties
+      - ./wallet.data:/semux/wallet.data
+    entrypoint:
+      - /semux/semux-cli.sh
+      - --network
+      - devnet
+      - --password
+      - ""
