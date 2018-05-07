@@ -11,6 +11,6 @@ before_install:
 install:
   - composer install
   - cp phpunit.xml.dist phpunit.xml
-  - docker-compose -f .travis/docker-compose.yml up -d
+  - docker-compose -f .travis/docker-compose.yml up -d && .travis/wait-for-it.sh -h localhost -p 5171 -t 30
 script:
   - ./vendor/bin/phpunit
