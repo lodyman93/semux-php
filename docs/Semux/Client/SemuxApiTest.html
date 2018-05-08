@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Semux\Client\SemuxApiTest | Semux PHP SDK</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Semux_Client_SemuxApiTest" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Semux PHP SDK</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../Semux.html">Semux</a></li>
+                                        <li><a href="../../Semux/Client.html">Client</a></li>
+    
+                <li>SemuxApiTest</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            SemuxApiTest
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>SemuxApiTest</strong>        extends PHPUnit_Framework_TestCase
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>SemuxApiTest Class Doc Comment</p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setUpBeforeClass">setUpBeforeClass</a>()
+        
+                                            <p>Setup before running any test cases</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setUp">setUp</a>()
+        
+                                            <p>Setup before running each test case</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_tearDown">tearDown</a>()
+        
+                                            <p>Clean up after running each test case</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_tearDownAfterClass">tearDownAfterClass</a>()
+        
+                                            <p>Clean up after running all test cases</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testAddNode">testAddNode</a>()
+        
+                                            <p>Test case for addNode</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testAddToBlacklist">testAddToBlacklist</a>()
+        
+                                            <p>Test case for addToBlacklist</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testAddToWhitelist">testAddToWhitelist</a>()
+        
+                                            <p>Test case for addToWhitelist</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testBroadcastRawTransaction">testBroadcastRawTransaction</a>()
+        
+                                            <p>Test case for broadcastRawTransaction</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testComposeRawTransaction">testComposeRawTransaction</a>()
+        
+                                            <p>Test case for composeRawTransaction</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testCreateAccount">testCreateAccount</a>()
+        
+                                            <p>Test case for createAccount</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetAccount">testGetAccount</a>()
+        
+                                            <p>Test case for getAccount</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetAccountTransactions">testGetAccountTransactions</a>()
+        
+                                            <p>Test case for getAccountTransactions</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetBlockByHash">testGetBlockByHash</a>()
+        
+                                            <p>Test case for getBlockByHash</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetBlockByNumber">testGetBlockByNumber</a>()
+        
+                                            <p>Test case for getBlockByNumber</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetDelegate">testGetDelegate</a>()
+        
+                                            <p>Test case for getDelegate</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetDelegates">testGetDelegates</a>()
+        
+                                            <p>Test case for getDelegates</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetInfo">testGetInfo</a>()
+        
+                                            <p>Test case for getInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetLatestBlock">testGetLatestBlock</a>()
+        
+                                            <p>Test case for getLatestBlock</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetLatestBlockNumber">testGetLatestBlockNumber</a>()
+        
+                                            <p>Test case for getLatestBlockNumber</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetPeers">testGetPeers</a>()
+        
+                                            <p>Test case for getPeers</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetPendingTransactions">testGetPendingTransactions</a>()
+        
+                                            <p>Test case for getPendingTransactions</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetRoot">testGetRoot</a>()
+        
+                                            <p>Test case for getRoot</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetTransaction">testGetTransaction</a>()
+        
+                                            <p>Test case for getTransaction</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetTransactionLimits">testGetTransactionLimits</a>()
+        
+                                            <p>Test case for getTransactionLimits</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetValidators">testGetValidators</a>()
+        
+                                            <p>Test case for getValidators</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetVote">testGetVote</a>()
+        
+                                            <p>Test case for getVote</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testGetVotes">testGetVotes</a>()
+        
+                                            <p>Test case for getVotes</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testListAccounts">testListAccounts</a>()
+        
+                                            <p>Test case for listAccounts</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testRegisterDelegate">testRegisterDelegate</a>()
+        
+                                            <p>Test case for registerDelegate</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testSignMessage">testSignMessage</a>()
+        
+                                            <p>Test case for signMessage</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testSignRawTransaction">testSignRawTransaction</a>()
+        
+                                            <p>Test case for signRawTransaction</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testTransfer">testTransfer</a>()
+        
+                                            <p>Test case for transfer</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testUnvote">testUnvote</a>()
+        
+                                            <p>Test case for unvote</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testVerifyMessage">testVerifyMessage</a>()
+        
+                                            <p>Test case for verifyMessage</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_testVote">testVote</a>()
+        
+                                            <p>Test case for vote</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_setUpBeforeClass">
+        <div class="location">at line         line 55</div>
+        <code>        static            
+    <strong>setUpBeforeClass</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Setup before running any test cases</p>                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setUp">
+        <div class="location">at line         line 62</div>
+        <code>                    
+    <strong>setUp</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Setup before running each test case</p>                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_tearDown">
+        <div class="location">at line         line 72</div>
+        <code>                    
+    <strong>tearDown</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Clean up after running each test case</p>                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_tearDownAfterClass">
+        <div class="location">at line         line 79</div>
+        <code>        static            
+    <strong>tearDownAfterClass</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Clean up after running all test cases</p>                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testAddNode">
+        <div class="location">at line         line 88</div>
+        <code>                    
+    <strong>testAddNode</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for addNode</p>                    <p>Add node.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testAddToBlacklist">
+        <div class="location">at line         line 97</div>
+        <code>                    
+    <strong>testAddToBlacklist</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for addToBlacklist</p>                    <p>Add to blacklist.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testAddToWhitelist">
+        <div class="location">at line         line 106</div>
+        <code>                    
+    <strong>testAddToWhitelist</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for addToWhitelist</p>                    <p>Add to whitelist.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testBroadcastRawTransaction">
+        <div class="location">at line         line 115</div>
+        <code>                    
+    <strong>testBroadcastRawTransaction</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for broadcastRawTransaction</p>                    <p>Broadcast a raw transaction.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testComposeRawTransaction">
+        <div class="location">at line         line 124</div>
+        <code>                    
+    <strong>testComposeRawTransaction</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for composeRawTransaction</p>                    <p>Compose an unsigned raw transaction.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testCreateAccount">
+        <div class="location">at line         line 133</div>
+        <code>                    
+    <strong>testCreateAccount</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for createAccount</p>                    <p>Create account.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetAccount">
+        <div class="location">at line         line 142</div>
+        <code>                    
+    <strong>testGetAccount</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getAccount</p>                    <p>Get account.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetAccountTransactions">
+        <div class="location">at line         line 151</div>
+        <code>                    
+    <strong>testGetAccountTransactions</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getAccountTransactions</p>                    <p>Get account transactions.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetBlockByHash">
+        <div class="location">at line         line 160</div>
+        <code>                    
+    <strong>testGetBlockByHash</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getBlockByHash</p>                    <p>Get block by hash.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetBlockByNumber">
+        <div class="location">at line         line 169</div>
+        <code>                    
+    <strong>testGetBlockByNumber</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getBlockByNumber</p>                    <p>Get block by number.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetDelegate">
+        <div class="location">at line         line 178</div>
+        <code>                    
+    <strong>testGetDelegate</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getDelegate</p>                    <p>Get a delegate.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetDelegates">
+        <div class="location">at line         line 187</div>
+        <code>                    
+    <strong>testGetDelegates</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getDelegates</p>                    <p>Get all delegates.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetInfo">
+        <div class="location">at line         line 196</div>
+        <code>                    
+    <strong>testGetInfo</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getInfo</p>                    <p>Get info.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetLatestBlock">
+        <div class="location">at line         line 207</div>
+        <code>                    
+    <strong>testGetLatestBlock</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getLatestBlock</p>                    <p>Get latest block.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetLatestBlockNumber">
+        <div class="location">at line         line 216</div>
+        <code>                    
+    <strong>testGetLatestBlockNumber</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getLatestBlockNumber</p>                    <p>Get latest block number.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetPeers">
+        <div class="location">at line         line 225</div>
+        <code>                    
+    <strong>testGetPeers</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getPeers</p>                    <p>Get peers.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetPendingTransactions">
+        <div class="location">at line         line 234</div>
+        <code>                    
+    <strong>testGetPendingTransactions</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getPendingTransactions</p>                    <p>Get pending transactions.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetRoot">
+        <div class="location">at line         line 243</div>
+        <code>                    
+    <strong>testGetRoot</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getRoot</p>                    <p>Get root.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetTransaction">
+        <div class="location">at line         line 252</div>
+        <code>                    
+    <strong>testGetTransaction</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getTransaction</p>                    <p>Get transaction.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetTransactionLimits">
+        <div class="location">at line         line 261</div>
+        <code>                    
+    <strong>testGetTransactionLimits</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getTransactionLimits</p>                    <p>Get transaction limits.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetValidators">
+        <div class="location">at line         line 270</div>
+        <code>                    
+    <strong>testGetValidators</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getValidators</p>                    <p>Get validators.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetVote">
+        <div class="location">at line         line 279</div>
+        <code>                    
+    <strong>testGetVote</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getVote</p>                    <p>Get vote.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testGetVotes">
+        <div class="location">at line         line 288</div>
+        <code>                    
+    <strong>testGetVotes</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for getVotes</p>                    <p>Get votes.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testListAccounts">
+        <div class="location">at line         line 297</div>
+        <code>                    
+    <strong>testListAccounts</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for listAccounts</p>                    <p>List accounts.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testRegisterDelegate">
+        <div class="location">at line         line 306</div>
+        <code>                    
+    <strong>testRegisterDelegate</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for registerDelegate</p>                    <p>Register delegate.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testSignMessage">
+        <div class="location">at line         line 315</div>
+        <code>                    
+    <strong>testSignMessage</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for signMessage</p>                    <p>Sign a message.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testSignRawTransaction">
+        <div class="location">at line         line 324</div>
+        <code>                    
+    <strong>testSignRawTransaction</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for signRawTransaction</p>                    <p>Sign an unsigned raw transaction.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testTransfer">
+        <div class="location">at line         line 333</div>
+        <code>                    
+    <strong>testTransfer</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for transfer</p>                    <p>Transfer coins.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testUnvote">
+        <div class="location">at line         line 342</div>
+        <code>                    
+    <strong>testUnvote</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for unvote</p>                    <p>Unvote.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testVerifyMessage">
+        <div class="location">at line         line 351</div>
+        <code>                    
+    <strong>testVerifyMessage</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for verifyMessage</p>                    <p>Verify a message.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_testVote">
+        <div class="location">at line         line 360</div>
+        <code>                    
+    <strong>testVote</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Test case for vote</p>                    <p>Vote.</p>            </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
