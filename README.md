@@ -1,5 +1,6 @@
 # Semux PHP SDK
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/semuxproject/semux-php-sdk.svg)](https://packagist.org/packages/semuxproject/semux-php-sdk)
 [![Build Status](https://travis-ci.org/semuxproject/semux-php-sdk.svg?branch=master)](https://travis-ci.org/semuxproject/semux-php-sdk)
 
 Semux is an experimental high-performance blockchain platform that powers decentralized application.
@@ -10,23 +11,12 @@ For more information, please visit [https://www.semux.org](https://www.semux.org
 
 PHP 5.6 and later
 
-## Installation & Usage
-### Composer
+## Installation
 
-To install the bindings via [Composer](http://getcomposer.org/), run:
+To install the SDK via [Composer](http://getcomposer.org/), run:
 
 ```
 composer require semuxproject/semux-php-sdk
-```
-
-## Tests
-
-To run the unit tests:
-
-```
-composer install
-cp phpunit.xml.dist phpunit.xml
-./vendor/bin/phpunit
 ```
 
 ## Getting Started
@@ -54,4 +44,19 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SemuxApi->getInfo(): ', $e->getMessage(), PHP_EOL;
 }
+```
+
+## Documentation
+
+https://semuxproject.github.io/semux-php-sdk/
+
+## Tests
+
+To run the unit tests:
+
+```
+docker-compose -f .travis/docker-compose.yml up -d && .travis/wait-for-it.sh -h 0.0.0.0 -p 5171 -t 30 -s
+composer install
+cp phpunit.xml.dist phpunit.xml
+./vendor/bin/phpunit
 ```
