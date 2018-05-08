@@ -28,3 +28,4 @@ client/phpunit.xml.dist
 client/composer.json
 client/git_push.sh
 client/README.md
+client/test/**/*
