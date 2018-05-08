@@ -1,0 +1,9 @@
+{
+  "packagePath": "client",
+  "srcBasePath": "src",
+  "invokerPackage": "Semux\\Client",
+  "modelPackage": "Model",
+  "apiPackage": "Api",
+  "variableNamingConvention": "camelCase",
+  "sortParamsByRequiredFlag": false
+}
