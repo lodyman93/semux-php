@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Semux\Client\ObjectSerializer | Semux PHP SDK</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Semux_Client_ObjectSerializer" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Semux PHP SDK</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../Semux.html">Semux</a></li>
+                                        <li><a href="../../Semux/Client.html">Client</a></li>
+    
+                <li>ObjectSerializer</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            ObjectSerializer
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>ObjectSerializer</strong>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>ObjectSerializer Class Doc Comment</p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string|object
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_sanitizeForSerialization">sanitizeForSerialization</a>(mixed $data, string $type = null, string $format = null)
+        
+                                            <p>Serialize data</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_sanitizeFilename">sanitizeFilename</a>(string $filename)
+        
+                                            <p>Sanitize filename by removing path.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toPathValue">toPathValue</a>(string $value)
+        
+                                            <p>Take value and turn it into a string suitable for inclusion in
+the path, by url-encoding.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toQueryValue">toQueryValue</a>(string[]|string|<a target="_blank" href="http://php.net/DateTime">DateTime</a> $object)
+        
+                                            <p>Take value and turn it into a string suitable for inclusion in
+the query, by imploding comma-separated if it's an object.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toHeaderValue">toHeaderValue</a>(string $value)
+        
+                                            <p>Take value and turn it into a string suitable for inclusion in
+the header. If it's a string, pass through unchanged
+If it's a datetime object, format it in ISO8601</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toFormValue">toFormValue</a>(string|<a target="_blank" href="http://php.net/SplFileObject">SplFileObject</a> $value)
+        
+                                            <p>Take value and turn it into a string suitable for inclusion in
+the http body (form parameter). If it's a string, pass through unchanged
+If it's a datetime object, format it in ISO8601</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toString">toString</a>(string|<a target="_blank" href="http://php.net/DateTime">DateTime</a> $value)
+        
+                                            <p>Take value and turn it into a string suitable for inclusion in
+the parameter. If it's a string, pass through unchanged
+If it's a datetime object, format it in ISO8601</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_serializeCollection">serializeCollection</a>(array $collection, string $collectionFormat, bool $allowCollectionFormatMulti = false)
+        
+                                            <p>Serialize an array to a string.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;object|array|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deserialize">deserialize</a>($data, $class, $httpHeaders = null)
+        
+                                            <p>Deserialize a JSON string into an object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_sanitizeForSerialization">
+        <div class="location">at line         line 51</div>
+        <code>        static            string|object
+    <strong>sanitizeForSerialization</strong>(mixed $data, string $type = null, string $format = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Serialize data</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>mixed</td>
+                <td>$data</td>
+                <td>the data to serialize</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$type</td>
+                <td>the SwaggerType of the data</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$format</td>
+                <td>the format of the Swagger type of the data</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|object</td>
+            <td>serialized form of $data</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_sanitizeFilename">
+        <div class="location">at line         line 93</div>
+        <code>        static            string
+    <strong>sanitizeFilename</strong>(string $filename)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sanitize filename by removing path.</p>                    <p>e.g. ../../sun.gif becomes sun.gif</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$filename</td>
+                <td>filename to be sanitized</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the sanitized filename</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toPathValue">
+        <div class="location">at line         line 110</div>
+        <code>        static            string
+    <strong>toPathValue</strong>(string $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Take value and turn it into a string suitable for inclusion in
+the path, by url-encoding.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$value</td>
+                <td>a string which will be part of the path</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the serialized object</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toQueryValue">
+        <div class="location">at line         line 125</div>
+        <code>        static            string
+    <strong>toQueryValue</strong>(string[]|string|<a target="_blank" href="http://php.net/DateTime">DateTime</a> $object)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Take value and turn it into a string suitable for inclusion in
+the query, by imploding comma-separated if it's an object.</p>                    <p>If it's a string, pass through unchanged. It will be url-encoded
+later.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string[]|string|<a target="_blank" href="http://php.net/DateTime">DateTime</a></td>
+                <td>$object</td>
+                <td>an object to be serialized to a string</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the serialized object</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toHeaderValue">
+        <div class="location">at line         line 143</div>
+        <code>        static            string
+    <strong>toHeaderValue</strong>(string $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Take value and turn it into a string suitable for inclusion in
+the header. If it's a string, pass through unchanged
+If it's a datetime object, format it in ISO8601</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$value</td>
+                <td>a string which will be part of the header</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the header string</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toFormValue">
+        <div class="location">at line         line 157</div>
+        <code>        static            string
+    <strong>toFormValue</strong>(string|<a target="_blank" href="http://php.net/SplFileObject">SplFileObject</a> $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Take value and turn it into a string suitable for inclusion in
+the http body (form parameter). If it's a string, pass through unchanged
+If it's a datetime object, format it in ISO8601</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|<a target="_blank" href="http://php.net/SplFileObject">SplFileObject</a></td>
+                <td>$value</td>
+                <td>the value of the form parameter</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the form string</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toString">
+        <div class="location">at line         line 175</div>
+        <code>        static            string
+    <strong>toString</strong>(string|<a target="_blank" href="http://php.net/DateTime">DateTime</a> $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Take value and turn it into a string suitable for inclusion in
+the parameter. If it's a string, pass through unchanged
+If it's a datetime object, format it in ISO8601</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|<a target="_blank" href="http://php.net/DateTime">DateTime</a></td>
+                <td>$value</td>
+                <td>the value of the parameter</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the header string</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_serializeCollection">
+        <div class="location">at line         line 194</div>
+        <code>        static            string
+    <strong>serializeCollection</strong>(array $collection, string $collectionFormat, bool $allowCollectionFormatMulti = false)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Serialize an array to a string.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$collection</td>
+                <td>collection to serialize to a string</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$collectionFormat</td>
+                <td>the format use for serialization (csv,
+ssv, tsv, pipes, multi)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$allowCollectionFormatMulti</td>
+                <td>allow collection format to be a multidimensional array</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deserialize">
+        <div class="location">at line         line 228</div>
+        <code>        static            object|array|null
+    <strong>deserialize</strong>($data, $class, $httpHeaders = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Deserialize a JSON string into an object</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$data</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$class</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$httpHeaders</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>object|array|null</td>
+            <td>an single or an array of $class instances</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
