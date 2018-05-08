@@ -62,7 +62,7 @@ class SemuxApiTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $config = new Configuration();
-        $config->setHost("http://localhost:5171/v2.0.0")->setUsername("user")->setPassword("pass");
+        $config->setHost("http://0.0.0.0:5171/v2.0.0")->setUsername("user")->setPassword("pass");
         $this->api = new SemuxApi(new \GuzzleHttp\Client(), $config);
     }
 
