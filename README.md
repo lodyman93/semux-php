@@ -48,7 +48,7 @@ try {
 
 ## Documentation
 
-https://semuxproject.github.io/semux-php-sdk/
+https://semuxproject.github.io/semux-php-sdk/Semux/Client/Api/SemuxApi.html
 
 ## Tests
 
