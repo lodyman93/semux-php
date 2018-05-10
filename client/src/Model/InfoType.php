@@ -57,6 +57,8 @@ class InfoType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'network' => 'string',
+        'capabilities' => 'string[]',
         'clientId' => 'string',
         'coinbase' => 'string',
         'latestBlockNumber' => 'string',
@@ -71,6 +73,8 @@ class InfoType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'network' => null,
+        'capabilities' => null,
         'clientId' => null,
         'coinbase' => null,
         'latestBlockNumber' => 'int64',
@@ -106,6 +110,8 @@ class InfoType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'network' => 'network',
+        'capabilities' => 'capabilities',
         'clientId' => 'clientId',
         'coinbase' => 'coinbase',
         'latestBlockNumber' => 'latestBlockNumber',
@@ -120,6 +126,8 @@ class InfoType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'network' => 'setNetwork',
+        'capabilities' => 'setCapabilities',
         'clientId' => 'setClientId',
         'coinbase' => 'setCoinbase',
         'latestBlockNumber' => 'setLatestBlockNumber',
@@ -134,6 +142,8 @@ class InfoType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'network' => 'getNetwork',
+        'capabilities' => 'getCapabilities',
         'clientId' => 'getClientId',
         'coinbase' => 'getCoinbase',
         'latestBlockNumber' => 'getLatestBlockNumber',
@@ -183,8 +193,25 @@ class InfoType implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const NETWORK_MAINNET = 'MAINNET';
+    const NETWORK_TESTNET = 'TESTNET';
+    const NETWORK_DEVNET = 'DEVNET';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getNetworkAllowableValues()
+    {
+        return [
+            self::NETWORK_MAINNET,
+            self::NETWORK_TESTNET,
+            self::NETWORK_DEVNET,
+        ];
+    }
     
 
     /**
@@ -202,6 +229,8 @@ class InfoType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
+        $this->container['capabilities'] = isset($data['capabilities']) ? $data['capabilities'] : null;
         $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;
         $this->container['coinbase'] = isset($data['coinbase']) ? $data['coinbase'] : null;
         $this->container['latestBlockNumber'] = isset($data['latestBlockNumber']) ? $data['latestBlockNumber'] : null;
@@ -219,8 +248,24 @@ class InfoType implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getNetworkAllowableValues();
+        if (!in_array($this->container['network'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'network', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['coinbase']) && !preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['coinbase'])) {
+            $invalidProperties[] = "invalid value for 'coinbase', must be conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.";
+        }
+
         if (!is_null($this->container['latestBlockNumber']) && !preg_match("/^\\d+$/", $this->container['latestBlockNumber'])) {
             $invalidProperties[] = "invalid value for 'latestBlockNumber', must be conform to the pattern /^\\d+$/.";
+        }
+
+        if (!is_null($this->container['latestBlockHash']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['latestBlockHash'])) {
+            $invalidProperties[] = "invalid value for 'latestBlockHash', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
         }
 
         return $invalidProperties;
@@ -235,12 +280,79 @@ class InfoType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        $allowedValues = $this->getNetworkAllowableValues();
+        if (!in_array($this->container['network'], $allowedValues)) {
+            return false;
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['coinbase'])) {
+            return false;
+        }
         if (!preg_match("/^\\d+$/", $this->container['latestBlockNumber'])) {
+            return false;
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['latestBlockHash'])) {
             return false;
         }
         return true;
     }
 
+
+    /**
+     * Gets network
+     *
+     * @return string
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     *
+     * @param string $network network
+     *
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $allowedValues = $this->getNetworkAllowableValues();
+        if (!is_null($network) && !in_array($network, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'network', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['network'] = $network;
+
+        return $this;
+    }
+
+    /**
+     * Gets capabilities
+     *
+     * @return string[]
+     */
+    public function getCapabilities()
+    {
+        return $this->container['capabilities'];
+    }
+
+    /**
+     * Sets capabilities
+     *
+     * @param string[] $capabilities capabilities
+     *
+     * @return $this
+     */
+    public function setCapabilities($capabilities)
+    {
+        $this->container['capabilities'] = $capabilities;
+
+        return $this;
+    }
 
     /**
      * Gets clientId
@@ -285,6 +397,11 @@ class InfoType implements ModelInterface, ArrayAccess
      */
     public function setCoinbase($coinbase)
     {
+
+        if (!is_null($coinbase) && (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $coinbase))) {
+            throw new \InvalidArgumentException("invalid value for $coinbase when calling InfoType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         $this->container['coinbase'] = $coinbase;
 
         return $this;
@@ -338,6 +455,11 @@ class InfoType implements ModelInterface, ArrayAccess
      */
     public function setLatestBlockHash($latestBlockHash)
     {
+
+        if (!is_null($latestBlockHash) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $latestBlockHash))) {
+            throw new \InvalidArgumentException("invalid value for $latestBlockHash when calling InfoType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
         $this->container['latestBlockHash'] = $latestBlockHash;
 
         return $this;

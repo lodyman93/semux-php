@@ -183,6 +183,10 @@ class SignMessageResponse extends ApiHandlerResponse
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        if (!is_null($this->container['result']) && !preg_match("/^(0x)?[0-9a-fA-F]{192}$/", $this->container['result'])) {
+            $invalidProperties[] = "invalid value for 'result', must be conform to the pattern /^(0x)?[0-9a-fA-F]{192}$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -198,6 +202,9 @@ class SignMessageResponse extends ApiHandlerResponse
             return false;
         }
 
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{192}$/", $this->container['result'])) {
+            return false;
+        }
         return true;
     }
 
@@ -221,6 +228,11 @@ class SignMessageResponse extends ApiHandlerResponse
      */
     public function setResult($result)
     {
+
+        if (!is_null($result) && (!preg_match("/^(0x)?[0-9a-fA-F]{192}$/", $result))) {
+            throw new \InvalidArgumentException("invalid value for $result when calling SignMessageResponse., must conform to the pattern /^(0x)?[0-9a-fA-F]{192}$/.");
+        }
+
         $this->container['result'] = $result;
 
         return $this;

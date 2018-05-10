@@ -255,12 +255,44 @@ class BlockType implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['hash']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['hash'])) {
+            $invalidProperties[] = "invalid value for 'hash', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
+        }
+
         if (!is_null($this->container['number']) && !preg_match("/^\\d+$/", $this->container['number'])) {
             $invalidProperties[] = "invalid value for 'number', must be conform to the pattern /^\\d+$/.";
         }
 
+        if (!is_null($this->container['coinbase']) && !preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['coinbase'])) {
+            $invalidProperties[] = "invalid value for 'coinbase', must be conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.";
+        }
+
+        if (!is_null($this->container['parentHash']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['parentHash'])) {
+            $invalidProperties[] = "invalid value for 'parentHash', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
+        }
+
         if (!is_null($this->container['timestamp']) && !preg_match("/^\\d+$/", $this->container['timestamp'])) {
             $invalidProperties[] = "invalid value for 'timestamp', must be conform to the pattern /^\\d+$/.";
+        }
+
+        if (!is_null($this->container['date']) && !preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/", $this->container['date'])) {
+            $invalidProperties[] = "invalid value for 'date', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/.";
+        }
+
+        if (!is_null($this->container['transactionsRoot']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['transactionsRoot'])) {
+            $invalidProperties[] = "invalid value for 'transactionsRoot', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
+        }
+
+        if (!is_null($this->container['resultsRoot']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['resultsRoot'])) {
+            $invalidProperties[] = "invalid value for 'resultsRoot', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
+        }
+
+        if (!is_null($this->container['stateRoot']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['stateRoot'])) {
+            $invalidProperties[] = "invalid value for 'stateRoot', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
+        }
+
+        if (!is_null($this->container['data']) && !preg_match("/^(0x)?[0-9a-fA-F]*$/", $this->container['data'])) {
+            $invalidProperties[] = "invalid value for 'data', must be conform to the pattern /^(0x)?[0-9a-fA-F]*$/.";
         }
 
         return $invalidProperties;
@@ -275,10 +307,34 @@ class BlockType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['hash'])) {
+            return false;
+        }
         if (!preg_match("/^\\d+$/", $this->container['number'])) {
             return false;
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['coinbase'])) {
+            return false;
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['parentHash'])) {
+            return false;
+        }
         if (!preg_match("/^\\d+$/", $this->container['timestamp'])) {
+            return false;
+        }
+        if (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/", $this->container['date'])) {
+            return false;
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['transactionsRoot'])) {
+            return false;
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['resultsRoot'])) {
+            return false;
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['stateRoot'])) {
+            return false;
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]*$/", $this->container['data'])) {
             return false;
         }
         return true;
@@ -304,6 +360,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setHash($hash)
     {
+
+        if (!is_null($hash) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $hash))) {
+            throw new \InvalidArgumentException("invalid value for $hash when calling BlockType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
         $this->container['hash'] = $hash;
 
         return $this;
@@ -381,6 +442,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setCoinbase($coinbase)
     {
+
+        if (!is_null($coinbase) && (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $coinbase))) {
+            throw new \InvalidArgumentException("invalid value for $coinbase when calling BlockType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         $this->container['coinbase'] = $coinbase;
 
         return $this;
@@ -405,6 +471,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setParentHash($parentHash)
     {
+
+        if (!is_null($parentHash) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $parentHash))) {
+            throw new \InvalidArgumentException("invalid value for $parentHash when calling BlockType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
         $this->container['parentHash'] = $parentHash;
 
         return $this;
@@ -458,6 +529,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setDate($date)
     {
+
+        if (!is_null($date) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/", $date))) {
+            throw new \InvalidArgumentException("invalid value for $date when calling BlockType., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/.");
+        }
+
         $this->container['date'] = $date;
 
         return $this;
@@ -482,6 +558,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setTransactionsRoot($transactionsRoot)
     {
+
+        if (!is_null($transactionsRoot) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $transactionsRoot))) {
+            throw new \InvalidArgumentException("invalid value for $transactionsRoot when calling BlockType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
         $this->container['transactionsRoot'] = $transactionsRoot;
 
         return $this;
@@ -506,6 +587,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setResultsRoot($resultsRoot)
     {
+
+        if (!is_null($resultsRoot) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $resultsRoot))) {
+            throw new \InvalidArgumentException("invalid value for $resultsRoot when calling BlockType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
         $this->container['resultsRoot'] = $resultsRoot;
 
         return $this;
@@ -530,6 +616,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setStateRoot($stateRoot)
     {
+
+        if (!is_null($stateRoot) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $stateRoot))) {
+            throw new \InvalidArgumentException("invalid value for $stateRoot when calling BlockType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
         $this->container['stateRoot'] = $stateRoot;
 
         return $this;
@@ -554,6 +645,11 @@ class BlockType implements ModelInterface, ArrayAccess
      */
     public function setData($data)
     {
+
+        if (!is_null($data) && (!preg_match("/^(0x)?[0-9a-fA-F]*$/", $data))) {
+            throw new \InvalidArgumentException("invalid value for $data when calling BlockType., must conform to the pattern /^(0x)?[0-9a-fA-F]*$/.");
+        }
+
         $this->container['data'] = $data;
 
         return $this;

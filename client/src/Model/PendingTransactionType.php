@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionType
+ * PendingTransactionType
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Semux\Client\ObjectSerializer;
 
 /**
- * TransactionType Class Doc Comment
+ * PendingTransactionType Class Doc Comment
  *
  * @category Class
  * @package  Semux\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionType implements ModelInterface, ArrayAccess
+class PendingTransactionType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TransactionType';
+    protected static $swaggerModelName = 'PendingTransactionType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,6 @@ class TransactionType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'blockNumber' => 'string',
         'hash' => 'string',
         'type' => 'string',
         'from' => 'string',
@@ -75,7 +74,6 @@ class TransactionType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'blockNumber' => 'int64',
         'hash' => null,
         'type' => null,
         'from' => null,
@@ -114,7 +112,6 @@ class TransactionType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'blockNumber' => 'blockNumber',
         'hash' => 'hash',
         'type' => 'type',
         'from' => 'from',
@@ -132,7 +129,6 @@ class TransactionType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'blockNumber' => 'setBlockNumber',
         'hash' => 'setHash',
         'type' => 'setType',
         'from' => 'setFrom',
@@ -150,7 +146,6 @@ class TransactionType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'blockNumber' => 'getBlockNumber',
         'hash' => 'getHash',
         'type' => 'getType',
         'from' => 'getFrom',
@@ -247,7 +242,6 @@ class TransactionType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['blockNumber'] = isset($data['blockNumber']) ? $data['blockNumber'] : null;
         $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['from'] = isset($data['from']) ? $data['from'] : null;
@@ -267,10 +261,6 @@ class TransactionType implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if (!is_null($this->container['blockNumber']) && !preg_match("/^\\d+$/", $this->container['blockNumber'])) {
-            $invalidProperties[] = "invalid value for 'blockNumber', must be conform to the pattern /^\\d+$/.";
-        }
 
         if (!is_null($this->container['hash']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['hash'])) {
             $invalidProperties[] = "invalid value for 'hash', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
@@ -324,9 +314,6 @@ class TransactionType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^\\d+$/", $this->container['blockNumber'])) {
-            return false;
-        }
         if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['hash'])) {
             return false;
         }
@@ -360,35 +347,6 @@ class TransactionType implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets blockNumber
-     *
-     * @return string
-     */
-    public function getBlockNumber()
-    {
-        return $this->container['blockNumber'];
-    }
-
-    /**
-     * Sets blockNumber
-     *
-     * @param string $blockNumber blockNumber
-     *
-     * @return $this
-     */
-    public function setBlockNumber($blockNumber)
-    {
-
-        if (!is_null($blockNumber) && (!preg_match("/^\\d+$/", $blockNumber))) {
-            throw new \InvalidArgumentException("invalid value for $blockNumber when calling TransactionType., must conform to the pattern /^\\d+$/.");
-        }
-
-        $this->container['blockNumber'] = $blockNumber;
-
-        return $this;
-    }
-
-    /**
      * Gets hash
      *
      * @return string
@@ -409,7 +367,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($hash) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $hash))) {
-            throw new \InvalidArgumentException("invalid value for $hash when calling TransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+            throw new \InvalidArgumentException("invalid value for $hash when calling PendingTransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
         }
 
         $this->container['hash'] = $hash;
@@ -471,7 +429,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($from) && (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $from))) {
-            throw new \InvalidArgumentException("invalid value for $from when calling TransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+            throw new \InvalidArgumentException("invalid value for $from when calling PendingTransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
         }
 
         $this->container['from'] = $from;
@@ -500,7 +458,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($to) && (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $to))) {
-            throw new \InvalidArgumentException("invalid value for $to when calling TransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+            throw new \InvalidArgumentException("invalid value for $to when calling PendingTransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
         }
 
         $this->container['to'] = $to;
@@ -529,7 +487,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($value) && (!preg_match("/^\\d+$/", $value))) {
-            throw new \InvalidArgumentException("invalid value for $value when calling TransactionType., must conform to the pattern /^\\d+$/.");
+            throw new \InvalidArgumentException("invalid value for $value when calling PendingTransactionType., must conform to the pattern /^\\d+$/.");
         }
 
         $this->container['value'] = $value;
@@ -558,7 +516,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($fee) && (!preg_match("/^\\d+$/", $fee))) {
-            throw new \InvalidArgumentException("invalid value for $fee when calling TransactionType., must conform to the pattern /^\\d+$/.");
+            throw new \InvalidArgumentException("invalid value for $fee when calling PendingTransactionType., must conform to the pattern /^\\d+$/.");
         }
 
         $this->container['fee'] = $fee;
@@ -587,7 +545,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($nonce) && (!preg_match("/^\\d+$/", $nonce))) {
-            throw new \InvalidArgumentException("invalid value for $nonce when calling TransactionType., must conform to the pattern /^\\d+$/.");
+            throw new \InvalidArgumentException("invalid value for $nonce when calling PendingTransactionType., must conform to the pattern /^\\d+$/.");
         }
 
         $this->container['nonce'] = $nonce;
@@ -616,7 +574,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($timestamp) && (!preg_match("/^\\d+$/", $timestamp))) {
-            throw new \InvalidArgumentException("invalid value for $timestamp when calling TransactionType., must conform to the pattern /^\\d+$/.");
+            throw new \InvalidArgumentException("invalid value for $timestamp when calling PendingTransactionType., must conform to the pattern /^\\d+$/.");
         }
 
         $this->container['timestamp'] = $timestamp;
@@ -645,7 +603,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     {
 
         if (!is_null($data) && (!preg_match("/^(0x)?[0-9a-fA-F]*$/", $data))) {
-            throw new \InvalidArgumentException("invalid value for $data when calling TransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]*$/.");
+            throw new \InvalidArgumentException("invalid value for $data when calling PendingTransactionType., must conform to the pattern /^(0x)?[0-9a-fA-F]*$/.");
         }
 
         $this->container['data'] = $data;

@@ -1,6 +1,6 @@
 <?php
 /**
- * GetPendingTransactionsResponse
+ * AccountVoteType
  *
  * PHP version 5
  *
@@ -28,17 +28,19 @@
  */
 
 namespace Semux\Client\Model;
+
+use \ArrayAccess;
 use \Semux\Client\ObjectSerializer;
 
 /**
- * GetPendingTransactionsResponse Class Doc Comment
+ * AccountVoteType Class Doc Comment
  *
  * @category Class
  * @package  Semux\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetPendingTransactionsResponse extends ApiHandlerResponse 
+class AccountVoteType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +49,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetPendingTransactionsResponse';
+    protected static $swaggerModelName = 'AccountVoteType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,7 +57,8 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'result' => '\Semux\Client\Model\PendingTransactionType[]'
+        'delegate' => '\Semux\Client\Model\DelegateType',
+        'votes' => 'string'
     ];
 
     /**
@@ -64,7 +67,8 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'result' => null
+        'delegate' => null,
+        'votes' => 'int64'
     ];
 
     /**
@@ -74,7 +78,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /**
@@ -84,7 +88,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /**
@@ -94,7 +98,8 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'result' => 'result'
+        'delegate' => 'delegate',
+        'votes' => 'votes'
     ];
 
     /**
@@ -103,7 +108,8 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      * @var string[]
      */
     protected static $setters = [
-        'result' => 'setResult'
+        'delegate' => 'setDelegate',
+        'votes' => 'setVotes'
     ];
 
     /**
@@ -112,7 +118,8 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      * @var string[]
      */
     protected static $getters = [
-        'result' => 'getResult'
+        'delegate' => 'getDelegate',
+        'votes' => 'getVotes'
     ];
 
     /**
@@ -123,7 +130,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -133,7 +140,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -143,7 +150,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -160,6 +167,12 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
 
     
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -169,9 +182,8 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['result'] = isset($data['result']) ? $data['result'] : null;
+        $this->container['delegate'] = isset($data['delegate']) ? $data['delegate'] : null;
+        $this->container['votes'] = isset($data['votes']) ? $data['votes'] : null;
     }
 
     /**
@@ -181,7 +193,11 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
+
+        if (!is_null($this->container['votes']) && !preg_match("/^\\d+$/", $this->container['votes'])) {
+            $invalidProperties[] = "invalid value for 'votes', must be conform to the pattern /^\\d+$/.";
+        }
 
         return $invalidProperties;
     }
@@ -194,34 +210,63 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
      */
     public function valid()
     {
-        if (!parent::valid()) {
+
+        if (!preg_match("/^\\d+$/", $this->container['votes'])) {
             return false;
         }
-
         return true;
     }
 
 
     /**
-     * Gets result
+     * Gets delegate
      *
-     * @return \Semux\Client\Model\PendingTransactionType[]
+     * @return \Semux\Client\Model\DelegateType
      */
-    public function getResult()
+    public function getDelegate()
     {
-        return $this->container['result'];
+        return $this->container['delegate'];
     }
 
     /**
-     * Sets result
+     * Sets delegate
      *
-     * @param \Semux\Client\Model\PendingTransactionType[] $result result
+     * @param \Semux\Client\Model\DelegateType $delegate delegate
      *
      * @return $this
      */
-    public function setResult($result)
+    public function setDelegate($delegate)
     {
-        $this->container['result'] = $result;
+        $this->container['delegate'] = $delegate;
+
+        return $this;
+    }
+
+    /**
+     * Gets votes
+     *
+     * @return string
+     */
+    public function getVotes()
+    {
+        return $this->container['votes'];
+    }
+
+    /**
+     * Sets votes
+     *
+     * @param string $votes Votes from the account
+     *
+     * @return $this
+     */
+    public function setVotes($votes)
+    {
+
+        if (!is_null($votes) && (!preg_match("/^\\d+$/", $votes))) {
+            throw new \InvalidArgumentException("invalid value for $votes when calling AccountVoteType., must conform to the pattern /^\\d+$/.");
+        }
+
+        $this->container['votes'] = $votes;
 
         return $this;
     }

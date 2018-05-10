@@ -1,6 +1,6 @@
 <?php
 /**
- * GetPendingTransactionsResponse
+ * GetAccountPendingTransactionsResponse
  *
  * PHP version 5
  *
@@ -31,14 +31,14 @@ namespace Semux\Client\Model;
 use \Semux\Client\ObjectSerializer;
 
 /**
- * GetPendingTransactionsResponse Class Doc Comment
+ * GetAccountPendingTransactionsResponse Class Doc Comment
  *
  * @category Class
  * @package  Semux\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetPendingTransactionsResponse extends ApiHandlerResponse 
+class GetAccountPendingTransactionsResponse extends ApiHandlerResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetPendingTransactionsResponse';
+    protected static $swaggerModelName = 'GetAccountPendingTransactionsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

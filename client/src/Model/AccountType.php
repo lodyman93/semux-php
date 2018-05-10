@@ -61,7 +61,8 @@ class AccountType implements ModelInterface, ArrayAccess
         'available' => 'string',
         'locked' => 'string',
         'nonce' => 'string',
-        'transactionCount' => 'int'
+        'transactionCount' => 'int',
+        'pendingTransactionCount' => 'int'
     ];
 
     /**
@@ -74,7 +75,8 @@ class AccountType implements ModelInterface, ArrayAccess
         'available' => 'int64',
         'locked' => 'int64',
         'nonce' => 'int64',
-        'transactionCount' => 'int32'
+        'transactionCount' => 'int32',
+        'pendingTransactionCount' => 'int32'
     ];
 
     /**
@@ -108,7 +110,8 @@ class AccountType implements ModelInterface, ArrayAccess
         'available' => 'available',
         'locked' => 'locked',
         'nonce' => 'nonce',
-        'transactionCount' => 'transactionCount'
+        'transactionCount' => 'transactionCount',
+        'pendingTransactionCount' => 'pendingTransactionCount'
     ];
 
     /**
@@ -121,7 +124,8 @@ class AccountType implements ModelInterface, ArrayAccess
         'available' => 'setAvailable',
         'locked' => 'setLocked',
         'nonce' => 'setNonce',
-        'transactionCount' => 'setTransactionCount'
+        'transactionCount' => 'setTransactionCount',
+        'pendingTransactionCount' => 'setPendingTransactionCount'
     ];
 
     /**
@@ -134,7 +138,8 @@ class AccountType implements ModelInterface, ArrayAccess
         'available' => 'getAvailable',
         'locked' => 'getLocked',
         'nonce' => 'getNonce',
-        'transactionCount' => 'getTransactionCount'
+        'transactionCount' => 'getTransactionCount',
+        'pendingTransactionCount' => 'getPendingTransactionCount'
     ];
 
     /**
@@ -202,6 +207,7 @@ class AccountType implements ModelInterface, ArrayAccess
         $this->container['locked'] = isset($data['locked']) ? $data['locked'] : null;
         $this->container['nonce'] = isset($data['nonce']) ? $data['nonce'] : null;
         $this->container['transactionCount'] = isset($data['transactionCount']) ? $data['transactionCount'] : null;
+        $this->container['pendingTransactionCount'] = isset($data['pendingTransactionCount']) ? $data['pendingTransactionCount'] : null;
     }
 
     /**
@@ -212,6 +218,10 @@ class AccountType implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['address']) && !preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['address'])) {
+            $invalidProperties[] = "invalid value for 'address', must be conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.";
+        }
 
         if (!is_null($this->container['available']) && !preg_match("/^\\d+$/", $this->container['available'])) {
             $invalidProperties[] = "invalid value for 'available', must be conform to the pattern /^\\d+$/.";
@@ -237,6 +247,9 @@ class AccountType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['address'])) {
+            return false;
+        }
         if (!preg_match("/^\\d+$/", $this->container['available'])) {
             return false;
         }
@@ -269,6 +282,11 @@ class AccountType implements ModelInterface, ArrayAccess
      */
     public function setAddress($address)
     {
+
+        if (!is_null($address) && (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address))) {
+            throw new \InvalidArgumentException("invalid value for $address when calling AccountType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         $this->container['address'] = $address;
 
         return $this;
@@ -381,6 +399,30 @@ class AccountType implements ModelInterface, ArrayAccess
     public function setTransactionCount($transactionCount)
     {
         $this->container['transactionCount'] = $transactionCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets pendingTransactionCount
+     *
+     * @return int
+     */
+    public function getPendingTransactionCount()
+    {
+        return $this->container['pendingTransactionCount'];
+    }
+
+    /**
+     * Sets pendingTransactionCount
+     *
+     * @param int $pendingTransactionCount pendingTransactionCount
+     *
+     * @return $this
+     */
+    public function setPendingTransactionCount($pendingTransactionCount)
+    {
+        $this->container['pendingTransactionCount'] = $pendingTransactionCount;
 
         return $this;
     }

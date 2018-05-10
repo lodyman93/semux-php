@@ -1,6 +1,6 @@
 <?php
 /**
- * GetPendingTransactionsResponse
+ * GetAccountVotesResponse
  *
  * PHP version 5
  *
@@ -31,14 +31,14 @@ namespace Semux\Client\Model;
 use \Semux\Client\ObjectSerializer;
 
 /**
- * GetPendingTransactionsResponse Class Doc Comment
+ * GetAccountVotesResponse Class Doc Comment
  *
  * @category Class
  * @package  Semux\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GetPendingTransactionsResponse extends ApiHandlerResponse 
+class GetAccountVotesResponse extends ApiHandlerResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GetPendingTransactionsResponse';
+    protected static $swaggerModelName = 'GetAccountVotesResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,7 +55,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'result' => '\Semux\Client\Model\PendingTransactionType[]'
+        'result' => '\Semux\Client\Model\AccountVoteType[]'
     ];
 
     /**
@@ -205,7 +205,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
     /**
      * Gets result
      *
-     * @return \Semux\Client\Model\PendingTransactionType[]
+     * @return \Semux\Client\Model\AccountVoteType[]
      */
     public function getResult()
     {
@@ -215,7 +215,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
     /**
      * Sets result
      *
-     * @param \Semux\Client\Model\PendingTransactionType[] $result result
+     * @param \Semux\Client\Model\AccountVoteType[] $result result
      *
      * @return $this
      */
