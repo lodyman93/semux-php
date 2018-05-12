@@ -244,7 +244,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
     /**
      * Sets maxTransactionDataSize
      *
-     * @param int $maxTransactionDataSize maxTransactionDataSize
+     * @param int $maxTransactionDataSize The maximum transaction size in bytes
      *
      * @return $this
      */
@@ -268,7 +268,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
     /**
      * Sets minTransactionFee
      *
-     * @param string $minTransactionFee minTransactionFee
+     * @param string $minTransactionFee The minimum transaction fee in nano SEM
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
     /**
      * Sets minDelegateBurnAmount
      *
-     * @param string $minDelegateBurnAmount minDelegateBurnAmount
+     * @param string $minDelegateBurnAmount The amount of nano SEM required to burn for delegate registration
      *
      * @return $this
      */

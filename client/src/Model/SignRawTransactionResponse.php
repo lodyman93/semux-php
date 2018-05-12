@@ -215,7 +215,7 @@ class SignRawTransactionResponse extends ApiHandlerResponse
     /**
      * Sets result
      *
-     * @param string $result result
+     * @param string $result The signed raw transaction encoded in hexadecimal string
      *
      * @return $this
      */

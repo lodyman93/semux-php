@@ -494,7 +494,7 @@ class BlockType implements ModelInterface, ArrayAccess
     /**
      * Sets timestamp
      *
-     * @param string $timestamp timestamp
+     * @param string $timestamp Block timestamp in milliseconds specified by the block forger. There can be a time drift up to 30 seconds.
      *
      * @return $this
      */

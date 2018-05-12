@@ -222,7 +222,7 @@ class SignMessageResponse extends ApiHandlerResponse
     /**
      * Sets result
      *
-     * @param string $result result
+     * @param string $result The message signature encoded in hexadecimal string
      *
      * @return $this
      */

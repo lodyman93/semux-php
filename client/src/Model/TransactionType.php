@@ -463,7 +463,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     /**
      * Sets from
      *
-     * @param string $from from
+     * @param string $from Sender's address
      *
      * @return $this
      */
@@ -492,7 +492,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     /**
      * Sets to
      *
-     * @param string $to to
+     * @param string $to Recipient's address
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value value
+     * @param string $value Transaction value in nano SEM
      *
      * @return $this
      */
@@ -550,7 +550,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     /**
      * Sets fee
      *
-     * @param string $fee fee
+     * @param string $fee Transaction fee in nano SEM
      *
      * @return $this
      */
@@ -608,7 +608,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     /**
      * Sets timestamp
      *
-     * @param string $timestamp timestamp
+     * @param string $timestamp Transaction timestamp in milliseconds specified by the transaction creator. There can be a time drift up to 2 hours.
      *
      * @return $this
      */
@@ -637,7 +637,7 @@ class TransactionType implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param string $data data
+     * @param string $data Transaction data encoded in hexadecimal string
      *
      * @return $this
      */

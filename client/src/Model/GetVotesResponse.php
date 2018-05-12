@@ -215,7 +215,7 @@ class GetVotesResponse extends ApiHandlerResponse
     /**
      * Sets result
      *
-     * @param map[string,string] $result result
+     * @param map[string,string] $result A map of [voter address] => [votes]
      *
      * @return $this
      */

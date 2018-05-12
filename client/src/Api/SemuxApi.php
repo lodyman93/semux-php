@@ -6495,7 +6495,7 @@ class SemuxApi
     /**
      * Operation getVotes
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -6512,7 +6512,7 @@ class SemuxApi
     /**
      * Operation getVotesWithHttpInfo
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -6587,7 +6587,7 @@ class SemuxApi
     /**
      * Operation getVotesAsync
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -6607,7 +6607,7 @@ class SemuxApi
     /**
      * Operation getVotesAsyncWithHttpInfo
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -7012,7 +7012,7 @@ class SemuxApi
      *
      * @param  string $from Registering address (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
-     * @param  string $data Delegate name in hexadecimal encoded string, 16 bytes of data at maximum (required)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7031,7 +7031,7 @@ class SemuxApi
      *
      * @param  string $from Registering address (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
-     * @param  string $data Delegate name in hexadecimal encoded string, 16 bytes of data at maximum (required)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7108,7 +7108,7 @@ class SemuxApi
      *
      * @param  string $from Registering address (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
-     * @param  string $data Delegate name in hexadecimal encoded string, 16 bytes of data at maximum (required)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7130,7 +7130,7 @@ class SemuxApi
      *
      * @param  string $from Registering address (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
-     * @param  string $data Delegate name in hexadecimal encoded string, 16 bytes of data at maximum (required)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7182,7 +7182,7 @@ class SemuxApi
      *
      * @param  string $from Registering address (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
-     * @param  string $data Delegate name in hexadecimal encoded string, 16 bytes of data at maximum (required)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7308,7 +7308,7 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -7326,7 +7326,7 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -7402,7 +7402,7 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \InvalidArgumentException
@@ -7423,7 +7423,7 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \InvalidArgumentException
@@ -7474,7 +7474,7 @@ class SemuxApi
     /**
      * Create request for operation 'signMessage'
      *
-     * @param  string $address Signing address (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \InvalidArgumentException
@@ -7874,11 +7874,11 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (optional)
-     * @param  string $data Transaction data (optional)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7895,11 +7895,11 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (optional)
-     * @param  string $data Transaction data (optional)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7974,11 +7974,11 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (optional)
-     * @param  string $data Transaction data (optional)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7998,11 +7998,11 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (optional)
-     * @param  string $data Transaction data (optional)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8052,11 +8052,11 @@ class SemuxApi
     /**
      * Create request for operation 'transfer'
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (optional)
-     * @param  string $data Transaction data (optional)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8204,10 +8204,10 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
-     * @param  string $fee Transaction fee in nano SEM (optional)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8224,10 +8224,10 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
-     * @param  string $fee Transaction fee in nano SEM (optional)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8302,10 +8302,10 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
-     * @param  string $fee Transaction fee in nano SEM (optional)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8325,10 +8325,10 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
-     * @param  string $fee Transaction fee in nano SEM (optional)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8378,10 +8378,10 @@ class SemuxApi
     /**
      * Create request for operation 'unvote'
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
-     * @param  string $fee Transaction fee in nano SEM (optional)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -8521,8 +8521,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -8540,8 +8540,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -8617,8 +8617,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \InvalidArgumentException
@@ -8639,8 +8639,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \InvalidArgumentException
@@ -8691,8 +8691,8 @@ class SemuxApi
     /**
      * Create request for operation 'verifyMessage'
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \InvalidArgumentException
@@ -8821,9 +8821,9 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
+     * @param  string $value Number of votes in nano SEM (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -8841,9 +8841,9 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
+     * @param  string $value Number of votes in nano SEM (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -8919,9 +8919,9 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
+     * @param  string $value Number of votes in nano SEM (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
@@ -8942,9 +8942,9 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
+     * @param  string $value Number of votes in nano SEM (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
@@ -8995,9 +8995,9 @@ class SemuxApi
     /**
      * Create request for operation 'vote'
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount in nano SEM (required)
+     * @param  string $value Number of votes in nano SEM (required)
      * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
