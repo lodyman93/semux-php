@@ -215,7 +215,7 @@ class ListAccountsResponse extends ApiHandlerResponse
     /**
      * Sets result
      *
-     * @param string[] $result result
+     * @param string[] $result A list of account addresses
      *
      * @return $this
      */

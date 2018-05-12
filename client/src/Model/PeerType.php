@@ -231,6 +231,10 @@ class PeerType implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['ip']) && !preg_match("/^(\\d{1,3}\\.){3}\\d{1,3}$/", $this->container['ip'])) {
+            $invalidProperties[] = "invalid value for 'ip', must be conform to the pattern /^(\\d{1,3}\\.){3}\\d{1,3}$/.";
+        }
+
         if (!is_null($this->container['latestBlockNumber']) && !preg_match("/^\\d+$/", $this->container['latestBlockNumber'])) {
             $invalidProperties[] = "invalid value for 'latestBlockNumber', must be conform to the pattern /^\\d+$/.";
         }
@@ -251,6 +255,9 @@ class PeerType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if (!preg_match("/^(\\d{1,3}\\.){3}\\d{1,3}$/", $this->container['ip'])) {
+            return false;
+        }
         if (!preg_match("/^\\d+$/", $this->container['latestBlockNumber'])) {
             return false;
         }
@@ -280,6 +287,11 @@ class PeerType implements ModelInterface, ArrayAccess
      */
     public function setIp($ip)
     {
+
+        if (!is_null($ip) && (!preg_match("/^(\\d{1,3}\\.){3}\\d{1,3}$/", $ip))) {
+            throw new \InvalidArgumentException("invalid value for $ip when calling PeerType., must conform to the pattern /^(\\d{1,3}\\.){3}\\d{1,3}$/.");
+        }
+
         $this->container['ip'] = $ip;
 
         return $this;

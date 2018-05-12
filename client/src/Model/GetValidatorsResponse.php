@@ -215,7 +215,7 @@ class GetValidatorsResponse extends ApiHandlerResponse
     /**
      * Sets result
      *
-     * @param string[] $result result
+     * @param string[] $result A list of validator addresses
      *
      * @return $this
      */

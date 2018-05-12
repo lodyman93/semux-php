@@ -215,7 +215,7 @@ class VerifyMessageResponse extends ApiHandlerResponse
     /**
      * Sets validSignature
      *
-     * @param bool $validSignature validSignature
+     * @param bool $validSignature Whether the signature is valid
      *
      * @return $this
      */

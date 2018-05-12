@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionLimitsType
+ * AccountVoteType
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Semux\Client\ObjectSerializer;
 
 /**
- * TransactionLimitsType Class Doc Comment
+ * AccountVoteType Class Doc Comment
  *
  * @category Class
  * @package  Semux\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionLimitsType implements ModelInterface, ArrayAccess
+class AccountVoteType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TransactionLimitsType';
+    protected static $swaggerModelName = 'AccountVoteType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'maxTransactionDataSize' => 'int',
-        'minTransactionFee' => 'string',
-        'minDelegateBurnAmount' => 'string'
+        'delegate' => '\Semux\Client\Model\DelegateType',
+        'votes' => 'string'
     ];
 
     /**
@@ -68,9 +67,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'maxTransactionDataSize' => 'int32',
-        'minTransactionFee' => 'int64',
-        'minDelegateBurnAmount' => 'int64'
+        'delegate' => null,
+        'votes' => 'int64'
     ];
 
     /**
@@ -100,9 +98,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'maxTransactionDataSize' => 'maxTransactionDataSize',
-        'minTransactionFee' => 'minTransactionFee',
-        'minDelegateBurnAmount' => 'minDelegateBurnAmount'
+        'delegate' => 'delegate',
+        'votes' => 'votes'
     ];
 
     /**
@@ -111,9 +108,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'maxTransactionDataSize' => 'setMaxTransactionDataSize',
-        'minTransactionFee' => 'setMinTransactionFee',
-        'minDelegateBurnAmount' => 'setMinDelegateBurnAmount'
+        'delegate' => 'setDelegate',
+        'votes' => 'setVotes'
     ];
 
     /**
@@ -122,9 +118,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'maxTransactionDataSize' => 'getMaxTransactionDataSize',
-        'minTransactionFee' => 'getMinTransactionFee',
-        'minDelegateBurnAmount' => 'getMinDelegateBurnAmount'
+        'delegate' => 'getDelegate',
+        'votes' => 'getVotes'
     ];
 
     /**
@@ -187,9 +182,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['maxTransactionDataSize'] = isset($data['maxTransactionDataSize']) ? $data['maxTransactionDataSize'] : null;
-        $this->container['minTransactionFee'] = isset($data['minTransactionFee']) ? $data['minTransactionFee'] : null;
-        $this->container['minDelegateBurnAmount'] = isset($data['minDelegateBurnAmount']) ? $data['minDelegateBurnAmount'] : null;
+        $this->container['delegate'] = isset($data['delegate']) ? $data['delegate'] : null;
+        $this->container['votes'] = isset($data['votes']) ? $data['votes'] : null;
     }
 
     /**
@@ -201,12 +195,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['minTransactionFee']) && !preg_match("/^\\d+$/", $this->container['minTransactionFee'])) {
-            $invalidProperties[] = "invalid value for 'minTransactionFee', must be conform to the pattern /^\\d+$/.";
-        }
-
-        if (!is_null($this->container['minDelegateBurnAmount']) && !preg_match("/^\\d+$/", $this->container['minDelegateBurnAmount'])) {
-            $invalidProperties[] = "invalid value for 'minDelegateBurnAmount', must be conform to the pattern /^\\d+$/.";
+        if (!is_null($this->container['votes']) && !preg_match("/^\\d+$/", $this->container['votes'])) {
+            $invalidProperties[] = "invalid value for 'votes', must be conform to the pattern /^\\d+$/.";
         }
 
         return $invalidProperties;
@@ -221,10 +211,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^\\d+$/", $this->container['minTransactionFee'])) {
-            return false;
-        }
-        if (!preg_match("/^\\d+$/", $this->container['minDelegateBurnAmount'])) {
+        if (!preg_match("/^\\d+$/", $this->container['votes'])) {
             return false;
         }
         return true;
@@ -232,83 +219,54 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets maxTransactionDataSize
+     * Gets delegate
      *
-     * @return int
+     * @return \Semux\Client\Model\DelegateType
      */
-    public function getMaxTransactionDataSize()
+    public function getDelegate()
     {
-        return $this->container['maxTransactionDataSize'];
+        return $this->container['delegate'];
     }
 
     /**
-     * Sets maxTransactionDataSize
+     * Sets delegate
      *
-     * @param int $maxTransactionDataSize The maximum transaction size in bytes
+     * @param \Semux\Client\Model\DelegateType $delegate delegate
      *
      * @return $this
      */
-    public function setMaxTransactionDataSize($maxTransactionDataSize)
+    public function setDelegate($delegate)
     {
-        $this->container['maxTransactionDataSize'] = $maxTransactionDataSize;
+        $this->container['delegate'] = $delegate;
 
         return $this;
     }
 
     /**
-     * Gets minTransactionFee
+     * Gets votes
      *
      * @return string
      */
-    public function getMinTransactionFee()
+    public function getVotes()
     {
-        return $this->container['minTransactionFee'];
+        return $this->container['votes'];
     }
 
     /**
-     * Sets minTransactionFee
+     * Sets votes
      *
-     * @param string $minTransactionFee The minimum transaction fee in nano SEM
+     * @param string $votes Votes from the account
      *
      * @return $this
      */
-    public function setMinTransactionFee($minTransactionFee)
+    public function setVotes($votes)
     {
 
-        if (!is_null($minTransactionFee) && (!preg_match("/^\\d+$/", $minTransactionFee))) {
-            throw new \InvalidArgumentException("invalid value for $minTransactionFee when calling TransactionLimitsType., must conform to the pattern /^\\d+$/.");
+        if (!is_null($votes) && (!preg_match("/^\\d+$/", $votes))) {
+            throw new \InvalidArgumentException("invalid value for $votes when calling AccountVoteType., must conform to the pattern /^\\d+$/.");
         }
 
-        $this->container['minTransactionFee'] = $minTransactionFee;
-
-        return $this;
-    }
-
-    /**
-     * Gets minDelegateBurnAmount
-     *
-     * @return string
-     */
-    public function getMinDelegateBurnAmount()
-    {
-        return $this->container['minDelegateBurnAmount'];
-    }
-
-    /**
-     * Sets minDelegateBurnAmount
-     *
-     * @param string $minDelegateBurnAmount The amount of nano SEM required to burn for delegate registration
-     *
-     * @return $this
-     */
-    public function setMinDelegateBurnAmount($minDelegateBurnAmount)
-    {
-
-        if (!is_null($minDelegateBurnAmount) && (!preg_match("/^\\d+$/", $minDelegateBurnAmount))) {
-            throw new \InvalidArgumentException("invalid value for $minDelegateBurnAmount when calling TransactionLimitsType., must conform to the pattern /^\\d+$/.");
-        }
-
-        $this->container['minDelegateBurnAmount'] = $minDelegateBurnAmount;
+        $this->container['votes'] = $votes;
 
         return $this;
     }

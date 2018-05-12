@@ -55,7 +55,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'result' => '\Semux\Client\Model\TransactionType[]'
+        'result' => '\Semux\Client\Model\PendingTransactionType[]'
     ];
 
     /**
@@ -205,7 +205,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
     /**
      * Gets result
      *
-     * @return \Semux\Client\Model\TransactionType[]
+     * @return \Semux\Client\Model\PendingTransactionType[]
      */
     public function getResult()
     {
@@ -215,7 +215,7 @@ class GetPendingTransactionsResponse extends ApiHandlerResponse
     /**
      * Sets result
      *
-     * @param \Semux\Client\Model\TransactionType[] $result result
+     * @param \Semux\Client\Model\PendingTransactionType[] $result result
      *
      * @return $this
      */

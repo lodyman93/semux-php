@@ -33,13 +33,13 @@ $config->setHost("http://localhost:5171/v2.0.0")
     ->setUsername('YOUR_USERNAME')
     ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Semux\Client\Api\SemuxApi(
+$semuxApi = new Semux\Client\Api\SemuxApi(
     new GuzzleHttp\Client(),
     $config
 );
 
 try {
-    $result = $apiInstance->getInfo();
+    $result = $semuxApi->getInfo();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SemuxApi->getInfo(): ', $e->getMessage(), PHP_EOL;
@@ -49,6 +49,11 @@ try {
 ## Documentation
 
 https://semuxproject.github.io/semux-php-sdk/Semux/Client/Api/SemuxApi.html
+
+## Examples
+
+- [Create wallets](./examples/create-wallets.php)
+- [Transfer coins](./examples/transfer-coins.php)
 
 ## Tests
 

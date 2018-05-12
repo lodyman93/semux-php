@@ -183,6 +183,10 @@ class DoTransactionResponse extends ApiHandlerResponse
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        if (!is_null($this->container['result']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['result'])) {
+            $invalidProperties[] = "invalid value for 'result', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -198,6 +202,9 @@ class DoTransactionResponse extends ApiHandlerResponse
             return false;
         }
 
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['result'])) {
+            return false;
+        }
         return true;
     }
 
@@ -221,6 +228,11 @@ class DoTransactionResponse extends ApiHandlerResponse
      */
     public function setResult($result)
     {
+
+        if (!is_null($result) && (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $result))) {
+            throw new \InvalidArgumentException("invalid value for $result when calling DoTransactionResponse., must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
         $this->container['result'] = $result;
 
         return $this;

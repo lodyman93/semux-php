@@ -63,7 +63,8 @@ class DelegateType implements ModelInterface, ArrayAccess
         'votes' => 'string',
         'blocksForged' => 'string',
         'turnsHit' => 'string',
-        'turnsMissed' => 'string'
+        'turnsMissed' => 'string',
+        'validator' => 'bool'
     ];
 
     /**
@@ -78,7 +79,8 @@ class DelegateType implements ModelInterface, ArrayAccess
         'votes' => 'int64',
         'blocksForged' => 'int64',
         'turnsHit' => 'int64',
-        'turnsMissed' => 'int64'
+        'turnsMissed' => 'int64',
+        'validator' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class DelegateType implements ModelInterface, ArrayAccess
         'votes' => 'votes',
         'blocksForged' => 'blocksForged',
         'turnsHit' => 'turnsHit',
-        'turnsMissed' => 'turnsMissed'
+        'turnsMissed' => 'turnsMissed',
+        'validator' => 'validator'
     ];
 
     /**
@@ -129,7 +132,8 @@ class DelegateType implements ModelInterface, ArrayAccess
         'votes' => 'setVotes',
         'blocksForged' => 'setBlocksForged',
         'turnsHit' => 'setTurnsHit',
-        'turnsMissed' => 'setTurnsMissed'
+        'turnsMissed' => 'setTurnsMissed',
+        'validator' => 'setValidator'
     ];
 
     /**
@@ -144,7 +148,8 @@ class DelegateType implements ModelInterface, ArrayAccess
         'votes' => 'getVotes',
         'blocksForged' => 'getBlocksForged',
         'turnsHit' => 'getTurnsHit',
-        'turnsMissed' => 'getTurnsMissed'
+        'turnsMissed' => 'getTurnsMissed',
+        'validator' => 'getValidator'
     ];
 
     /**
@@ -214,6 +219,7 @@ class DelegateType implements ModelInterface, ArrayAccess
         $this->container['blocksForged'] = isset($data['blocksForged']) ? $data['blocksForged'] : null;
         $this->container['turnsHit'] = isset($data['turnsHit']) ? $data['turnsHit'] : null;
         $this->container['turnsMissed'] = isset($data['turnsMissed']) ? $data['turnsMissed'] : null;
+        $this->container['validator'] = isset($data['validator']) ? $data['validator'] : null;
     }
 
     /**
@@ -224,6 +230,10 @@ class DelegateType implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['address']) && !preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['address'])) {
+            $invalidProperties[] = "invalid value for 'address', must be conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.";
+        }
 
         if (!is_null($this->container['registeredAt']) && !preg_match("/^\\d+$/", $this->container['registeredAt'])) {
             $invalidProperties[] = "invalid value for 'registeredAt', must be conform to the pattern /^\\d+$/.";
@@ -257,6 +267,9 @@ class DelegateType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $this->container['address'])) {
+            return false;
+        }
         if (!preg_match("/^\\d+$/", $this->container['registeredAt'])) {
             return false;
         }
@@ -289,12 +302,17 @@ class DelegateType implements ModelInterface, ArrayAccess
     /**
      * Sets address
      *
-     * @param string $address address
+     * @param string $address Delegate SEM address
      *
      * @return $this
      */
     public function setAddress($address)
     {
+
+        if (!is_null($address) && (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address))) {
+            throw new \InvalidArgumentException("invalid value for $address when calling DelegateType., must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         $this->container['address'] = $address;
 
         return $this;
@@ -313,7 +331,7 @@ class DelegateType implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Delegate name
      *
      * @return $this
      */
@@ -337,7 +355,7 @@ class DelegateType implements ModelInterface, ArrayAccess
     /**
      * Sets registeredAt
      *
-     * @param string $registeredAt registeredAt
+     * @param string $registeredAt Delegate registration block number
      *
      * @return $this
      */
@@ -366,7 +384,7 @@ class DelegateType implements ModelInterface, ArrayAccess
     /**
      * Sets votes
      *
-     * @param string $votes votes
+     * @param string $votes Total votes of the delegate
      *
      * @return $this
      */
@@ -395,7 +413,7 @@ class DelegateType implements ModelInterface, ArrayAccess
     /**
      * Sets blocksForged
      *
-     * @param string $blocksForged blocksForged
+     * @param string $blocksForged Total forged blocks including primary rounds & backup rounds
      *
      * @return $this
      */
@@ -424,7 +442,7 @@ class DelegateType implements ModelInterface, ArrayAccess
     /**
      * Sets turnsHit
      *
-     * @param string $turnsHit turnsHit
+     * @param string $turnsHit Forged blocks when the delegate is a primary validator
      *
      * @return $this
      */
@@ -453,7 +471,7 @@ class DelegateType implements ModelInterface, ArrayAccess
     /**
      * Sets turnsMissed
      *
-     * @param string $turnsMissed turnsMissed
+     * @param string $turnsMissed Missed blocks when the delegate is a primary validator
      *
      * @return $this
      */
@@ -465,6 +483,30 @@ class DelegateType implements ModelInterface, ArrayAccess
         }
 
         $this->container['turnsMissed'] = $turnsMissed;
+
+        return $this;
+    }
+
+    /**
+     * Gets validator
+     *
+     * @return bool
+     */
+    public function getValidator()
+    {
+        return $this->container['validator'];
+    }
+
+    /**
+     * Sets validator
+     *
+     * @param bool $validator Whether the delegate is currently a validator
+     *
+     * @return $this
+     */
+    public function setValidator($validator)
+    {
+        $this->container['validator'] = $validator;
 
         return $this;
     }

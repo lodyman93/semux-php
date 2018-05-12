@@ -87,7 +87,7 @@ class SemuxApi
      *
      * Add node
      *
-     * @param  string $node Name of the node in host:port format (required)
+     * @param  string $node Address of the node in host:port format (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -104,7 +104,7 @@ class SemuxApi
      *
      * Add node
      *
-     * @param  string $node Name of the node in host:port format (required)
+     * @param  string $node Address of the node in host:port format (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -179,7 +179,7 @@ class SemuxApi
      *
      * Add node
      *
-     * @param  string $node Name of the node in host:port format (required)
+     * @param  string $node Address of the node in host:port format (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -199,7 +199,7 @@ class SemuxApi
      *
      * Add node
      *
-     * @param  string $node Name of the node in host:port format (required)
+     * @param  string $node Address of the node in host:port format (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -249,7 +249,7 @@ class SemuxApi
     /**
      * Create request for operation 'addNode'
      *
-     * @param  string $node Name of the node in host:port format (required)
+     * @param  string $node Address of the node in host:port format (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -524,6 +524,10 @@ class SemuxApi
                 'Missing the required parameter $ip when calling addToBlacklist'
             );
         }
+        if (!preg_match("/^(\\d{1,3}\\.){3}\\d{1,3}$/", $ip)) {
+            throw new \InvalidArgumentException("invalid value for \"ip\" when calling SemuxApi.addToBlacklist, must conform to the pattern /^(\\d{1,3}\\.){3}\\d{1,3}$/.");
+        }
+
 
         $resourcePath = '/blacklist';
         $formParams = [];
@@ -786,6 +790,10 @@ class SemuxApi
                 'Missing the required parameter $ip when calling addToWhitelist'
             );
         }
+        if (!preg_match("/^(\\d{1,3}\\.){3}\\d{1,3}$/", $ip)) {
+            throw new \InvalidArgumentException("invalid value for \"ip\" when calling SemuxApi.addToWhitelist, must conform to the pattern /^(\\d{1,3}\\.){3}\\d{1,3}$/.");
+        }
+
 
         $resourcePath = '/whitelist';
         $formParams = [];
@@ -877,7 +885,7 @@ class SemuxApi
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Semux\Client\Model\SendTransactionResponse
+     * @return \Semux\Client\Model\DoTransactionResponse
      */
     public function broadcastRawTransaction($raw)
     {
@@ -894,11 +902,11 @@ class SemuxApi
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Semux\Client\Model\SendTransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Semux\Client\Model\DoTransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function broadcastRawTransactionWithHttpInfo($raw)
     {
-        $returnType = '\Semux\Client\Model\SendTransactionResponse';
+        $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->broadcastRawTransactionRequest($raw);
 
         try {
@@ -950,7 +958,7 @@ class SemuxApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Semux\Client\Model\SendTransactionResponse',
+                        '\Semux\Client\Model\DoTransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -992,7 +1000,7 @@ class SemuxApi
      */
     public function broadcastRawTransactionAsyncWithHttpInfo($raw)
     {
-        $returnType = '\Semux\Client\Model\SendTransactionResponse';
+        $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->broadcastRawTransactionRequest($raw);
 
         return $this->client
@@ -1144,7 +1152,7 @@ class SemuxApi
      * @param  string $fee Transaction fee in nano (required)
      * @param  string $nonce Transaction nonce (required)
      * @param  string $to Recipient&#39;s address (optional)
-     * @param  string $value Transaction value in nano (optional)
+     * @param  string $value Transaction value in nano SEM (optional)
      * @param  string $timestamp Transaction timestamp in milliseconds. Default to current time. (optional)
      * @param  string $data Hexadecimal encoded transaction data. (optional)
      *
@@ -1168,7 +1176,7 @@ class SemuxApi
      * @param  string $fee Transaction fee in nano (required)
      * @param  string $nonce Transaction nonce (required)
      * @param  string $to Recipient&#39;s address (optional)
-     * @param  string $value Transaction value in nano (optional)
+     * @param  string $value Transaction value in nano SEM (optional)
      * @param  string $timestamp Transaction timestamp in milliseconds. Default to current time. (optional)
      * @param  string $data Hexadecimal encoded transaction data. (optional)
      *
@@ -1250,7 +1258,7 @@ class SemuxApi
      * @param  string $fee Transaction fee in nano (required)
      * @param  string $nonce Transaction nonce (required)
      * @param  string $to Recipient&#39;s address (optional)
-     * @param  string $value Transaction value in nano (optional)
+     * @param  string $value Transaction value in nano SEM (optional)
      * @param  string $timestamp Transaction timestamp in milliseconds. Default to current time. (optional)
      * @param  string $data Hexadecimal encoded transaction data. (optional)
      *
@@ -1277,7 +1285,7 @@ class SemuxApi
      * @param  string $fee Transaction fee in nano (required)
      * @param  string $nonce Transaction nonce (required)
      * @param  string $to Recipient&#39;s address (optional)
-     * @param  string $value Transaction value in nano (optional)
+     * @param  string $value Transaction value in nano SEM (optional)
      * @param  string $timestamp Transaction timestamp in milliseconds. Default to current time. (optional)
      * @param  string $data Hexadecimal encoded transaction data. (optional)
      *
@@ -1334,7 +1342,7 @@ class SemuxApi
      * @param  string $fee Transaction fee in nano (required)
      * @param  string $nonce Transaction nonce (required)
      * @param  string $to Recipient&#39;s address (optional)
-     * @param  string $value Transaction value in nano (optional)
+     * @param  string $value Transaction value in nano SEM (optional)
      * @param  string $timestamp Transaction timestamp in milliseconds. Default to current time. (optional)
      * @param  string $data Hexadecimal encoded transaction data. (optional)
      *
@@ -1375,8 +1383,8 @@ class SemuxApi
             throw new \InvalidArgumentException("invalid value for \"nonce\" when calling SemuxApi.composeRawTransaction, must conform to the pattern /^\\d+$/.");
         }
 
-        if ($to !== null && !preg_match("/^(0x)?[0-9a-fA-F]+$/", $to)) {
-            throw new \InvalidArgumentException("invalid value for \"to\" when calling SemuxApi.composeRawTransaction, must conform to the pattern /^(0x)?[0-9a-fA-F]+$/.");
+        if ($to !== null && !preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $to)) {
+            throw new \InvalidArgumentException("invalid value for \"to\" when calling SemuxApi.composeRawTransaction, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
         }
 
         if ($value !== null && !preg_match("/^\\d+$/", $value)) {
@@ -1937,6 +1945,10 @@ class SemuxApi
                 'Missing the required parameter $address when calling getAccount'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.getAccount, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
 
         $resourcePath = '/account';
         $formParams = [];
@@ -1948,6 +1960,310 @@ class SemuxApi
         // query params
         if ($address !== null) {
             $queryParams['address'] = ObjectSerializer::toQueryValue($address);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/x-www-form-urlencoded']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAccountPendingTransactions
+     *
+     * Get pending transactions of the account
+     *
+     * @param  string $address Address of account (required)
+     * @param  string $from Starting range of transactions (required)
+     * @param  string $to Ending range of transactions (required)
+     *
+     * @throws \Semux\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Semux\Client\Model\GetAccountPendingTransactionsResponse
+     */
+    public function getAccountPendingTransactions($address, $from, $to)
+    {
+        list($response) = $this->getAccountPendingTransactionsWithHttpInfo($address, $from, $to);
+        return $response;
+    }
+
+    /**
+     * Operation getAccountPendingTransactionsWithHttpInfo
+     *
+     * Get pending transactions of the account
+     *
+     * @param  string $address Address of account (required)
+     * @param  string $from Starting range of transactions (required)
+     * @param  string $to Ending range of transactions (required)
+     *
+     * @throws \Semux\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Semux\Client\Model\GetAccountPendingTransactionsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAccountPendingTransactionsWithHttpInfo($address, $from, $to)
+    {
+        $returnType = '\Semux\Client\Model\GetAccountPendingTransactionsResponse';
+        $request = $this->getAccountPendingTransactionsRequest($address, $from, $to);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Semux\Client\Model\GetAccountPendingTransactionsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAccountPendingTransactionsAsync
+     *
+     * Get pending transactions of the account
+     *
+     * @param  string $address Address of account (required)
+     * @param  string $from Starting range of transactions (required)
+     * @param  string $to Ending range of transactions (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountPendingTransactionsAsync($address, $from, $to)
+    {
+        return $this->getAccountPendingTransactionsAsyncWithHttpInfo($address, $from, $to)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAccountPendingTransactionsAsyncWithHttpInfo
+     *
+     * Get pending transactions of the account
+     *
+     * @param  string $address Address of account (required)
+     * @param  string $from Starting range of transactions (required)
+     * @param  string $to Ending range of transactions (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountPendingTransactionsAsyncWithHttpInfo($address, $from, $to)
+    {
+        $returnType = '\Semux\Client\Model\GetAccountPendingTransactionsResponse';
+        $request = $this->getAccountPendingTransactionsRequest($address, $from, $to);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAccountPendingTransactions'
+     *
+     * @param  string $address Address of account (required)
+     * @param  string $from Starting range of transactions (required)
+     * @param  string $to Ending range of transactions (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getAccountPendingTransactionsRequest($address, $from, $to)
+    {
+        // verify the required parameter 'address' is set
+        if ($address === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling getAccountPendingTransactions'
+            );
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.getAccountPendingTransactions, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
+        // verify the required parameter 'from' is set
+        if ($from === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $from when calling getAccountPendingTransactions'
+            );
+        }
+        if (!preg_match("/^\\d+$/", $from)) {
+            throw new \InvalidArgumentException("invalid value for \"from\" when calling SemuxApi.getAccountPendingTransactions, must conform to the pattern /^\\d+$/.");
+        }
+
+        // verify the required parameter 'to' is set
+        if ($to === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to when calling getAccountPendingTransactions'
+            );
+        }
+        if (!preg_match("/^\\d+$/", $to)) {
+            throw new \InvalidArgumentException("invalid value for \"to\" when calling SemuxApi.getAccountPendingTransactions, must conform to the pattern /^\\d+$/.");
+        }
+
+
+        $resourcePath = '/account/pending-transactions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($address !== null) {
+            $queryParams['address'] = ObjectSerializer::toQueryValue($address);
+        }
+        // query params
+        if ($from !== null) {
+            $queryParams['from'] = ObjectSerializer::toQueryValue($from);
+        }
+        // query params
+        if ($to !== null) {
+            $queryParams['to'] = ObjectSerializer::toQueryValue($to);
         }
 
 
@@ -2209,18 +2525,30 @@ class SemuxApi
                 'Missing the required parameter $address when calling getAccountTransactions'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.getAccountTransactions, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'from' is set
         if ($from === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $from when calling getAccountTransactions'
             );
         }
+        if (!preg_match("/^\\d+$/", $from)) {
+            throw new \InvalidArgumentException("invalid value for \"from\" when calling SemuxApi.getAccountTransactions, must conform to the pattern /^\\d+$/.");
+        }
+
         // verify the required parameter 'to' is set
         if ($to === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $to when calling getAccountTransactions'
             );
         }
+        if (!preg_match("/^\\d+$/", $to)) {
+            throw new \InvalidArgumentException("invalid value for \"to\" when calling SemuxApi.getAccountTransactions, must conform to the pattern /^\\d+$/.");
+        }
+
 
         $resourcePath = '/account/transactions';
         $formParams = [];
@@ -2240,6 +2568,272 @@ class SemuxApi
         // query params
         if ($to !== null) {
             $queryParams['to'] = ObjectSerializer::toQueryValue($to);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/x-www-form-urlencoded']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires HTTP basic authentication
+        if ($this->config->getUsername() !== null || $this->config->getPassword() !== null) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAccountVotes
+     *
+     * Get account votes
+     *
+     * @param  string $address Address of account (required)
+     *
+     * @throws \Semux\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Semux\Client\Model\GetAccountVotesResponse
+     */
+    public function getAccountVotes($address)
+    {
+        list($response) = $this->getAccountVotesWithHttpInfo($address);
+        return $response;
+    }
+
+    /**
+     * Operation getAccountVotesWithHttpInfo
+     *
+     * Get account votes
+     *
+     * @param  string $address Address of account (required)
+     *
+     * @throws \Semux\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Semux\Client\Model\GetAccountVotesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAccountVotesWithHttpInfo($address)
+    {
+        $returnType = '\Semux\Client\Model\GetAccountVotesResponse';
+        $request = $this->getAccountVotesRequest($address);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Semux\Client\Model\GetAccountVotesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAccountVotesAsync
+     *
+     * Get account votes
+     *
+     * @param  string $address Address of account (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountVotesAsync($address)
+    {
+        return $this->getAccountVotesAsyncWithHttpInfo($address)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAccountVotesAsyncWithHttpInfo
+     *
+     * Get account votes
+     *
+     * @param  string $address Address of account (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountVotesAsyncWithHttpInfo($address)
+    {
+        $returnType = '\Semux\Client\Model\GetAccountVotesResponse';
+        $request = $this->getAccountVotesRequest($address);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAccountVotes'
+     *
+     * @param  string $address Address of account (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getAccountVotesRequest($address)
+    {
+        // verify the required parameter 'address' is set
+        if ($address === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $address when calling getAccountVotes'
+            );
+        }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.getAccountVotes, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
+
+        $resourcePath = '/account/votes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($address !== null) {
+            $queryParams['address'] = ObjectSerializer::toQueryValue($address);
         }
 
 
@@ -2491,8 +3085,8 @@ class SemuxApi
                 'Missing the required parameter $hash when calling getBlockByHash'
             );
         }
-        if (!preg_match("/^(0x)?[0-9a-fA-F]+$/", $hash)) {
-            throw new \InvalidArgumentException("invalid value for \"hash\" when calling SemuxApi.getBlockByHash, must conform to the pattern /^(0x)?[0-9a-fA-F]+$/.");
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $hash)) {
+            throw new \InvalidArgumentException("invalid value for \"hash\" when calling SemuxApi.getBlockByHash, must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
         }
 
 
@@ -3023,6 +3617,10 @@ class SemuxApi
                 'Missing the required parameter $address when calling getDelegate'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.getDelegate, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
 
         $resourcePath = '/delegate';
         $formParams = [];
@@ -5014,6 +5612,10 @@ class SemuxApi
                 'Missing the required parameter $hash when calling getTransaction'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $hash)) {
+            throw new \InvalidArgumentException("invalid value for \"hash\" when calling SemuxApi.getTransaction, must conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.");
+        }
+
 
         $resourcePath = '/transaction';
         $formParams = [];
@@ -5790,12 +6392,20 @@ class SemuxApi
                 'Missing the required parameter $delegate when calling getVote'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $delegate)) {
+            throw new \InvalidArgumentException("invalid value for \"delegate\" when calling SemuxApi.getVote, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'voter' is set
         if ($voter === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $voter when calling getVote'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $voter)) {
+            throw new \InvalidArgumentException("invalid value for \"voter\" when calling SemuxApi.getVote, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
 
         $resourcePath = '/vote';
         $formParams = [];
@@ -5885,7 +6495,7 @@ class SemuxApi
     /**
      * Operation getVotes
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -5902,7 +6512,7 @@ class SemuxApi
     /**
      * Operation getVotesWithHttpInfo
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -5977,7 +6587,7 @@ class SemuxApi
     /**
      * Operation getVotesAsync
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -5997,7 +6607,7 @@ class SemuxApi
     /**
      * Operation getVotesAsyncWithHttpInfo
      *
-     * Get votes
+     * Get a delegate's votes
      *
      * @param  string $delegate Delegate address (required)
      *
@@ -6062,6 +6672,10 @@ class SemuxApi
                 'Missing the required parameter $delegate when calling getVotes'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $delegate)) {
+            throw new \InvalidArgumentException("invalid value for \"delegate\" when calling SemuxApi.getVotes, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
 
         $resourcePath = '/votes';
         $formParams = [];
@@ -6397,14 +7011,14 @@ class SemuxApi
      * Register delegate
      *
      * @param  string $from Registering address (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Delegate name (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Semux\Client\Model\DoTransactionResponse
      */
-    public function registerDelegate($from, $fee, $data)
+    public function registerDelegate($from, $fee = null, $data)
     {
         list($response) = $this->registerDelegateWithHttpInfo($from, $fee, $data);
         return $response;
@@ -6416,14 +7030,14 @@ class SemuxApi
      * Register delegate
      *
      * @param  string $from Registering address (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Delegate name (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Semux\Client\Model\DoTransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function registerDelegateWithHttpInfo($from, $fee, $data)
+    public function registerDelegateWithHttpInfo($from, $fee = null, $data)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->registerDelegateRequest($from, $fee, $data);
@@ -6493,13 +7107,13 @@ class SemuxApi
      * Register delegate
      *
      * @param  string $from Registering address (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Delegate name (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function registerDelegateAsync($from, $fee, $data)
+    public function registerDelegateAsync($from, $fee = null, $data)
     {
         return $this->registerDelegateAsyncWithHttpInfo($from, $fee, $data)
             ->then(
@@ -6515,13 +7129,13 @@ class SemuxApi
      * Register delegate
      *
      * @param  string $from Registering address (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Delegate name (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function registerDelegateAsyncWithHttpInfo($from, $fee, $data)
+    public function registerDelegateAsyncWithHttpInfo($from, $fee = null, $data)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->registerDelegateRequest($from, $fee, $data);
@@ -6567,13 +7181,13 @@ class SemuxApi
      * Create request for operation 'registerDelegate'
      *
      * @param  string $from Registering address (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Delegate name (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function registerDelegateRequest($from, $fee, $data)
+    protected function registerDelegateRequest($from, $fee = null, $data)
     {
         // verify the required parameter 'from' is set
         if ($from === null) {
@@ -6581,13 +7195,11 @@ class SemuxApi
                 'Missing the required parameter $from when calling registerDelegate'
             );
         }
-        // verify the required parameter 'fee' is set
-        if ($fee === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $fee when calling registerDelegate'
-            );
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $from)) {
+            throw new \InvalidArgumentException("invalid value for \"from\" when calling SemuxApi.registerDelegate, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
         }
-        if (!preg_match("/^\\d+$/", $fee)) {
+
+        if ($fee !== null && !preg_match("/^\\d+$/", $fee)) {
             throw new \InvalidArgumentException("invalid value for \"fee\" when calling SemuxApi.registerDelegate, must conform to the pattern /^\\d+$/.");
         }
 
@@ -6696,8 +7308,8 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
-     * @param  string $message Message to sign (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6714,8 +7326,8 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
-     * @param  string $message Message to sign (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6790,8 +7402,8 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
-     * @param  string $message Message to sign (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6811,8 +7423,8 @@ class SemuxApi
      *
      * Sign a message
      *
-     * @param  string $address Signing address (required)
-     * @param  string $message Message to sign (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6862,8 +7474,8 @@ class SemuxApi
     /**
      * Create request for operation 'signMessage'
      *
-     * @param  string $address Signing address (required)
-     * @param  string $message Message to sign (required)
+     * @param  string $address Signing address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $message Message to sign in UTF-8 string (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6876,6 +7488,10 @@ class SemuxApi
                 'Missing the required parameter $address when calling signMessage'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.signMessage, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'message' is set
         if ($message === null) {
             throw new \InvalidArgumentException(
@@ -7163,8 +7779,8 @@ class SemuxApi
                 'Missing the required parameter $address when calling signRawTransaction'
             );
         }
-        if (!preg_match("/^(0x)?[0-9a-fA-F]+$/", $address)) {
-            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.signRawTransaction, must conform to the pattern /^(0x)?[0-9a-fA-F]+$/.");
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.signRawTransaction, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
         }
 
 
@@ -7258,17 +7874,17 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Transaction data (required)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Semux\Client\Model\DoTransactionResponse
      */
-    public function transfer($from, $to, $value, $fee, $data)
+    public function transfer($from, $to, $value, $fee = null, $data = null)
     {
         list($response) = $this->transferWithHttpInfo($from, $to, $value, $fee, $data);
         return $response;
@@ -7279,17 +7895,17 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Transaction data (required)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Semux\Client\Model\DoTransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferWithHttpInfo($from, $to, $value, $fee, $data)
+    public function transferWithHttpInfo($from, $to, $value, $fee = null, $data = null)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->transferRequest($from, $to, $value, $fee, $data);
@@ -7358,16 +7974,16 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Transaction data (required)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferAsync($from, $to, $value, $fee, $data)
+    public function transferAsync($from, $to, $value, $fee = null, $data = null)
     {
         return $this->transferAsyncWithHttpInfo($from, $to, $value, $fee, $data)
             ->then(
@@ -7382,16 +7998,16 @@ class SemuxApi
      *
      * Transfer coins
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Transaction data (required)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferAsyncWithHttpInfo($from, $to, $value, $fee, $data)
+    public function transferAsyncWithHttpInfo($from, $to, $value, $fee = null, $data = null)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->transferRequest($from, $to, $value, $fee, $data);
@@ -7436,16 +8052,16 @@ class SemuxApi
     /**
      * Create request for operation 'transfer'
      *
-     * @param  string $from Sending address (required)
-     * @param  string $to Receiving address (required)
-     * @param  string $value Amount of SEM to transfer (required)
-     * @param  string $fee Transaction fee (required)
-     * @param  string $data Transaction data (required)
+     * @param  string $from Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
+     * @param  string $to Recipient&#39;s address (required)
+     * @param  string $value Amount of SEM to transfer in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
+     * @param  string $data Transaction data encoded in hexadecimal string (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function transferRequest($from, $to, $value, $fee, $data)
+    protected function transferRequest($from, $to, $value, $fee = null, $data = null)
     {
         // verify the required parameter 'from' is set
         if ($from === null) {
@@ -7453,12 +8069,20 @@ class SemuxApi
                 'Missing the required parameter $from when calling transfer'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $from)) {
+            throw new \InvalidArgumentException("invalid value for \"from\" when calling SemuxApi.transfer, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'to' is set
         if ($to === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $to when calling transfer'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $to)) {
+            throw new \InvalidArgumentException("invalid value for \"to\" when calling SemuxApi.transfer, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'value' is set
         if ($value === null) {
             throw new \InvalidArgumentException(
@@ -7469,23 +8093,11 @@ class SemuxApi
             throw new \InvalidArgumentException("invalid value for \"value\" when calling SemuxApi.transfer, must conform to the pattern /^\\d+$/.");
         }
 
-        // verify the required parameter 'fee' is set
-        if ($fee === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $fee when calling transfer'
-            );
-        }
-        if (!preg_match("/^\\d+$/", $fee)) {
+        if ($fee !== null && !preg_match("/^\\d+$/", $fee)) {
             throw new \InvalidArgumentException("invalid value for \"fee\" when calling SemuxApi.transfer, must conform to the pattern /^\\d+$/.");
         }
 
-        // verify the required parameter 'data' is set
-        if ($data === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $data when calling transfer'
-            );
-        }
-        if (!preg_match("/^(0x)?[0-9a-fA-F]+$/", $data)) {
+        if ($data !== null && !preg_match("/^(0x)?[0-9a-fA-F]+$/", $data)) {
             throw new \InvalidArgumentException("invalid value for \"data\" when calling SemuxApi.transfer, must conform to the pattern /^(0x)?[0-9a-fA-F]+$/.");
         }
 
@@ -7592,16 +8204,16 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Semux\Client\Model\DoTransactionResponse
      */
-    public function unvote($from, $to, $value, $fee)
+    public function unvote($from, $to, $value, $fee = null)
     {
         list($response) = $this->unvoteWithHttpInfo($from, $to, $value, $fee);
         return $response;
@@ -7612,16 +8224,16 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Semux\Client\Model\DoTransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function unvoteWithHttpInfo($from, $to, $value, $fee)
+    public function unvoteWithHttpInfo($from, $to, $value, $fee = null)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->unvoteRequest($from, $to, $value, $fee);
@@ -7690,15 +8302,15 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function unvoteAsync($from, $to, $value, $fee)
+    public function unvoteAsync($from, $to, $value, $fee = null)
     {
         return $this->unvoteAsyncWithHttpInfo($from, $to, $value, $fee)
             ->then(
@@ -7713,15 +8325,15 @@ class SemuxApi
      *
      * Unvote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function unvoteAsyncWithHttpInfo($from, $to, $value, $fee)
+    public function unvoteAsyncWithHttpInfo($from, $to, $value, $fee = null)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->unvoteRequest($from, $to, $value, $fee);
@@ -7766,15 +8378,15 @@ class SemuxApi
     /**
      * Create request for operation 'unvote'
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function unvoteRequest($from, $to, $value, $fee)
+    protected function unvoteRequest($from, $to, $value, $fee = null)
     {
         // verify the required parameter 'from' is set
         if ($from === null) {
@@ -7782,12 +8394,20 @@ class SemuxApi
                 'Missing the required parameter $from when calling unvote'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $from)) {
+            throw new \InvalidArgumentException("invalid value for \"from\" when calling SemuxApi.unvote, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'to' is set
         if ($to === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $to when calling unvote'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $to)) {
+            throw new \InvalidArgumentException("invalid value for \"to\" when calling SemuxApi.unvote, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'value' is set
         if ($value === null) {
             throw new \InvalidArgumentException(
@@ -7798,13 +8418,7 @@ class SemuxApi
             throw new \InvalidArgumentException("invalid value for \"value\" when calling SemuxApi.unvote, must conform to the pattern /^\\d+$/.");
         }
 
-        // verify the required parameter 'fee' is set
-        if ($fee === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $fee when calling unvote'
-            );
-        }
-        if (!preg_match("/^\\d+$/", $fee)) {
+        if ($fee !== null && !preg_match("/^\\d+$/", $fee)) {
             throw new \InvalidArgumentException("invalid value for \"fee\" when calling SemuxApi.unvote, must conform to the pattern /^\\d+$/.");
         }
 
@@ -7907,8 +8521,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -7926,8 +8540,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
@@ -8003,8 +8617,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \InvalidArgumentException
@@ -8025,8 +8639,8 @@ class SemuxApi
      *
      * Verify a message
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \InvalidArgumentException
@@ -8077,8 +8691,8 @@ class SemuxApi
     /**
      * Create request for operation 'verifyMessage'
      *
-     * @param  string $address Address (required)
-     * @param  string $message Message (required)
+     * @param  string $address Address of the message signer (required)
+     * @param  string $message Message in UTF-8 string (required)
      * @param  string $signature Signature to verify (required)
      *
      * @throws \InvalidArgumentException
@@ -8092,6 +8706,10 @@ class SemuxApi
                 'Missing the required parameter $address when calling verifyMessage'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $address)) {
+            throw new \InvalidArgumentException("invalid value for \"address\" when calling SemuxApi.verifyMessage, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'message' is set
         if ($message === null) {
             throw new \InvalidArgumentException(
@@ -8104,6 +8722,10 @@ class SemuxApi
                 'Missing the required parameter $signature when calling verifyMessage'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{192}$/", $signature)) {
+            throw new \InvalidArgumentException("invalid value for \"signature\" when calling SemuxApi.verifyMessage, must conform to the pattern /^(0x)?[0-9a-fA-F]{192}$/.");
+        }
+
 
         $resourcePath = '/verify-message';
         $formParams = [];
@@ -8199,16 +8821,16 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Semux\Client\Model\DoTransactionResponse
      */
-    public function vote($from, $to, $value, $fee)
+    public function vote($from, $to, $value, $fee = null)
     {
         list($response) = $this->voteWithHttpInfo($from, $to, $value, $fee);
         return $response;
@@ -8219,16 +8841,16 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \Semux\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Semux\Client\Model\DoTransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function voteWithHttpInfo($from, $to, $value, $fee)
+    public function voteWithHttpInfo($from, $to, $value, $fee = null)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->voteRequest($from, $to, $value, $fee);
@@ -8297,15 +8919,15 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function voteAsync($from, $to, $value, $fee)
+    public function voteAsync($from, $to, $value, $fee = null)
     {
         return $this->voteAsyncWithHttpInfo($from, $to, $value, $fee)
             ->then(
@@ -8320,15 +8942,15 @@ class SemuxApi
      *
      * Vote
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function voteAsyncWithHttpInfo($from, $to, $value, $fee)
+    public function voteAsyncWithHttpInfo($from, $to, $value, $fee = null)
     {
         $returnType = '\Semux\Client\Model\DoTransactionResponse';
         $request = $this->voteRequest($from, $to, $value, $fee);
@@ -8373,15 +8995,15 @@ class SemuxApi
     /**
      * Create request for operation 'vote'
      *
-     * @param  string $from Voting address (required)
+     * @param  string $from Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)
      * @param  string $to Delegate address (required)
-     * @param  string $value Vote amount (required)
-     * @param  string $fee Transaction fee (required)
+     * @param  string $value Number of votes in nano SEM (required)
+     * @param  string $fee Transaction fee in nano SEM, default to minimum fee if omitted (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function voteRequest($from, $to, $value, $fee)
+    protected function voteRequest($from, $to, $value, $fee = null)
     {
         // verify the required parameter 'from' is set
         if ($from === null) {
@@ -8389,12 +9011,20 @@ class SemuxApi
                 'Missing the required parameter $from when calling vote'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $from)) {
+            throw new \InvalidArgumentException("invalid value for \"from\" when calling SemuxApi.vote, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'to' is set
         if ($to === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $to when calling vote'
             );
         }
+        if (!preg_match("/^(0x)?[0-9a-fA-F]{40}$/", $to)) {
+            throw new \InvalidArgumentException("invalid value for \"to\" when calling SemuxApi.vote, must conform to the pattern /^(0x)?[0-9a-fA-F]{40}$/.");
+        }
+
         // verify the required parameter 'value' is set
         if ($value === null) {
             throw new \InvalidArgumentException(
@@ -8405,13 +9035,7 @@ class SemuxApi
             throw new \InvalidArgumentException("invalid value for \"value\" when calling SemuxApi.vote, must conform to the pattern /^\\d+$/.");
         }
 
-        // verify the required parameter 'fee' is set
-        if ($fee === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $fee when calling vote'
-            );
-        }
-        if (!preg_match("/^\\d+$/", $fee)) {
+        if ($fee !== null && !preg_match("/^\\d+$/", $fee)) {
             throw new \InvalidArgumentException("invalid value for \"fee\" when calling SemuxApi.vote, must conform to the pattern /^\\d+$/.");
         }
 
