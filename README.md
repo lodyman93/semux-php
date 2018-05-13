@@ -3,9 +3,18 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/semuxproject/semux-php-sdk.svg)](https://packagist.org/packages/semuxproject/semux-php-sdk)
 [![Build Status](https://travis-ci.org/semuxproject/semux-php-sdk.svg?branch=master)](https://travis-ci.org/semuxproject/semux-php-sdk)
 
-Semux is an experimental high-performance blockchain platform that powers decentralized application.
+Semux PHP SDK aims to provide necessary utilities for web developers to create 3rd party web services connecting to [Semux Wallet](https://github.com/semuxproject/semux). Currently the only supported feature is an API client.
 
-For more information, please visit [https://www.semux.org](https://www.semux.org)
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Documentation](#documentation)
+- [Examples](#examples)
+- [Tests](#tests)
+- [Maintainers](#maintainers)
+- [License](#license)
 
 ## Requirements
 
@@ -21,7 +30,7 @@ composer require semuxproject/semux-php-sdk
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the [installation procedure](#installation) and then run the following:
 
 ```php
 <?php
@@ -65,3 +74,11 @@ composer install
 cp phpunit.xml.dist phpunit.xml
 ./vendor/bin/phpunit
 ```
+
+## Maintainers
+
+[@cryptokat](https://github.com/cryptokat).
+
+## License
+
+[MIT](LICENSE) © [Semux Foundation](https://github.com/semuxproject)
