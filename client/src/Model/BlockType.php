@@ -63,7 +63,7 @@ class BlockType implements ModelInterface, ArrayAccess
         'coinbase' => 'string',
         'parentHash' => 'string',
         'timestamp' => 'string',
-        'date' => 'string',
+        'date' => '\DateTime',
         'transactionsRoot' => 'string',
         'resultsRoot' => 'string',
         'stateRoot' => 'string',
@@ -83,7 +83,7 @@ class BlockType implements ModelInterface, ArrayAccess
         'coinbase' => null,
         'parentHash' => null,
         'timestamp' => 'int64',
-        'date' => null,
+        'date' => 'date-time',
         'transactionsRoot' => null,
         'resultsRoot' => null,
         'stateRoot' => null,
@@ -275,10 +275,6 @@ class BlockType implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'timestamp', must be conform to the pattern /^\\d+$/.";
         }
 
-        if (!is_null($this->container['date']) && !preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/", $this->container['date'])) {
-            $invalidProperties[] = "invalid value for 'date', must be conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/.";
-        }
-
         if (!is_null($this->container['transactionsRoot']) && !preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['transactionsRoot'])) {
             $invalidProperties[] = "invalid value for 'transactionsRoot', must be conform to the pattern /^(0x)?[0-9a-fA-F]{64}$/.";
         }
@@ -320,9 +316,6 @@ class BlockType implements ModelInterface, ArrayAccess
             return false;
         }
         if (!preg_match("/^\\d+$/", $this->container['timestamp'])) {
-            return false;
-        }
-        if (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/", $this->container['date'])) {
             return false;
         }
         if (!preg_match("/^(0x)?[0-9a-fA-F]{64}$/", $this->container['transactionsRoot'])) {
@@ -513,7 +506,7 @@ class BlockType implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -523,17 +516,12 @@ class BlockType implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param string $date date
+     * @param \DateTime $date Block timestamp formatted in ISO-8601
      *
      * @return $this
      */
     public function setDate($date)
     {
-
-        if (!is_null($date) && (!preg_match("/^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/", $date))) {
-            throw new \InvalidArgumentException("invalid value for $date when calling BlockType., must conform to the pattern /^\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2}$/.");
-        }
-
         $this->container['date'] = $date;
 
         return $this;

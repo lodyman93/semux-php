@@ -10,3 +10,5 @@ RUN LINK=https://github.com/semuxproject/semux/releases/download/v1.1.1/semux-li
     mkdir -p /semux && \
     tar -xzf ${TARBALL} -C /semux --strip-components=1 && \
     rm ${TARBALL}
+
+COPY ./database /semux/database
