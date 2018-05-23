@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionLimitsType
+ * DeleteAccountResponse
  *
  * PHP version 5
  *
@@ -28,19 +28,17 @@
  */
 
 namespace Semux\Client\Model;
-
-use \ArrayAccess;
 use \Semux\Client\ObjectSerializer;
 
 /**
- * TransactionLimitsType Class Doc Comment
+ * DeleteAccountResponse Class Doc Comment
  *
  * @category Class
  * @package  Semux\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionLimitsType implements ModelInterface, ArrayAccess
+class DeleteAccountResponse extends ApiHandlerResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +47,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TransactionLimitsType';
+    protected static $swaggerModelName = 'DeleteAccountResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +55,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'maxTransactionDataSize' => 'int',
-        'minTransactionFee' => 'string',
-        'minDelegateBurnAmount' => 'string'
+        
     ];
 
     /**
@@ -68,9 +64,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'maxTransactionDataSize' => 'int32',
-        'minTransactionFee' => 'int64',
-        'minDelegateBurnAmount' => 'int64'
+        
     ];
 
     /**
@@ -80,7 +74,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -90,7 +84,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -100,9 +94,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'maxTransactionDataSize' => 'maxTransactionDataSize',
-        'minTransactionFee' => 'minTransactionFee',
-        'minDelegateBurnAmount' => 'minDelegateBurnAmount'
+        
     ];
 
     /**
@@ -111,9 +103,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'maxTransactionDataSize' => 'setMaxTransactionDataSize',
-        'minTransactionFee' => 'setMinTransactionFee',
-        'minDelegateBurnAmount' => 'setMinDelegateBurnAmount'
+        
     ];
 
     /**
@@ -122,9 +112,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'maxTransactionDataSize' => 'getMaxTransactionDataSize',
-        'minTransactionFee' => 'getMinTransactionFee',
-        'minDelegateBurnAmount' => 'getMinDelegateBurnAmount'
+        
     ];
 
     /**
@@ -135,7 +123,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -145,7 +133,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -155,7 +143,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -172,12 +160,6 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -187,9 +169,8 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['maxTransactionDataSize'] = isset($data['maxTransactionDataSize']) ? $data['maxTransactionDataSize'] : null;
-        $this->container['minTransactionFee'] = isset($data['minTransactionFee']) ? $data['minTransactionFee'] : null;
-        $this->container['minDelegateBurnAmount'] = isset($data['minDelegateBurnAmount']) ? $data['minDelegateBurnAmount'] : null;
+        parent::__construct($data);
+
     }
 
     /**
@@ -199,15 +180,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['minTransactionFee']) && !preg_match("/^\\d+$/", $this->container['minTransactionFee'])) {
-            $invalidProperties[] = "invalid value for 'minTransactionFee', must be conform to the pattern /^\\d+$/.";
-        }
-
-        if (!is_null($this->container['minDelegateBurnAmount']) && !preg_match("/^\\d+$/", $this->container['minDelegateBurnAmount'])) {
-            $invalidProperties[] = "invalid value for 'minDelegateBurnAmount', must be conform to the pattern /^\\d+$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -220,98 +193,13 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
-        if (!preg_match("/^\\d+$/", $this->container['minTransactionFee'])) {
-            return false;
-        }
-        if (!preg_match("/^\\d+$/", $this->container['minDelegateBurnAmount'])) {
-            return false;
-        }
         return true;
     }
 
-
-    /**
-     * Gets maxTransactionDataSize
-     *
-     * @return int
-     */
-    public function getMaxTransactionDataSize()
-    {
-        return $this->container['maxTransactionDataSize'];
-    }
-
-    /**
-     * Sets maxTransactionDataSize
-     *
-     * @param int $maxTransactionDataSize The maximum transaction size in bytes
-     *
-     * @return $this
-     */
-    public function setMaxTransactionDataSize($maxTransactionDataSize)
-    {
-        $this->container['maxTransactionDataSize'] = $maxTransactionDataSize;
-
-        return $this;
-    }
-
-    /**
-     * Gets minTransactionFee
-     *
-     * @return string
-     */
-    public function getMinTransactionFee()
-    {
-        return $this->container['minTransactionFee'];
-    }
-
-    /**
-     * Sets minTransactionFee
-     *
-     * @param string $minTransactionFee The minimum transaction fee in nano SEM
-     *
-     * @return $this
-     */
-    public function setMinTransactionFee($minTransactionFee)
-    {
-
-        if (!is_null($minTransactionFee) && (!preg_match("/^\\d+$/", $minTransactionFee))) {
-            throw new \InvalidArgumentException("invalid value for $minTransactionFee when calling TransactionLimitsType., must conform to the pattern /^\\d+$/.");
-        }
-
-        $this->container['minTransactionFee'] = $minTransactionFee;
-
-        return $this;
-    }
-
-    /**
-     * Gets minDelegateBurnAmount
-     *
-     * @return string
-     */
-    public function getMinDelegateBurnAmount()
-    {
-        return $this->container['minDelegateBurnAmount'];
-    }
-
-    /**
-     * Sets minDelegateBurnAmount
-     *
-     * @param string $minDelegateBurnAmount The amount of nano SEM required to burn for delegate registration
-     *
-     * @return $this
-     */
-    public function setMinDelegateBurnAmount($minDelegateBurnAmount)
-    {
-
-        if (!is_null($minDelegateBurnAmount) && (!preg_match("/^\\d+$/", $minDelegateBurnAmount))) {
-            throw new \InvalidArgumentException("invalid value for $minDelegateBurnAmount when calling TransactionLimitsType., must conform to the pattern /^\\d+$/.");
-        }
-
-        $this->container['minDelegateBurnAmount'] = $minDelegateBurnAmount;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

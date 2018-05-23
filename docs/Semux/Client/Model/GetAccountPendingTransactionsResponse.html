@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Semux\Client\Model\SendTransactionResponse | Semux PHP SDK</title>
+    <title>Semux\Client\Model\GetAccountPendingTransactionsResponse | Semux PHP SDK</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Semux_Client_Model_SendTransactionResponse" data-root-path="../../../">
+    <body id="class" data-name="class:Semux_Client_Model_GetAccountPendingTransactionsResponse" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -67,27 +67,27 @@
                                         <li><a href="../../../Semux/Client.html">Client</a></li>
                                         <li><a href="../../../Semux/Client/Model.html">Model</a></li>
     
-                <li>SendTransactionResponse</li>
+                <li>GetAccountPendingTransactionsResponse</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            SendTransactionResponse
+            GetAccountPendingTransactionsResponse
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>SendTransactionResponse</strong>        extends <a href="../../../Semux/Client/Model/ApiHandlerResponse.html"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a>
+    <strong>GetAccountPendingTransactionsResponse</strong>        extends <a href="../../../Semux/Client/Model/ApiHandlerResponse.html"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a>
 </p>
 
         
     
 
             <div class="description">
-            <p>SendTransactionResponse Class Doc Comment</p>                    </div>
+            <p>GetAccountPendingTransactionsResponse Class Doc Comment</p>                    </div>
     
     
             <h2>Constants</h2>
@@ -287,6 +287,26 @@ return true if all passed</p>                </div>
                     <a href="#method___toString">__toString</a>()
         
                                             <p>Gets the string presentation of the object</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Semux/Client/Model/PendingTransactionType.html"><abbr title="Semux\Client\Model\PendingTransactionType">PendingTransactionType</abbr></a>[]
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getResult">getResult</a>()
+        
+                                            <p>Gets result</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Semux\Client\Model\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setResult">setResult</a>(<a href="../../../Semux/Client/Model/PendingTransactionType.html"><abbr title="Semux\Client\Model\PendingTransactionType">PendingTransactionType</abbr></a>[] $result)
+        
+                                            <p>Sets result</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -510,7 +530,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_listInvalidProperties">
-        <div class="location">at line         line 181</div>
+        <div class="location">at line         line 182</div>
         <code>                    array
     <strong>listInvalidProperties</strong>()
         </code>
@@ -540,7 +560,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_valid">
-        <div class="location">at line         line 194</div>
+        <div class="location">at line         line 195</div>
         <code>                    bool
     <strong>valid</strong>()
         </code>
@@ -711,7 +731,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetExists">
-        <div class="location">at line         line 210</div>
+        <div class="location">at line         line 235</div>
         <code>                    boolean
     <strong>offsetExists</strong>(integer $offset)
         </code>
@@ -751,7 +771,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetGet">
-        <div class="location">at line         line 222</div>
+        <div class="location">at line         line 247</div>
         <code>                    mixed
     <strong>offsetGet</strong>(integer $offset)
         </code>
@@ -791,7 +811,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetSet">
-        <div class="location">at line         line 235</div>
+        <div class="location">at line         line 260</div>
         <code>                    void
     <strong>offsetSet</strong>(integer $offset, mixed $value)
         </code>
@@ -836,7 +856,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetUnset">
-        <div class="location">at line         line 251</div>
+        <div class="location">at line         line 276</div>
         <code>                    void
     <strong>offsetUnset</strong>(integer $offset)
         </code>
@@ -876,7 +896,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at line         line 261</div>
+        <div class="location">at line         line 286</div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -894,6 +914,76 @@ return true if all passed</p>                                </div>
                     <table class="table table-condensed">
         <tr>
             <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getResult">
+        <div class="location">at line         line 210</div>
+        <code>                    <a href="../../../Semux/Client/Model/PendingTransactionType.html"><abbr title="Semux\Client\Model\PendingTransactionType">PendingTransactionType</abbr></a>[]
+    <strong>getResult</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets result</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Semux/Client/Model/PendingTransactionType.html"><abbr title="Semux\Client\Model\PendingTransactionType">PendingTransactionType</abbr></a>[]</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setResult">
+        <div class="location">at line         line 222</div>
+        <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
+    <strong>setResult</strong>(<a href="../../../Semux/Client/Model/PendingTransactionType.html"><abbr title="Semux\Client\Model\PendingTransactionType">PendingTransactionType</abbr></a>[] $result)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets result</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/Model/PendingTransactionType.html"><abbr title="Semux\Client\Model\PendingTransactionType">PendingTransactionType</abbr></a>[]</td>
+                <td>$result</td>
+                <td>result</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Semux\Client\Model\$this">$this</abbr></td>
             <td></td>
         </tr>
     </table>

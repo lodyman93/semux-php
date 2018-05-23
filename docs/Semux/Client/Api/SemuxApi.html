@@ -239,10 +239,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../../Semux/Client/Model/SendTransactionResponse.html"><abbr title="Semux\Client\Model\SendTransactionResponse">SendTransactionResponse</abbr></a>
+                    <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_broadcastRawTransaction">broadcastRawTransaction</a>(string $raw)
+                    <a href="#method_broadcastRawTransaction">broadcastRawTransaction</a>(string $raw, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation broadcastRawTransaction</p>                </div>
                 <div class="col-md-2"></div>
@@ -252,7 +252,7 @@
                     array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_broadcastRawTransactionWithHttpInfo">broadcastRawTransactionWithHttpInfo</a>(string $raw)
+                    <a href="#method_broadcastRawTransactionWithHttpInfo">broadcastRawTransactionWithHttpInfo</a>(string $raw, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation broadcastRawTransactionWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -262,7 +262,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_broadcastRawTransactionAsync">broadcastRawTransactionAsync</a>(string $raw)
+                    <a href="#method_broadcastRawTransactionAsync">broadcastRawTransactionAsync</a>(string $raw, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation broadcastRawTransactionAsync</p>                </div>
                 <div class="col-md-2"></div>
@@ -272,7 +272,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_broadcastRawTransactionAsyncWithHttpInfo">broadcastRawTransactionAsyncWithHttpInfo</a>(string $raw)
+                    <a href="#method_broadcastRawTransactionAsyncWithHttpInfo">broadcastRawTransactionAsyncWithHttpInfo</a>(string $raw, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation broadcastRawTransactionAsyncWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -322,7 +322,7 @@
                     <a href="../../../Semux/Client/Model/CreateAccountResponse.html"><abbr title="Semux\Client\Model\CreateAccountResponse">CreateAccountResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createAccount">createAccount</a>(string $name = null)
+                    <a href="#method_createAccount">createAccount</a>(string $name = null, string $privateKey = null)
         
                                             <p>Operation createAccount</p>                </div>
                 <div class="col-md-2"></div>
@@ -332,7 +332,7 @@
                     array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createAccountWithHttpInfo">createAccountWithHttpInfo</a>(string $name = null)
+                    <a href="#method_createAccountWithHttpInfo">createAccountWithHttpInfo</a>(string $name = null, string $privateKey = null)
         
                                             <p>Operation createAccountWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -342,7 +342,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createAccountAsync">createAccountAsync</a>(string $name = null)
+                    <a href="#method_createAccountAsync">createAccountAsync</a>(string $name = null, string $privateKey = null)
         
                                             <p>Operation createAccountAsync</p>                </div>
                 <div class="col-md-2"></div>
@@ -352,9 +352,49 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createAccountAsyncWithHttpInfo">createAccountAsyncWithHttpInfo</a>(string $name = null)
+                    <a href="#method_createAccountAsyncWithHttpInfo">createAccountAsyncWithHttpInfo</a>(string $name = null, string $privateKey = null)
         
                                             <p>Operation createAccountAsyncWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Semux/Client/Model/DeleteAccountResponse.html"><abbr title="Semux\Client\Model\DeleteAccountResponse">DeleteAccountResponse</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteAccount">deleteAccount</a>(string $address)
+        
+                                            <p>Operation deleteAccount</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteAccountWithHttpInfo">deleteAccountWithHttpInfo</a>(string $address)
+        
+                                            <p>Operation deleteAccountWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteAccountAsync">deleteAccountAsync</a>(string $address)
+        
+                                            <p>Operation deleteAccountAsync</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteAccountAsyncWithHttpInfo">deleteAccountAsyncWithHttpInfo</a>(string $address)
+        
+                                            <p>Operation deleteAccountAsyncWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -399,6 +439,46 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    <a href="../../../Semux/Client/Model/GetAccountPendingTransactionsResponse.html"><abbr title="Semux\Client\Model\GetAccountPendingTransactionsResponse">GetAccountPendingTransactionsResponse</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountPendingTransactions">getAccountPendingTransactions</a>(string $address, string $from, string $to)
+        
+                                            <p>Operation getAccountPendingTransactions</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountPendingTransactionsWithHttpInfo">getAccountPendingTransactionsWithHttpInfo</a>(string $address, string $from, string $to)
+        
+                                            <p>Operation getAccountPendingTransactionsWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountPendingTransactionsAsync">getAccountPendingTransactionsAsync</a>(string $address, string $from, string $to)
+        
+                                            <p>Operation getAccountPendingTransactionsAsync</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountPendingTransactionsAsyncWithHttpInfo">getAccountPendingTransactionsAsyncWithHttpInfo</a>(string $address, string $from, string $to)
+        
+                                            <p>Operation getAccountPendingTransactionsAsyncWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     <a href="../../../Semux/Client/Model/GetAccountTransactionsResponse.html"><abbr title="Semux\Client\Model\GetAccountTransactionsResponse">GetAccountTransactionsResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -435,6 +515,46 @@
                     <a href="#method_getAccountTransactionsAsyncWithHttpInfo">getAccountTransactionsAsyncWithHttpInfo</a>(string $address, string $from, string $to)
         
                                             <p>Operation getAccountTransactionsAsyncWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Semux/Client/Model/GetAccountVotesResponse.html"><abbr title="Semux\Client\Model\GetAccountVotesResponse">GetAccountVotesResponse</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountVotes">getAccountVotes</a>(string $address)
+        
+                                            <p>Operation getAccountVotes</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountVotesWithHttpInfo">getAccountVotesWithHttpInfo</a>(string $address)
+        
+                                            <p>Operation getAccountVotesWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountVotesAsync">getAccountVotesAsync</a>(string $address)
+        
+                                            <p>Operation getAccountVotesAsync</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccountVotesAsyncWithHttpInfo">getAccountVotesAsyncWithHttpInfo</a>(string $address)
+        
+                                            <p>Operation getAccountVotesAsyncWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -839,6 +959,46 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    <a href="../../../Semux/Client/Model/GetSyncingProgressResponse.html"><abbr title="Semux\Client\Model\GetSyncingProgressResponse">GetSyncingProgressResponse</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSyncingProgress">getSyncingProgress</a>()
+        
+                                            <p>Operation getSyncingProgress</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSyncingProgressWithHttpInfo">getSyncingProgressWithHttpInfo</a>()
+        
+                                            <p>Operation getSyncingProgressWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSyncingProgressAsync">getSyncingProgressAsync</a>()
+        
+                                            <p>Operation getSyncingProgressAsync</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSyncingProgressAsyncWithHttpInfo">getSyncingProgressAsyncWithHttpInfo</a>()
+        
+                                            <p>Operation getSyncingProgressAsyncWithHttpInfo</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     <a href="../../../Semux/Client/Model/GetTransactionResponse.html"><abbr title="Semux\Client\Model\GetTransactionResponse">GetTransactionResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -1082,7 +1242,7 @@
                     <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_registerDelegate">registerDelegate</a>(string $from, string $fee, string $data)
+                    <a href="#method_registerDelegate">registerDelegate</a>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation registerDelegate</p>                </div>
                 <div class="col-md-2"></div>
@@ -1092,7 +1252,7 @@
                     array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_registerDelegateWithHttpInfo">registerDelegateWithHttpInfo</a>(string $from, string $fee, string $data)
+                    <a href="#method_registerDelegateWithHttpInfo">registerDelegateWithHttpInfo</a>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation registerDelegateWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1102,7 +1262,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_registerDelegateAsync">registerDelegateAsync</a>(string $from, string $fee, string $data)
+                    <a href="#method_registerDelegateAsync">registerDelegateAsync</a>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation registerDelegateAsync</p>                </div>
                 <div class="col-md-2"></div>
@@ -1112,7 +1272,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_registerDelegateAsyncWithHttpInfo">registerDelegateAsyncWithHttpInfo</a>(string $from, string $fee, string $data)
+                    <a href="#method_registerDelegateAsyncWithHttpInfo">registerDelegateAsyncWithHttpInfo</a>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation registerDelegateAsyncWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1202,7 +1362,7 @@
                     <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_transfer">transfer</a>(string $from, string $to, string $value, string $fee, string $data)
+                    <a href="#method_transfer">transfer</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         
                                             <p>Operation transfer</p>                </div>
                 <div class="col-md-2"></div>
@@ -1212,7 +1372,7 @@
                     array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_transferWithHttpInfo">transferWithHttpInfo</a>(string $from, string $to, string $value, string $fee, string $data)
+                    <a href="#method_transferWithHttpInfo">transferWithHttpInfo</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         
                                             <p>Operation transferWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1222,7 +1382,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_transferAsync">transferAsync</a>(string $from, string $to, string $value, string $fee, string $data)
+                    <a href="#method_transferAsync">transferAsync</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         
                                             <p>Operation transferAsync</p>                </div>
                 <div class="col-md-2"></div>
@@ -1232,7 +1392,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_transferAsyncWithHttpInfo">transferAsyncWithHttpInfo</a>(string $from, string $to, string $value, string $fee, string $data)
+                    <a href="#method_transferAsyncWithHttpInfo">transferAsyncWithHttpInfo</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         
                                             <p>Operation transferAsyncWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1242,7 +1402,7 @@
                     <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_unvote">unvote</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_unvote">unvote</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation unvote</p>                </div>
                 <div class="col-md-2"></div>
@@ -1252,7 +1412,7 @@
                     array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_unvoteWithHttpInfo">unvoteWithHttpInfo</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_unvoteWithHttpInfo">unvoteWithHttpInfo</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation unvoteWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1262,7 +1422,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_unvoteAsync">unvoteAsync</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_unvoteAsync">unvoteAsync</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation unvoteAsync</p>                </div>
                 <div class="col-md-2"></div>
@@ -1272,7 +1432,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_unvoteAsyncWithHttpInfo">unvoteAsyncWithHttpInfo</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_unvoteAsyncWithHttpInfo">unvoteAsyncWithHttpInfo</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation unvoteAsyncWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1322,7 +1482,7 @@
                     <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_vote">vote</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_vote">vote</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation vote</p>                </div>
                 <div class="col-md-2"></div>
@@ -1332,7 +1492,7 @@
                     array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_voteWithHttpInfo">voteWithHttpInfo</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_voteWithHttpInfo">voteWithHttpInfo</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation voteWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1342,7 +1502,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_voteAsync">voteAsync</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_voteAsync">voteAsync</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation voteAsync</p>                </div>
                 <div class="col-md-2"></div>
@@ -1352,7 +1512,7 @@
                     <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_voteAsyncWithHttpInfo">voteAsyncWithHttpInfo</a>(string $from, string $to, string $value, string $fee)
+                    <a href="#method_voteAsyncWithHttpInfo">voteAsyncWithHttpInfo</a>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         
                                             <p>Operation voteAsyncWithHttpInfo</p>                </div>
                 <div class="col-md-2"></div>
@@ -1450,7 +1610,7 @@
                     <tr>
                 <td>string</td>
                 <td>$node</td>
-                <td>Name of the node in host:port format (required)</td>
+                <td>Address of the node in host:port format (required)</td>
             </tr>
             </table>
 
@@ -1503,7 +1663,7 @@
                     <tr>
                 <td>string</td>
                 <td>$node</td>
-                <td>Name of the node in host:port format (required)</td>
+                <td>Address of the node in host:port format (required)</td>
             </tr>
             </table>
 
@@ -1556,7 +1716,7 @@
                     <tr>
                 <td>string</td>
                 <td>$node</td>
-                <td>Name of the node in host:port format (required)</td>
+                <td>Address of the node in host:port format (required)</td>
             </tr>
             </table>
 
@@ -1605,7 +1765,7 @@
                     <tr>
                 <td>string</td>
                 <td>$node</td>
-                <td>Name of the node in host:port format (required)</td>
+                <td>Address of the node in host:port format (required)</td>
             </tr>
             </table>
 
@@ -1840,7 +2000,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addToWhitelist">
-        <div class="location">at line         line 620</div>
+        <div class="location">at line         line 624</div>
         <code>                    <a href="../../../Semux/Client/Model/ApiHandlerResponse.html"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a>
     <strong>addToWhitelist</strong>(string $ip)
         </code>
@@ -1893,7 +2053,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addToWhitelistWithHttpInfo">
-        <div class="location">at line         line 637</div>
+        <div class="location">at line         line 641</div>
         <code>                    array
     <strong>addToWhitelistWithHttpInfo</strong>(string $ip)
         </code>
@@ -1946,7 +2106,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addToWhitelistAsync">
-        <div class="location">at line         line 711</div>
+        <div class="location">at line         line 715</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>addToWhitelistAsync</strong>(string $ip)
         </code>
@@ -1995,7 +2155,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_addToWhitelistAsyncWithHttpInfo">
-        <div class="location">at line         line 731</div>
+        <div class="location">at line         line 735</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>addToWhitelistAsyncWithHttpInfo</strong>(string $ip)
         </code>
@@ -2044,9 +2204,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_broadcastRawTransaction">
-        <div class="location">at line         line 882</div>
-        <code>                    <a href="../../../Semux/Client/Model/SendTransactionResponse.html"><abbr title="Semux\Client\Model\SendTransactionResponse">SendTransactionResponse</abbr></a>
-    <strong>broadcastRawTransaction</strong>(string $raw)
+        <div class="location">at line         line 891</div>
+        <code>                    <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
+    <strong>broadcastRawTransaction</strong>(string $raw, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -2062,7 +2222,12 @@
                     <tr>
                 <td>string</td>
                 <td>$raw</td>
-                <td>Raw transaction (required)</td>
+                <td>Raw transaction encoded in hexadecimal string. (required)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether to validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -2071,7 +2236,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../Semux/Client/Model/SendTransactionResponse.html"><abbr title="Semux\Client\Model\SendTransactionResponse">SendTransactionResponse</abbr></a></td>
+            <td><a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a></td>
             <td></td>
         </tr>
     </table>
@@ -2097,9 +2262,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_broadcastRawTransactionWithHttpInfo">
-        <div class="location">at line         line 899</div>
+        <div class="location">at line         line 909</div>
         <code>                    array
-    <strong>broadcastRawTransactionWithHttpInfo</strong>(string $raw)
+    <strong>broadcastRawTransactionWithHttpInfo</strong>(string $raw, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -2115,7 +2280,12 @@
                     <tr>
                 <td>string</td>
                 <td>$raw</td>
-                <td>Raw transaction (required)</td>
+                <td>Raw transaction encoded in hexadecimal string. (required)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether to validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -2125,7 +2295,7 @@
                     <table class="table table-condensed">
         <tr>
             <td>array</td>
-            <td>of \Semux\Client\Model\SendTransactionResponse, HTTP status code, HTTP response headers (array of strings)</td>
+            <td>of \Semux\Client\Model\DoTransactionResponse, HTTP status code, HTTP response headers (array of strings)</td>
         </tr>
     </table>
 
@@ -2150,9 +2320,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_broadcastRawTransactionAsync">
-        <div class="location">at line         line 973</div>
+        <div class="location">at line         line 984</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>broadcastRawTransactionAsync</strong>(string $raw)
+    <strong>broadcastRawTransactionAsync</strong>(string $raw, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -2168,7 +2338,12 @@
                     <tr>
                 <td>string</td>
                 <td>$raw</td>
-                <td>Raw transaction (required)</td>
+                <td>Raw transaction encoded in hexadecimal string. (required)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether to validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -2199,9 +2374,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_broadcastRawTransactionAsyncWithHttpInfo">
-        <div class="location">at line         line 993</div>
+        <div class="location">at line         line 1005</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>broadcastRawTransactionAsyncWithHttpInfo</strong>(string $raw)
+    <strong>broadcastRawTransactionAsyncWithHttpInfo</strong>(string $raw, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -2217,7 +2392,12 @@
                     <tr>
                 <td>string</td>
                 <td>$raw</td>
-                <td>Raw transaction (required)</td>
+                <td>Raw transaction encoded in hexadecimal string. (required)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether to validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -2248,7 +2428,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_composeRawTransaction">
-        <div class="location">at line         line 1155</div>
+        <div class="location">at line         line 1172</div>
         <code>                    <a href="../../../Semux/Client/Model/ComposeRawTransactionResponse.html"><abbr title="Semux\Client\Model\ComposeRawTransactionResponse">ComposeRawTransactionResponse</abbr></a>
     <strong>composeRawTransaction</strong>(string $network, string $type, string $fee, string $nonce, string $to = null, string $value = null, string $timestamp = null, string $data = null)
         </code>
@@ -2291,7 +2471,7 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Transaction value in nano (optional)</td>
+                <td>Transaction value in nano SEM (optional)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -2336,7 +2516,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_composeRawTransactionWithHttpInfo">
-        <div class="location">at line         line 1179</div>
+        <div class="location">at line         line 1196</div>
         <code>                    array
     <strong>composeRawTransactionWithHttpInfo</strong>(string $network, string $type, string $fee, string $nonce, string $to = null, string $value = null, string $timestamp = null, string $data = null)
         </code>
@@ -2379,7 +2559,7 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Transaction value in nano (optional)</td>
+                <td>Transaction value in nano SEM (optional)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -2424,7 +2604,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_composeRawTransactionAsync">
-        <div class="location">at line         line 1260</div>
+        <div class="location">at line         line 1277</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>composeRawTransactionAsync</strong>(string $network, string $type, string $fee, string $nonce, string $to = null, string $value = null, string $timestamp = null, string $data = null)
         </code>
@@ -2467,7 +2647,7 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Transaction value in nano (optional)</td>
+                <td>Transaction value in nano SEM (optional)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -2508,7 +2688,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_composeRawTransactionAsyncWithHttpInfo">
-        <div class="location">at line         line 1287</div>
+        <div class="location">at line         line 1304</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>composeRawTransactionAsyncWithHttpInfo</strong>(string $network, string $type, string $fee, string $nonce, string $to = null, string $value = null, string $timestamp = null, string $data = null)
         </code>
@@ -2551,7 +2731,7 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Transaction value in nano (optional)</td>
+                <td>Transaction value in nano SEM (optional)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -2592,9 +2772,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createAccount">
-        <div class="location">at line         line 1515</div>
+        <div class="location">at line         line 1533</div>
         <code>                    <a href="../../../Semux/Client/Model/CreateAccountResponse.html"><abbr title="Semux\Client\Model\CreateAccountResponse">CreateAccountResponse</abbr></a>
-    <strong>createAccount</strong>(string $name = null)
+    <strong>createAccount</strong>(string $name = null, string $privateKey = null)
         </code>
     </h3>
     <div class="details">
@@ -2602,7 +2782,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation createAccount</p>                    <p>Create account</p>            </div>
+                                    <p>Operation createAccount</p>                    <p>Create or import an account</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -2611,6 +2791,11 @@
                 <td>string</td>
                 <td>$name</td>
                 <td>Assigned alias to the created account. (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$privateKey</td>
+                <td>The private key to be imported, create a new key if omitted (optional)</td>
             </tr>
             </table>
 
@@ -2645,9 +2830,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createAccountWithHttpInfo">
-        <div class="location">at line         line 1532</div>
+        <div class="location">at line         line 1551</div>
         <code>                    array
-    <strong>createAccountWithHttpInfo</strong>(string $name = null)
+    <strong>createAccountWithHttpInfo</strong>(string $name = null, string $privateKey = null)
         </code>
     </h3>
     <div class="details">
@@ -2655,7 +2840,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation createAccountWithHttpInfo</p>                    <p>Create account</p>            </div>
+                                    <p>Operation createAccountWithHttpInfo</p>                    <p>Create or import an account</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -2664,6 +2849,11 @@
                 <td>string</td>
                 <td>$name</td>
                 <td>Assigned alias to the created account. (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$privateKey</td>
+                <td>The private key to be imported, create a new key if omitted (optional)</td>
             </tr>
             </table>
 
@@ -2698,9 +2888,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createAccountAsync">
-        <div class="location">at line         line 1606</div>
+        <div class="location">at line         line 1626</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>createAccountAsync</strong>(string $name = null)
+    <strong>createAccountAsync</strong>(string $name = null, string $privateKey = null)
         </code>
     </h3>
     <div class="details">
@@ -2708,7 +2898,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation createAccountAsync</p>                    <p>Create account</p>            </div>
+                                    <p>Operation createAccountAsync</p>                    <p>Create or import an account</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -2717,6 +2907,11 @@
                 <td>string</td>
                 <td>$name</td>
                 <td>Assigned alias to the created account. (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$privateKey</td>
+                <td>The private key to be imported, create a new key if omitted (optional)</td>
             </tr>
             </table>
 
@@ -2747,9 +2942,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createAccountAsyncWithHttpInfo">
-        <div class="location">at line         line 1626</div>
+        <div class="location">at line         line 1647</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>createAccountAsyncWithHttpInfo</strong>(string $name = null)
+    <strong>createAccountAsyncWithHttpInfo</strong>(string $name = null, string $privateKey = null)
         </code>
     </h3>
     <div class="details">
@@ -2757,7 +2952,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation createAccountAsyncWithHttpInfo</p>                    <p>Create account</p>            </div>
+                                    <p>Operation createAccountAsyncWithHttpInfo</p>                    <p>Create or import an account</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -2766,6 +2961,215 @@
                 <td>string</td>
                 <td>$name</td>
                 <td>Assigned alias to the created account. (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$privateKey</td>
+                <td>The private key to be imported, create a new key if omitted (optional)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteAccount">
+        <div class="location">at line         line 1801</div>
+        <code>                    <a href="../../../Semux/Client/Model/DeleteAccountResponse.html"><abbr title="Semux\Client\Model\DeleteAccountResponse">DeleteAccountResponse</abbr></a>
+    <strong>deleteAccount</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation deleteAccount</p>                    <p>Delete account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of the account (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Semux/Client/Model/DeleteAccountResponse.html"><abbr title="Semux\Client\Model\DeleteAccountResponse">DeleteAccountResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteAccountWithHttpInfo">
+        <div class="location">at line         line 1818</div>
+        <code>                    array
+    <strong>deleteAccountWithHttpInfo</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation deleteAccountWithHttpInfo</p>                    <p>Delete account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of the account (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>of \Semux\Client\Model\DeleteAccountResponse, HTTP status code, HTTP response headers (array of strings)</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteAccountAsync">
+        <div class="location">at line         line 1892</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>deleteAccountAsync</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation deleteAccountAsync</p>                    <p>Delete account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of the account (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteAccountAsyncWithHttpInfo">
+        <div class="location">at line         line 1912</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>deleteAccountAsyncWithHttpInfo</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation deleteAccountAsyncWithHttpInfo</p>                    <p>Delete account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of the account (required)</td>
             </tr>
             </table>
 
@@ -2796,7 +3200,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccount">
-        <div class="location">at line         line 1771</div>
+        <div class="location">at line         line 2067</div>
         <code>                    <a href="../../../Semux/Client/Model/GetAccountResponse.html"><abbr title="Semux\Client\Model\GetAccountResponse">GetAccountResponse</abbr></a>
     <strong>getAccount</strong>(string $address)
         </code>
@@ -2849,7 +3253,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccountWithHttpInfo">
-        <div class="location">at line         line 1788</div>
+        <div class="location">at line         line 2084</div>
         <code>                    array
     <strong>getAccountWithHttpInfo</strong>(string $address)
         </code>
@@ -2902,7 +3306,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccountAsync">
-        <div class="location">at line         line 1862</div>
+        <div class="location">at line         line 2158</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getAccountAsync</strong>(string $address)
         </code>
@@ -2951,7 +3355,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccountAsyncWithHttpInfo">
-        <div class="location">at line         line 1882</div>
+        <div class="location">at line         line 2178</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getAccountAsyncWithHttpInfo</strong>(string $address)
         </code>
@@ -2999,8 +3403,252 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getAccountPendingTransactions">
+        <div class="location">at line         line 2335</div>
+        <code>                    <a href="../../../Semux/Client/Model/GetAccountPendingTransactionsResponse.html"><abbr title="Semux\Client\Model\GetAccountPendingTransactionsResponse">GetAccountPendingTransactionsResponse</abbr></a>
+    <strong>getAccountPendingTransactions</strong>(string $address, string $from, string $to)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountPendingTransactions</p>                    <p>Get pending transactions of the account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$from</td>
+                <td>Starting range of transactions (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$to</td>
+                <td>Ending range of transactions (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Semux/Client/Model/GetAccountPendingTransactionsResponse.html"><abbr title="Semux\Client\Model\GetAccountPendingTransactionsResponse">GetAccountPendingTransactionsResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccountPendingTransactionsWithHttpInfo">
+        <div class="location">at line         line 2354</div>
+        <code>                    array
+    <strong>getAccountPendingTransactionsWithHttpInfo</strong>(string $address, string $from, string $to)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountPendingTransactionsWithHttpInfo</p>                    <p>Get pending transactions of the account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$from</td>
+                <td>Starting range of transactions (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$to</td>
+                <td>Ending range of transactions (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>of \Semux\Client\Model\GetAccountPendingTransactionsResponse, HTTP status code, HTTP response headers (array of strings)</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccountPendingTransactionsAsync">
+        <div class="location">at line         line 2430</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>getAccountPendingTransactionsAsync</strong>(string $address, string $from, string $to)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountPendingTransactionsAsync</p>                    <p>Get pending transactions of the account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$from</td>
+                <td>Starting range of transactions (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$to</td>
+                <td>Ending range of transactions (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccountPendingTransactionsAsyncWithHttpInfo">
+        <div class="location">at line         line 2452</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>getAccountPendingTransactionsAsyncWithHttpInfo</strong>(string $address, string $from, string $to)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountPendingTransactionsAsyncWithHttpInfo</p>                    <p>Get pending transactions of the account</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$from</td>
+                <td>Starting range of transactions (required)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$to</td>
+                <td>Ending range of transactions (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getAccountTransactions">
-        <div class="location">at line         line 2035</div>
+        <div class="location">at line         line 2639</div>
         <code>                    <a href="../../../Semux/Client/Model/GetAccountTransactionsResponse.html"><abbr title="Semux\Client\Model\GetAccountTransactionsResponse">GetAccountTransactionsResponse</abbr></a>
     <strong>getAccountTransactions</strong>(string $address, string $from, string $to)
         </code>
@@ -3063,7 +3711,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccountTransactionsWithHttpInfo">
-        <div class="location">at line         line 2054</div>
+        <div class="location">at line         line 2658</div>
         <code>                    array
     <strong>getAccountTransactionsWithHttpInfo</strong>(string $address, string $from, string $to)
         </code>
@@ -3126,7 +3774,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccountTransactionsAsync">
-        <div class="location">at line         line 2130</div>
+        <div class="location">at line         line 2734</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getAccountTransactionsAsync</strong>(string $address, string $from, string $to)
         </code>
@@ -3185,7 +3833,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccountTransactionsAsyncWithHttpInfo">
-        <div class="location">at line         line 2152</div>
+        <div class="location">at line         line 2756</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getAccountTransactionsAsyncWithHttpInfo</strong>(string $address, string $from, string $to)
         </code>
@@ -3243,8 +3891,212 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getAccountVotes">
+        <div class="location">at line         line 2941</div>
+        <code>                    <a href="../../../Semux/Client/Model/GetAccountVotesResponse.html"><abbr title="Semux\Client\Model\GetAccountVotesResponse">GetAccountVotesResponse</abbr></a>
+    <strong>getAccountVotes</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountVotes</p>                    <p>Get account votes</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Semux/Client/Model/GetAccountVotesResponse.html"><abbr title="Semux\Client\Model\GetAccountVotesResponse">GetAccountVotesResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccountVotesWithHttpInfo">
+        <div class="location">at line         line 2958</div>
+        <code>                    array
+    <strong>getAccountVotesWithHttpInfo</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountVotesWithHttpInfo</p>                    <p>Get account votes</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>of \Semux\Client\Model\GetAccountVotesResponse, HTTP status code, HTTP response headers (array of strings)</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccountVotesAsync">
+        <div class="location">at line         line 3032</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>getAccountVotesAsync</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountVotesAsync</p>                    <p>Get account votes</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccountVotesAsyncWithHttpInfo">
+        <div class="location">at line         line 3052</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>getAccountVotesAsyncWithHttpInfo</strong>(string $address)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getAccountVotesAsyncWithHttpInfo</p>                    <p>Get account votes</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$address</td>
+                <td>Address of account (required)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getBlockByHash">
-        <div class="location">at line         line 2325</div>
+        <div class="location">at line         line 3207</div>
         <code>                    <a href="../../../Semux/Client/Model/GetBlockResponse.html"><abbr title="Semux\Client\Model\GetBlockResponse">GetBlockResponse</abbr></a>
     <strong>getBlockByHash</strong>(string $hash)
         </code>
@@ -3297,7 +4149,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBlockByHashWithHttpInfo">
-        <div class="location">at line         line 2342</div>
+        <div class="location">at line         line 3224</div>
         <code>                    array
     <strong>getBlockByHashWithHttpInfo</strong>(string $hash)
         </code>
@@ -3350,7 +4202,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBlockByHashAsync">
-        <div class="location">at line         line 2416</div>
+        <div class="location">at line         line 3298</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getBlockByHashAsync</strong>(string $hash)
         </code>
@@ -3399,7 +4251,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBlockByHashAsyncWithHttpInfo">
-        <div class="location">at line         line 2436</div>
+        <div class="location">at line         line 3318</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getBlockByHashAsyncWithHttpInfo</strong>(string $hash)
         </code>
@@ -3448,7 +4300,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBlockByNumber">
-        <div class="location">at line         line 2591</div>
+        <div class="location">at line         line 3473</div>
         <code>                    <a href="../../../Semux/Client/Model/GetBlockResponse.html"><abbr title="Semux\Client\Model\GetBlockResponse">GetBlockResponse</abbr></a>
     <strong>getBlockByNumber</strong>(string $number)
         </code>
@@ -3501,7 +4353,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBlockByNumberWithHttpInfo">
-        <div class="location">at line         line 2608</div>
+        <div class="location">at line         line 3490</div>
         <code>                    array
     <strong>getBlockByNumberWithHttpInfo</strong>(string $number)
         </code>
@@ -3554,7 +4406,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBlockByNumberAsync">
-        <div class="location">at line         line 2682</div>
+        <div class="location">at line         line 3564</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getBlockByNumberAsync</strong>(string $number)
         </code>
@@ -3603,7 +4455,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBlockByNumberAsyncWithHttpInfo">
-        <div class="location">at line         line 2702</div>
+        <div class="location">at line         line 3584</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getBlockByNumberAsyncWithHttpInfo</strong>(string $number)
         </code>
@@ -3652,7 +4504,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegate">
-        <div class="location">at line         line 2857</div>
+        <div class="location">at line         line 3739</div>
         <code>                    <a href="../../../Semux/Client/Model/GetDelegateResponse.html"><abbr title="Semux\Client\Model\GetDelegateResponse">GetDelegateResponse</abbr></a>
     <strong>getDelegate</strong>(string $address)
         </code>
@@ -3705,7 +4557,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegateWithHttpInfo">
-        <div class="location">at line         line 2874</div>
+        <div class="location">at line         line 3756</div>
         <code>                    array
     <strong>getDelegateWithHttpInfo</strong>(string $address)
         </code>
@@ -3758,7 +4610,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegateAsync">
-        <div class="location">at line         line 2948</div>
+        <div class="location">at line         line 3830</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getDelegateAsync</strong>(string $address)
         </code>
@@ -3807,7 +4659,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegateAsyncWithHttpInfo">
-        <div class="location">at line         line 2968</div>
+        <div class="location">at line         line 3850</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getDelegateAsyncWithHttpInfo</strong>(string $address)
         </code>
@@ -3856,7 +4708,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegates">
-        <div class="location">at line         line 3118</div>
+        <div class="location">at line         line 4004</div>
         <code>                    <a href="../../../Semux/Client/Model/GetDelegatesResponse.html"><abbr title="Semux\Client\Model\GetDelegatesResponse">GetDelegatesResponse</abbr></a>
     <strong>getDelegates</strong>()
         </code>
@@ -3899,7 +4751,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegatesWithHttpInfo">
-        <div class="location">at line         line 3134</div>
+        <div class="location">at line         line 4020</div>
         <code>                    array
     <strong>getDelegatesWithHttpInfo</strong>()
         </code>
@@ -3942,7 +4794,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegatesAsync">
-        <div class="location">at line         line 3207</div>
+        <div class="location">at line         line 4093</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getDelegatesAsync</strong>()
         </code>
@@ -3981,7 +4833,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDelegatesAsyncWithHttpInfo">
-        <div class="location">at line         line 3226</div>
+        <div class="location">at line         line 4112</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getDelegatesAsyncWithHttpInfo</strong>()
         </code>
@@ -4020,7 +4872,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getInfo">
-        <div class="location">at line         line 3365</div>
+        <div class="location">at line         line 4251</div>
         <code>                    <a href="../../../Semux/Client/Model/GetInfoResponse.html"><abbr title="Semux\Client\Model\GetInfoResponse">GetInfoResponse</abbr></a>
     <strong>getInfo</strong>()
         </code>
@@ -4063,7 +4915,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getInfoWithHttpInfo">
-        <div class="location">at line         line 3381</div>
+        <div class="location">at line         line 4267</div>
         <code>                    array
     <strong>getInfoWithHttpInfo</strong>()
         </code>
@@ -4106,7 +4958,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getInfoAsync">
-        <div class="location">at line         line 3454</div>
+        <div class="location">at line         line 4340</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getInfoAsync</strong>()
         </code>
@@ -4145,7 +4997,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getInfoAsyncWithHttpInfo">
-        <div class="location">at line         line 3473</div>
+        <div class="location">at line         line 4359</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getInfoAsyncWithHttpInfo</strong>()
         </code>
@@ -4184,7 +5036,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlock">
-        <div class="location">at line         line 3612</div>
+        <div class="location">at line         line 4498</div>
         <code>                    <a href="../../../Semux/Client/Model/GetLatestBlockResponse.html"><abbr title="Semux\Client\Model\GetLatestBlockResponse">GetLatestBlockResponse</abbr></a>
     <strong>getLatestBlock</strong>()
         </code>
@@ -4227,7 +5079,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlockWithHttpInfo">
-        <div class="location">at line         line 3628</div>
+        <div class="location">at line         line 4514</div>
         <code>                    array
     <strong>getLatestBlockWithHttpInfo</strong>()
         </code>
@@ -4270,7 +5122,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlockAsync">
-        <div class="location">at line         line 3701</div>
+        <div class="location">at line         line 4587</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getLatestBlockAsync</strong>()
         </code>
@@ -4309,7 +5161,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlockAsyncWithHttpInfo">
-        <div class="location">at line         line 3720</div>
+        <div class="location">at line         line 4606</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getLatestBlockAsyncWithHttpInfo</strong>()
         </code>
@@ -4348,7 +5200,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlockNumber">
-        <div class="location">at line         line 3859</div>
+        <div class="location">at line         line 4745</div>
         <code>                    <a href="../../../Semux/Client/Model/GetLatestBlockNumberResponse.html"><abbr title="Semux\Client\Model\GetLatestBlockNumberResponse">GetLatestBlockNumberResponse</abbr></a>
     <strong>getLatestBlockNumber</strong>()
         </code>
@@ -4391,7 +5243,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlockNumberWithHttpInfo">
-        <div class="location">at line         line 3875</div>
+        <div class="location">at line         line 4761</div>
         <code>                    array
     <strong>getLatestBlockNumberWithHttpInfo</strong>()
         </code>
@@ -4434,7 +5286,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlockNumberAsync">
-        <div class="location">at line         line 3948</div>
+        <div class="location">at line         line 4834</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getLatestBlockNumberAsync</strong>()
         </code>
@@ -4473,7 +5325,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLatestBlockNumberAsyncWithHttpInfo">
-        <div class="location">at line         line 3967</div>
+        <div class="location">at line         line 4853</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getLatestBlockNumberAsyncWithHttpInfo</strong>()
         </code>
@@ -4512,7 +5364,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPeers">
-        <div class="location">at line         line 4106</div>
+        <div class="location">at line         line 4992</div>
         <code>                    <a href="../../../Semux/Client/Model/GetPeersResponse.html"><abbr title="Semux\Client\Model\GetPeersResponse">GetPeersResponse</abbr></a>
     <strong>getPeers</strong>()
         </code>
@@ -4555,7 +5407,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPeersWithHttpInfo">
-        <div class="location">at line         line 4122</div>
+        <div class="location">at line         line 5008</div>
         <code>                    array
     <strong>getPeersWithHttpInfo</strong>()
         </code>
@@ -4598,7 +5450,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPeersAsync">
-        <div class="location">at line         line 4195</div>
+        <div class="location">at line         line 5081</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getPeersAsync</strong>()
         </code>
@@ -4637,7 +5489,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPeersAsyncWithHttpInfo">
-        <div class="location">at line         line 4214</div>
+        <div class="location">at line         line 5100</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getPeersAsyncWithHttpInfo</strong>()
         </code>
@@ -4676,7 +5528,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPendingTransactions">
-        <div class="location">at line         line 4353</div>
+        <div class="location">at line         line 5239</div>
         <code>                    <a href="../../../Semux/Client/Model/GetPendingTransactionsResponse.html"><abbr title="Semux\Client\Model\GetPendingTransactionsResponse">GetPendingTransactionsResponse</abbr></a>
     <strong>getPendingTransactions</strong>()
         </code>
@@ -4719,7 +5571,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPendingTransactionsWithHttpInfo">
-        <div class="location">at line         line 4369</div>
+        <div class="location">at line         line 5255</div>
         <code>                    array
     <strong>getPendingTransactionsWithHttpInfo</strong>()
         </code>
@@ -4762,7 +5614,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPendingTransactionsAsync">
-        <div class="location">at line         line 4442</div>
+        <div class="location">at line         line 5328</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getPendingTransactionsAsync</strong>()
         </code>
@@ -4801,7 +5653,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getPendingTransactionsAsyncWithHttpInfo">
-        <div class="location">at line         line 4461</div>
+        <div class="location">at line         line 5347</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getPendingTransactionsAsyncWithHttpInfo</strong>()
         </code>
@@ -4840,7 +5692,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getRoot">
-        <div class="location">at line         line 4600</div>
+        <div class="location">at line         line 5486</div>
         <code>                    <a href="../../../Semux/Client/Model/GetRootResponse.html"><abbr title="Semux\Client\Model\GetRootResponse">GetRootResponse</abbr></a>
     <strong>getRoot</strong>()
         </code>
@@ -4883,7 +5735,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getRootWithHttpInfo">
-        <div class="location">at line         line 4616</div>
+        <div class="location">at line         line 5502</div>
         <code>                    array
     <strong>getRootWithHttpInfo</strong>()
         </code>
@@ -4926,7 +5778,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getRootAsync">
-        <div class="location">at line         line 4689</div>
+        <div class="location">at line         line 5575</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getRootAsync</strong>()
         </code>
@@ -4965,7 +5817,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getRootAsyncWithHttpInfo">
-        <div class="location">at line         line 4708</div>
+        <div class="location">at line         line 5594</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getRootAsyncWithHttpInfo</strong>()
         </code>
@@ -5003,8 +5855,172 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getSyncingProgress">
+        <div class="location">at line         line 5733</div>
+        <code>                    <a href="../../../Semux/Client/Model/GetSyncingProgressResponse.html"><abbr title="Semux\Client\Model\GetSyncingProgressResponse">GetSyncingProgressResponse</abbr></a>
+    <strong>getSyncingProgress</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getSyncingProgress</p>                    <p>Get syncing progress</p>            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Semux/Client/Model/GetSyncingProgressResponse.html"><abbr title="Semux\Client\Model\GetSyncingProgressResponse">GetSyncingProgressResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSyncingProgressWithHttpInfo">
+        <div class="location">at line         line 5749</div>
+        <code>                    array
+    <strong>getSyncingProgressWithHttpInfo</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getSyncingProgressWithHttpInfo</p>                    <p>Get syncing progress</p>            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>of \Semux\Client\Model\GetSyncingProgressResponse, HTTP status code, HTTP response headers (array of strings)</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Semux/Client/ApiException.html"><abbr title="Semux\Client\ApiException">ApiException</abbr></a></td>
+                <td>on non-2xx response</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSyncingProgressAsync">
+        <div class="location">at line         line 5822</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>getSyncingProgressAsync</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getSyncingProgressAsync</p>                    <p>Get syncing progress</p>            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSyncingProgressAsyncWithHttpInfo">
+        <div class="location">at line         line 5841</div>
+        <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
+    <strong>getSyncingProgressAsyncWithHttpInfo</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Operation getSyncingProgressAsyncWithHttpInfo</p>                    <p>Get syncing progress</p>            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException">InvalidArgumentException</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getTransaction">
-        <div class="location">at line         line 4848</div>
+        <div class="location">at line         line 5981</div>
         <code>                    <a href="../../../Semux/Client/Model/GetTransactionResponse.html"><abbr title="Semux\Client\Model\GetTransactionResponse">GetTransactionResponse</abbr></a>
     <strong>getTransaction</strong>(string $hash)
         </code>
@@ -5057,7 +6073,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getTransactionWithHttpInfo">
-        <div class="location">at line         line 4865</div>
+        <div class="location">at line         line 5998</div>
         <code>                    array
     <strong>getTransactionWithHttpInfo</strong>(string $hash)
         </code>
@@ -5110,7 +6126,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getTransactionAsync">
-        <div class="location">at line         line 4939</div>
+        <div class="location">at line         line 6072</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getTransactionAsync</strong>(string $hash)
         </code>
@@ -5159,7 +6175,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getTransactionAsyncWithHttpInfo">
-        <div class="location">at line         line 4959</div>
+        <div class="location">at line         line 6092</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getTransactionAsyncWithHttpInfo</strong>(string $hash)
         </code>
@@ -5208,7 +6224,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getTransactionLimits">
-        <div class="location">at line         line 5110</div>
+        <div class="location">at line         line 6247</div>
         <code>                    <a href="../../../Semux/Client/Model/GetTransactionLimitsResponse.html"><abbr title="Semux\Client\Model\GetTransactionLimitsResponse">GetTransactionLimitsResponse</abbr></a>
     <strong>getTransactionLimits</strong>(string $type)
         </code>
@@ -5261,7 +6277,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getTransactionLimitsWithHttpInfo">
-        <div class="location">at line         line 5127</div>
+        <div class="location">at line         line 6264</div>
         <code>                    array
     <strong>getTransactionLimitsWithHttpInfo</strong>(string $type)
         </code>
@@ -5314,7 +6330,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getTransactionLimitsAsync">
-        <div class="location">at line         line 5201</div>
+        <div class="location">at line         line 6338</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getTransactionLimitsAsync</strong>(string $type)
         </code>
@@ -5363,7 +6379,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getTransactionLimitsAsyncWithHttpInfo">
-        <div class="location">at line         line 5221</div>
+        <div class="location">at line         line 6358</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getTransactionLimitsAsyncWithHttpInfo</strong>(string $type)
         </code>
@@ -5412,7 +6428,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getValidators">
-        <div class="location">at line         line 5371</div>
+        <div class="location">at line         line 6508</div>
         <code>                    <a href="../../../Semux/Client/Model/GetValidatorsResponse.html"><abbr title="Semux\Client\Model\GetValidatorsResponse">GetValidatorsResponse</abbr></a>
     <strong>getValidators</strong>()
         </code>
@@ -5455,7 +6471,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getValidatorsWithHttpInfo">
-        <div class="location">at line         line 5387</div>
+        <div class="location">at line         line 6524</div>
         <code>                    array
     <strong>getValidatorsWithHttpInfo</strong>()
         </code>
@@ -5498,7 +6514,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getValidatorsAsync">
-        <div class="location">at line         line 5460</div>
+        <div class="location">at line         line 6597</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getValidatorsAsync</strong>()
         </code>
@@ -5537,7 +6553,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getValidatorsAsyncWithHttpInfo">
-        <div class="location">at line         line 5479</div>
+        <div class="location">at line         line 6616</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getValidatorsAsyncWithHttpInfo</strong>()
         </code>
@@ -5576,7 +6592,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVote">
-        <div class="location">at line         line 5620</div>
+        <div class="location">at line         line 6757</div>
         <code>                    <a href="../../../Semux/Client/Model/GetVoteResponse.html"><abbr title="Semux\Client\Model\GetVoteResponse">GetVoteResponse</abbr></a>
     <strong>getVote</strong>(string $delegate, string $voter)
         </code>
@@ -5634,7 +6650,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVoteWithHttpInfo">
-        <div class="location">at line         line 5638</div>
+        <div class="location">at line         line 6775</div>
         <code>                    array
     <strong>getVoteWithHttpInfo</strong>(string $delegate, string $voter)
         </code>
@@ -5692,7 +6708,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVoteAsync">
-        <div class="location">at line         line 5713</div>
+        <div class="location">at line         line 6850</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getVoteAsync</strong>(string $delegate, string $voter)
         </code>
@@ -5746,7 +6762,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVoteAsyncWithHttpInfo">
-        <div class="location">at line         line 5734</div>
+        <div class="location">at line         line 6871</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getVoteAsyncWithHttpInfo</strong>(string $delegate, string $voter)
         </code>
@@ -5800,7 +6816,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVotes">
-        <div class="location">at line         line 5896</div>
+        <div class="location">at line         line 7041</div>
         <code>                    <a href="../../../Semux/Client/Model/GetVotesResponse.html"><abbr title="Semux\Client\Model\GetVotesResponse">GetVotesResponse</abbr></a>
     <strong>getVotes</strong>(string $delegate)
         </code>
@@ -5810,7 +6826,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation getVotes</p>                    <p>Get votes</p>            </div>
+                                    <p>Operation getVotes</p>                    <p>Get a delegate's votes</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -5853,7 +6869,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVotesWithHttpInfo">
-        <div class="location">at line         line 5913</div>
+        <div class="location">at line         line 7058</div>
         <code>                    array
     <strong>getVotesWithHttpInfo</strong>(string $delegate)
         </code>
@@ -5863,7 +6879,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation getVotesWithHttpInfo</p>                    <p>Get votes</p>            </div>
+                                    <p>Operation getVotesWithHttpInfo</p>                    <p>Get a delegate's votes</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -5906,7 +6922,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVotesAsync">
-        <div class="location">at line         line 5987</div>
+        <div class="location">at line         line 7132</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getVotesAsync</strong>(string $delegate)
         </code>
@@ -5916,7 +6932,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation getVotesAsync</p>                    <p>Get votes</p>            </div>
+                                    <p>Operation getVotesAsync</p>                    <p>Get a delegate's votes</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -5955,7 +6971,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getVotesAsyncWithHttpInfo">
-        <div class="location">at line         line 6007</div>
+        <div class="location">at line         line 7152</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>getVotesAsyncWithHttpInfo</strong>(string $delegate)
         </code>
@@ -5965,7 +6981,7 @@
     
 
                     <div class="method-description">
-                                    <p>Operation getVotesAsyncWithHttpInfo</p>                    <p>Get votes</p>            </div>
+                                    <p>Operation getVotesAsyncWithHttpInfo</p>                    <p>Get a delegate's votes</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -6004,7 +7020,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_listAccounts">
-        <div class="location">at line         line 6157</div>
+        <div class="location">at line         line 7306</div>
         <code>                    <a href="../../../Semux/Client/Model/ListAccountsResponse.html"><abbr title="Semux\Client\Model\ListAccountsResponse">ListAccountsResponse</abbr></a>
     <strong>listAccounts</strong>()
         </code>
@@ -6047,7 +7063,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_listAccountsWithHttpInfo">
-        <div class="location">at line         line 6173</div>
+        <div class="location">at line         line 7322</div>
         <code>                    array
     <strong>listAccountsWithHttpInfo</strong>()
         </code>
@@ -6090,7 +7106,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_listAccountsAsync">
-        <div class="location">at line         line 6246</div>
+        <div class="location">at line         line 7395</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>listAccountsAsync</strong>()
         </code>
@@ -6129,7 +7145,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_listAccountsAsyncWithHttpInfo">
-        <div class="location">at line         line 6265</div>
+        <div class="location">at line         line 7414</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>listAccountsAsyncWithHttpInfo</strong>()
         </code>
@@ -6168,9 +7184,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_registerDelegate">
-        <div class="location">at line         line 6407</div>
+        <div class="location">at line         line 7558</div>
         <code>                    <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
-    <strong>registerDelegate</strong>(string $from, string $fee, string $data)
+    <strong>registerDelegate</strong>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -6190,13 +7206,23 @@
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>$data</td>
+                <td>Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$data</td>
-                <td>Delegate name (required)</td>
+                <td>$fee</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -6231,9 +7257,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_registerDelegateWithHttpInfo">
-        <div class="location">at line         line 6426</div>
+        <div class="location">at line         line 7579</div>
         <code>                    array
-    <strong>registerDelegateWithHttpInfo</strong>(string $from, string $fee, string $data)
+    <strong>registerDelegateWithHttpInfo</strong>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -6253,13 +7279,23 @@
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>$data</td>
+                <td>Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$data</td>
-                <td>Delegate name (required)</td>
+                <td>$fee</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -6294,9 +7330,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_registerDelegateAsync">
-        <div class="location">at line         line 6502</div>
+        <div class="location">at line         line 7657</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>registerDelegateAsync</strong>(string $from, string $fee, string $data)
+    <strong>registerDelegateAsync</strong>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -6316,13 +7352,23 @@
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>$data</td>
+                <td>Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$data</td>
-                <td>Delegate name (required)</td>
+                <td>$fee</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -6353,9 +7399,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_registerDelegateAsyncWithHttpInfo">
-        <div class="location">at line         line 6524</div>
+        <div class="location">at line         line 7681</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>registerDelegateAsyncWithHttpInfo</strong>(string $from, string $fee, string $data)
+    <strong>registerDelegateAsyncWithHttpInfo</strong>(string $from, string $data, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -6375,13 +7421,23 @@
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>$data</td>
+                <td>Delegate name in hexadecimal encoded UTF-8 string, 16 bytes of data at maximum (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$data</td>
-                <td>Delegate name (required)</td>
+                <td>$fee</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -6412,7 +7468,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signMessage">
-        <div class="location">at line         line 6706</div>
+        <div class="location">at line         line 7875</div>
         <code>                    <a href="../../../Semux/Client/Model/SignMessageResponse.html"><abbr title="Semux\Client\Model\SignMessageResponse">SignMessageResponse</abbr></a>
     <strong>signMessage</strong>(string $address, string $message)
         </code>
@@ -6430,12 +7486,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Signing address (required)</td>
+                <td>Signing address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message to sign (required)</td>
+                <td>Message to sign in UTF-8 string (required)</td>
             </tr>
             </table>
 
@@ -6470,7 +7526,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signMessageWithHttpInfo">
-        <div class="location">at line         line 6724</div>
+        <div class="location">at line         line 7893</div>
         <code>                    array
     <strong>signMessageWithHttpInfo</strong>(string $address, string $message)
         </code>
@@ -6488,12 +7544,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Signing address (required)</td>
+                <td>Signing address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message to sign (required)</td>
+                <td>Message to sign in UTF-8 string (required)</td>
             </tr>
             </table>
 
@@ -6528,7 +7584,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signMessageAsync">
-        <div class="location">at line         line 6799</div>
+        <div class="location">at line         line 7968</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>signMessageAsync</strong>(string $address, string $message)
         </code>
@@ -6546,12 +7602,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Signing address (required)</td>
+                <td>Signing address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message to sign (required)</td>
+                <td>Message to sign in UTF-8 string (required)</td>
             </tr>
             </table>
 
@@ -6582,7 +7638,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signMessageAsyncWithHttpInfo">
-        <div class="location">at line         line 6820</div>
+        <div class="location">at line         line 7989</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>signMessageAsyncWithHttpInfo</strong>(string $address, string $message)
         </code>
@@ -6600,12 +7656,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Signing address (required)</td>
+                <td>Signing address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message to sign (required)</td>
+                <td>Message to sign in UTF-8 string (required)</td>
             </tr>
             </table>
 
@@ -6636,7 +7692,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signRawTransaction">
-        <div class="location">at line         line 6983</div>
+        <div class="location">at line         line 8156</div>
         <code>                    <a href="../../../Semux/Client/Model/SignRawTransactionResponse.html"><abbr title="Semux\Client\Model\SignRawTransactionResponse">SignRawTransactionResponse</abbr></a>
     <strong>signRawTransaction</strong>(string $raw, string $address)
         </code>
@@ -6694,7 +7750,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signRawTransactionWithHttpInfo">
-        <div class="location">at line         line 7001</div>
+        <div class="location">at line         line 8174</div>
         <code>                    array
     <strong>signRawTransactionWithHttpInfo</strong>(string $raw, string $address)
         </code>
@@ -6752,7 +7808,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signRawTransactionAsync">
-        <div class="location">at line         line 7076</div>
+        <div class="location">at line         line 8249</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>signRawTransactionAsync</strong>(string $raw, string $address)
         </code>
@@ -6806,7 +7862,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_signRawTransactionAsyncWithHttpInfo">
-        <div class="location">at line         line 7097</div>
+        <div class="location">at line         line 8270</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>signRawTransactionAsyncWithHttpInfo</strong>(string $raw, string $address)
         </code>
@@ -6860,9 +7916,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_transfer">
-        <div class="location">at line         line 7271</div>
+        <div class="location">at line         line 8446</div>
         <code>                    <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
-    <strong>transfer</strong>(string $from, string $to, string $value, string $fee, string $data)
+    <strong>transfer</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         </code>
     </h3>
     <div class="details">
@@ -6878,27 +7934,37 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Sending address (required)</td>
+                <td>Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$to</td>
-                <td>Receiving address (required)</td>
+                <td>Recipient&#39;s address (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Amount of SEM to transfer (required)</td>
+                <td>Amount of SEM to transfer in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$data</td>
-                <td>Transaction data (required)</td>
+                <td>Transaction data encoded in hexadecimal string (optional)</td>
             </tr>
             </table>
 
@@ -6933,9 +7999,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_transferWithHttpInfo">
-        <div class="location">at line         line 7292</div>
+        <div class="location">at line         line 8469</div>
         <code>                    array
-    <strong>transferWithHttpInfo</strong>(string $from, string $to, string $value, string $fee, string $data)
+    <strong>transferWithHttpInfo</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         </code>
     </h3>
     <div class="details">
@@ -6951,27 +8017,37 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Sending address (required)</td>
+                <td>Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$to</td>
-                <td>Receiving address (required)</td>
+                <td>Recipient&#39;s address (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Amount of SEM to transfer (required)</td>
+                <td>Amount of SEM to transfer in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$data</td>
-                <td>Transaction data (required)</td>
+                <td>Transaction data encoded in hexadecimal string (optional)</td>
             </tr>
             </table>
 
@@ -7006,9 +8082,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_transferAsync">
-        <div class="location">at line         line 7370</div>
+        <div class="location">at line         line 8549</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>transferAsync</strong>(string $from, string $to, string $value, string $fee, string $data)
+    <strong>transferAsync</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         </code>
     </h3>
     <div class="details">
@@ -7024,27 +8100,37 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Sending address (required)</td>
+                <td>Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$to</td>
-                <td>Receiving address (required)</td>
+                <td>Recipient&#39;s address (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Amount of SEM to transfer (required)</td>
+                <td>Amount of SEM to transfer in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$data</td>
-                <td>Transaction data (required)</td>
+                <td>Transaction data encoded in hexadecimal string (optional)</td>
             </tr>
             </table>
 
@@ -7075,9 +8161,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_transferAsyncWithHttpInfo">
-        <div class="location">at line         line 7394</div>
+        <div class="location">at line         line 8575</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>transferAsyncWithHttpInfo</strong>(string $from, string $to, string $value, string $fee, string $data)
+    <strong>transferAsyncWithHttpInfo</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;, string $data = null)
         </code>
     </h3>
     <div class="details">
@@ -7093,27 +8179,37 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Sending address (required)</td>
+                <td>Sender&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$to</td>
-                <td>Receiving address (required)</td>
+                <td>Recipient&#39;s address (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Amount of SEM to transfer (required)</td>
+                <td>Amount of SEM to transfer in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$data</td>
-                <td>Transaction data (required)</td>
+                <td>Transaction data encoded in hexadecimal string (optional)</td>
             </tr>
             </table>
 
@@ -7144,9 +8240,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_unvote">
-        <div class="location">at line         line 7604</div>
+        <div class="location">at line         line 8797</div>
         <code>                    <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
-    <strong>unvote</strong>(string $from, string $to, string $value, string $fee)
+    <strong>unvote</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7162,7 +8258,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7172,12 +8268,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -7212,9 +8318,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_unvoteWithHttpInfo">
-        <div class="location">at line         line 7624</div>
+        <div class="location">at line         line 8819</div>
         <code>                    array
-    <strong>unvoteWithHttpInfo</strong>(string $from, string $to, string $value, string $fee)
+    <strong>unvoteWithHttpInfo</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7230,7 +8336,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7240,12 +8346,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -7280,9 +8396,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_unvoteAsync">
-        <div class="location">at line         line 7701</div>
+        <div class="location">at line         line 8898</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>unvoteAsync</strong>(string $from, string $to, string $value, string $fee)
+    <strong>unvoteAsync</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7298,7 +8414,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7308,12 +8424,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -7344,9 +8470,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_unvoteAsyncWithHttpInfo">
-        <div class="location">at line         line 7724</div>
+        <div class="location">at line         line 8923</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>unvoteAsyncWithHttpInfo</strong>(string $from, string $to, string $value, string $fee)
+    <strong>unvoteAsyncWithHttpInfo</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7362,7 +8488,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7372,12 +8498,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -7408,7 +8544,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_verifyMessage">
-        <div class="location">at line         line 7918</div>
+        <div class="location">at line         line 9133</div>
         <code>                    <a href="../../../Semux/Client/Model/VerifyMessageResponse.html"><abbr title="Semux\Client\Model\VerifyMessageResponse">VerifyMessageResponse</abbr></a>
     <strong>verifyMessage</strong>(string $address, string $message, string $signature)
         </code>
@@ -7426,12 +8562,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Address (required)</td>
+                <td>Address of the message signer (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message (required)</td>
+                <td>Message in UTF-8 string (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7471,7 +8607,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_verifyMessageWithHttpInfo">
-        <div class="location">at line         line 7937</div>
+        <div class="location">at line         line 9152</div>
         <code>                    array
     <strong>verifyMessageWithHttpInfo</strong>(string $address, string $message, string $signature)
         </code>
@@ -7489,12 +8625,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Address (required)</td>
+                <td>Address of the message signer (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message (required)</td>
+                <td>Message in UTF-8 string (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7534,7 +8670,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_verifyMessageAsync">
-        <div class="location">at line         line 8013</div>
+        <div class="location">at line         line 9228</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>verifyMessageAsync</strong>(string $address, string $message, string $signature)
         </code>
@@ -7552,12 +8688,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Address (required)</td>
+                <td>Address of the message signer (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message (required)</td>
+                <td>Message in UTF-8 string (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7593,7 +8729,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_verifyMessageAsyncWithHttpInfo">
-        <div class="location">at line         line 8035</div>
+        <div class="location">at line         line 9250</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
     <strong>verifyMessageAsyncWithHttpInfo</strong>(string $address, string $message, string $signature)
         </code>
@@ -7611,12 +8747,12 @@
                     <tr>
                 <td>string</td>
                 <td>$address</td>
-                <td>Address (required)</td>
+                <td>Address of the message signer (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$message</td>
-                <td>Message (required)</td>
+                <td>Message in UTF-8 string (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7652,9 +8788,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_vote">
-        <div class="location">at line         line 8211</div>
+        <div class="location">at line         line 9436</div>
         <code>                    <a href="../../../Semux/Client/Model/DoTransactionResponse.html"><abbr title="Semux\Client\Model\DoTransactionResponse">DoTransactionResponse</abbr></a>
-    <strong>vote</strong>(string $from, string $to, string $value, string $fee)
+    <strong>vote</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7670,7 +8806,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7680,12 +8816,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -7720,9 +8866,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_voteWithHttpInfo">
-        <div class="location">at line         line 8231</div>
+        <div class="location">at line         line 9458</div>
         <code>                    array
-    <strong>voteWithHttpInfo</strong>(string $from, string $to, string $value, string $fee)
+    <strong>voteWithHttpInfo</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7738,7 +8884,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7748,12 +8894,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -7788,9 +8944,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_voteAsync">
-        <div class="location">at line         line 8308</div>
+        <div class="location">at line         line 9537</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>voteAsync</strong>(string $from, string $to, string $value, string $fee)
+    <strong>voteAsync</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7806,7 +8962,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7816,12 +8972,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 
@@ -7852,9 +9018,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_voteAsyncWithHttpInfo">
-        <div class="location">at line         line 8331</div>
+        <div class="location">at line         line 9562</div>
         <code>                    <abbr title="GuzzleHttp\Promise\PromiseInterface">PromiseInterface</abbr>
-    <strong>voteAsyncWithHttpInfo</strong>(string $from, string $to, string $value, string $fee)
+    <strong>voteAsyncWithHttpInfo</strong>(string $from, string $to, string $value, string $fee = null, string $nonce = null, bool $validateNonce = &#039;false&#039;)
         </code>
     </h3>
     <div class="details">
@@ -7870,7 +9036,7 @@
                     <tr>
                 <td>string</td>
                 <td>$from</td>
-                <td>Voting address (required)</td>
+                <td>Voter&#39;s address. The address must exist in the wallet.data of this Semux node. (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
@@ -7880,12 +9046,22 @@
                     <tr>
                 <td>string</td>
                 <td>$value</td>
-                <td>Vote amount (required)</td>
+                <td>Number of votes in nano SEM (required)</td>
             </tr>
                     <tr>
                 <td>string</td>
                 <td>$fee</td>
-                <td>Transaction fee (required)</td>
+                <td>Transaction fee in nano SEM, default to minimum fee if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$nonce</td>
+                <td>Transaction nonce, default to sender&#39;s nonce if omitted (optional)</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$validateNonce</td>
+                <td>Whether validate tx nonce against the current account state, default to false if omitted (optional, default to false)</td>
             </tr>
             </table>
 

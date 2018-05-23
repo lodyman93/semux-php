@@ -4,9 +4,10 @@ services:
   - docker
 addons:
   apt:
+    update: true
     packages:
-    - coreutils
-    - realpath
+      - coreutils
+      - realpath
 php:
   - 5.6
   - 7.0

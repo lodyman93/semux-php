@@ -30,7 +30,7 @@
         "psr-4": { "Semux\\Client\\" : "client/test/" }
     },
     "scripts": {
-        "generate": "swagger-codegen-cli generate -i semux/src/main/resources/org/semux/api/v2_0_0/swagger.json -c .swagger-codegen/config.json -l php -o .",
+        "generate": "swagger-codegen-cli generate -i semux/src/main/resources/org/semux/api/v2_1_0/swagger.json -c .swagger-codegen/config.json -l php -o .",
         "docs": "sami.php update .sami/config.php -v"
     }
 }

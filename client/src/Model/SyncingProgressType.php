@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionLimitsType
+ * SyncingProgressType
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Semux\Client\ObjectSerializer;
 
 /**
- * TransactionLimitsType Class Doc Comment
+ * SyncingProgressType Class Doc Comment
  *
  * @category Class
  * @package  Semux\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionLimitsType implements ModelInterface, ArrayAccess
+class SyncingProgressType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TransactionLimitsType';
+    protected static $swaggerModelName = 'SyncingProgressType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'maxTransactionDataSize' => 'int',
-        'minTransactionFee' => 'string',
-        'minDelegateBurnAmount' => 'string'
+        'syncing' => 'bool',
+        'startingHeight' => 'string',
+        'currentHeight' => 'string',
+        'targetHeight' => 'string'
     ];
 
     /**
@@ -68,9 +69,10 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'maxTransactionDataSize' => 'int32',
-        'minTransactionFee' => 'int64',
-        'minDelegateBurnAmount' => 'int64'
+        'syncing' => null,
+        'startingHeight' => 'int64',
+        'currentHeight' => 'int64',
+        'targetHeight' => 'int64'
     ];
 
     /**
@@ -100,9 +102,10 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'maxTransactionDataSize' => 'maxTransactionDataSize',
-        'minTransactionFee' => 'minTransactionFee',
-        'minDelegateBurnAmount' => 'minDelegateBurnAmount'
+        'syncing' => 'syncing',
+        'startingHeight' => 'startingHeight',
+        'currentHeight' => 'currentHeight',
+        'targetHeight' => 'targetHeight'
     ];
 
     /**
@@ -111,9 +114,10 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'maxTransactionDataSize' => 'setMaxTransactionDataSize',
-        'minTransactionFee' => 'setMinTransactionFee',
-        'minDelegateBurnAmount' => 'setMinDelegateBurnAmount'
+        'syncing' => 'setSyncing',
+        'startingHeight' => 'setStartingHeight',
+        'currentHeight' => 'setCurrentHeight',
+        'targetHeight' => 'setTargetHeight'
     ];
 
     /**
@@ -122,9 +126,10 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'maxTransactionDataSize' => 'getMaxTransactionDataSize',
-        'minTransactionFee' => 'getMinTransactionFee',
-        'minDelegateBurnAmount' => 'getMinDelegateBurnAmount'
+        'syncing' => 'getSyncing',
+        'startingHeight' => 'getStartingHeight',
+        'currentHeight' => 'getCurrentHeight',
+        'targetHeight' => 'getTargetHeight'
     ];
 
     /**
@@ -187,9 +192,10 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['maxTransactionDataSize'] = isset($data['maxTransactionDataSize']) ? $data['maxTransactionDataSize'] : null;
-        $this->container['minTransactionFee'] = isset($data['minTransactionFee']) ? $data['minTransactionFee'] : null;
-        $this->container['minDelegateBurnAmount'] = isset($data['minDelegateBurnAmount']) ? $data['minDelegateBurnAmount'] : null;
+        $this->container['syncing'] = isset($data['syncing']) ? $data['syncing'] : null;
+        $this->container['startingHeight'] = isset($data['startingHeight']) ? $data['startingHeight'] : null;
+        $this->container['currentHeight'] = isset($data['currentHeight']) ? $data['currentHeight'] : null;
+        $this->container['targetHeight'] = isset($data['targetHeight']) ? $data['targetHeight'] : null;
     }
 
     /**
@@ -201,12 +207,19 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['minTransactionFee']) && !preg_match("/^\\d+$/", $this->container['minTransactionFee'])) {
-            $invalidProperties[] = "invalid value for 'minTransactionFee', must be conform to the pattern /^\\d+$/.";
+        if ($this->container['syncing'] === null) {
+            $invalidProperties[] = "'syncing' can't be null";
+        }
+        if (!is_null($this->container['startingHeight']) && !preg_match("/^\\d+$/", $this->container['startingHeight'])) {
+            $invalidProperties[] = "invalid value for 'startingHeight', must be conform to the pattern /^\\d+$/.";
         }
 
-        if (!is_null($this->container['minDelegateBurnAmount']) && !preg_match("/^\\d+$/", $this->container['minDelegateBurnAmount'])) {
-            $invalidProperties[] = "invalid value for 'minDelegateBurnAmount', must be conform to the pattern /^\\d+$/.";
+        if (!is_null($this->container['currentHeight']) && !preg_match("/^\\d+$/", $this->container['currentHeight'])) {
+            $invalidProperties[] = "invalid value for 'currentHeight', must be conform to the pattern /^\\d+$/.";
+        }
+
+        if (!is_null($this->container['targetHeight']) && !preg_match("/^\\d+$/", $this->container['targetHeight'])) {
+            $invalidProperties[] = "invalid value for 'targetHeight', must be conform to the pattern /^\\d+$/.";
         }
 
         return $invalidProperties;
@@ -221,10 +234,16 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^\\d+$/", $this->container['minTransactionFee'])) {
+        if ($this->container['syncing'] === null) {
             return false;
         }
-        if (!preg_match("/^\\d+$/", $this->container['minDelegateBurnAmount'])) {
+        if (!preg_match("/^\\d+$/", $this->container['startingHeight'])) {
+            return false;
+        }
+        if (!preg_match("/^\\d+$/", $this->container['currentHeight'])) {
+            return false;
+        }
+        if (!preg_match("/^\\d+$/", $this->container['targetHeight'])) {
             return false;
         }
         return true;
@@ -232,83 +251,112 @@ class TransactionLimitsType implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets maxTransactionDataSize
+     * Gets syncing
      *
-     * @return int
+     * @return bool
      */
-    public function getMaxTransactionDataSize()
+    public function getSyncing()
     {
-        return $this->container['maxTransactionDataSize'];
+        return $this->container['syncing'];
     }
 
     /**
-     * Sets maxTransactionDataSize
+     * Sets syncing
      *
-     * @param int $maxTransactionDataSize The maximum transaction size in bytes
+     * @param bool $syncing Whether the node is syncing
      *
      * @return $this
      */
-    public function setMaxTransactionDataSize($maxTransactionDataSize)
+    public function setSyncing($syncing)
     {
-        $this->container['maxTransactionDataSize'] = $maxTransactionDataSize;
+        $this->container['syncing'] = $syncing;
 
         return $this;
     }
 
     /**
-     * Gets minTransactionFee
+     * Gets startingHeight
      *
      * @return string
      */
-    public function getMinTransactionFee()
+    public function getStartingHeight()
     {
-        return $this->container['minTransactionFee'];
+        return $this->container['startingHeight'];
     }
 
     /**
-     * Sets minTransactionFee
+     * Sets startingHeight
      *
-     * @param string $minTransactionFee The minimum transaction fee in nano SEM
+     * @param string $startingHeight The block height at which the sync started
      *
      * @return $this
      */
-    public function setMinTransactionFee($minTransactionFee)
+    public function setStartingHeight($startingHeight)
     {
 
-        if (!is_null($minTransactionFee) && (!preg_match("/^\\d+$/", $minTransactionFee))) {
-            throw new \InvalidArgumentException("invalid value for $minTransactionFee when calling TransactionLimitsType., must conform to the pattern /^\\d+$/.");
+        if (!is_null($startingHeight) && (!preg_match("/^\\d+$/", $startingHeight))) {
+            throw new \InvalidArgumentException("invalid value for $startingHeight when calling SyncingProgressType., must conform to the pattern /^\\d+$/.");
         }
 
-        $this->container['minTransactionFee'] = $minTransactionFee;
+        $this->container['startingHeight'] = $startingHeight;
 
         return $this;
     }
 
     /**
-     * Gets minDelegateBurnAmount
+     * Gets currentHeight
      *
      * @return string
      */
-    public function getMinDelegateBurnAmount()
+    public function getCurrentHeight()
     {
-        return $this->container['minDelegateBurnAmount'];
+        return $this->container['currentHeight'];
     }
 
     /**
-     * Sets minDelegateBurnAmount
+     * Sets currentHeight
      *
-     * @param string $minDelegateBurnAmount The amount of nano SEM required to burn for delegate registration
+     * @param string $currentHeight The current block height
      *
      * @return $this
      */
-    public function setMinDelegateBurnAmount($minDelegateBurnAmount)
+    public function setCurrentHeight($currentHeight)
     {
 
-        if (!is_null($minDelegateBurnAmount) && (!preg_match("/^\\d+$/", $minDelegateBurnAmount))) {
-            throw new \InvalidArgumentException("invalid value for $minDelegateBurnAmount when calling TransactionLimitsType., must conform to the pattern /^\\d+$/.");
+        if (!is_null($currentHeight) && (!preg_match("/^\\d+$/", $currentHeight))) {
+            throw new \InvalidArgumentException("invalid value for $currentHeight when calling SyncingProgressType., must conform to the pattern /^\\d+$/.");
         }
 
-        $this->container['minDelegateBurnAmount'] = $minDelegateBurnAmount;
+        $this->container['currentHeight'] = $currentHeight;
+
+        return $this;
+    }
+
+    /**
+     * Gets targetHeight
+     *
+     * @return string
+     */
+    public function getTargetHeight()
+    {
+        return $this->container['targetHeight'];
+    }
+
+    /**
+     * Sets targetHeight
+     *
+     * @param string $targetHeight The target block height
+     *
+     * @return $this
+     */
+    public function setTargetHeight($targetHeight)
+    {
+
+        if (!is_null($targetHeight) && (!preg_match("/^\\d+$/", $targetHeight))) {
+            throw new \InvalidArgumentException("invalid value for $targetHeight when calling SyncingProgressType., must conform to the pattern /^\\d+$/.");
+        }
+
+        $this->container['targetHeight'] = $targetHeight;
 
         return $this;
     }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Semux\Client\Model\TransactionLimitsType | Semux PHP SDK</title>
+    <title>Semux\Client\Model\SyncingProgressType | Semux PHP SDK</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Semux_Client_Model_TransactionLimitsType" data-root-path="../../../">
+    <body id="class" data-name="class:Semux_Client_Model_SyncingProgressType" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -67,20 +67,20 @@
                                         <li><a href="../../../Semux/Client.html">Client</a></li>
                                         <li><a href="../../../Semux/Client/Model.html">Model</a></li>
     
-                <li>TransactionLimitsType</li>
+                <li>SyncingProgressType</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            TransactionLimitsType
+            SyncingProgressType
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>TransactionLimitsType</strong>        implements
+    <strong>SyncingProgressType</strong>        implements
         <a href="../../../Semux/Client/Model/ModelInterface.html"><abbr title="Semux\Client\Model\ModelInterface">ModelInterface</abbr></a>, <a target="_blank" href="http://php.net/ArrayAccess">ArrayAccess</a>
 </p>
 
@@ -88,7 +88,7 @@
     
 
             <div class="description">
-            <p>TransactionLimitsType Class Doc Comment</p>                    </div>
+            <p>SyncingProgressType Class Doc Comment</p>                    </div>
     
     
             <h2>Constants</h2>
@@ -202,12 +202,12 @@ return true if all passed</p>                </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    int
+                    bool
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getMaxTransactionDataSize">getMaxTransactionDataSize</a>()
+                    <a href="#method_getSyncing">getSyncing</a>()
         
-                                            <p>Gets maxTransactionDataSize</p>                </div>
+                                            <p>Gets syncing</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -215,9 +215,9 @@ return true if all passed</p>                </div>
                     <abbr title="Semux\Client\Model\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setMaxTransactionDataSize">setMaxTransactionDataSize</a>(int $maxTransactionDataSize)
+                    <a href="#method_setSyncing">setSyncing</a>(bool $syncing)
         
-                                            <p>Sets maxTransactionDataSize</p>                </div>
+                                            <p>Sets syncing</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -225,9 +225,9 @@ return true if all passed</p>                </div>
                     string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getMinTransactionFee">getMinTransactionFee</a>()
+                    <a href="#method_getStartingHeight">getStartingHeight</a>()
         
-                                            <p>Gets minTransactionFee</p>                </div>
+                                            <p>Gets startingHeight</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -235,9 +235,9 @@ return true if all passed</p>                </div>
                     <abbr title="Semux\Client\Model\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setMinTransactionFee">setMinTransactionFee</a>(string $minTransactionFee)
+                    <a href="#method_setStartingHeight">setStartingHeight</a>(string $startingHeight)
         
-                                            <p>Sets minTransactionFee</p>                </div>
+                                            <p>Sets startingHeight</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -245,9 +245,9 @@ return true if all passed</p>                </div>
                     string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getMinDelegateBurnAmount">getMinDelegateBurnAmount</a>()
+                    <a href="#method_getCurrentHeight">getCurrentHeight</a>()
         
-                                            <p>Gets minDelegateBurnAmount</p>                </div>
+                                            <p>Gets currentHeight</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -255,9 +255,29 @@ return true if all passed</p>                </div>
                     <abbr title="Semux\Client\Model\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_setMinDelegateBurnAmount">setMinDelegateBurnAmount</a>(string $minDelegateBurnAmount)
+                    <a href="#method_setCurrentHeight">setCurrentHeight</a>(string $currentHeight)
         
-                                            <p>Sets minDelegateBurnAmount</p>                </div>
+                                            <p>Sets currentHeight</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTargetHeight">getTargetHeight</a>()
+        
+                                            <p>Gets targetHeight</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Semux\Client\Model\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setTargetHeight">setTargetHeight</a>(string $targetHeight)
+        
+                                            <p>Sets targetHeight</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -318,7 +338,7 @@ return true if all passed</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_swaggerTypes">
-        <div class="location">at line         line 81</div>
+        <div class="location">at line         line 83</div>
         <code>        static            array
     <strong>swaggerTypes</strong>()
         </code>
@@ -348,7 +368,7 @@ return true if all passed</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_swaggerFormats">
-        <div class="location">at line         line 91</div>
+        <div class="location">at line         line 93</div>
         <code>        static            array
     <strong>swaggerFormats</strong>()
         </code>
@@ -378,7 +398,7 @@ return true if all passed</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_attributeMap">
-        <div class="location">at line         line 136</div>
+        <div class="location">at line         line 141</div>
         <code>        static            array
     <strong>attributeMap</strong>()
         </code>
@@ -409,7 +429,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setters">
-        <div class="location">at line         line 146</div>
+        <div class="location">at line         line 151</div>
         <code>        static            array
     <strong>setters</strong>()
         </code>
@@ -439,7 +459,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getters">
-        <div class="location">at line         line 156</div>
+        <div class="location">at line         line 161</div>
         <code>        static            array
     <strong>getters</strong>()
         </code>
@@ -469,7 +489,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getModelName">
-        <div class="location">at line         line 166</div>
+        <div class="location">at line         line 171</div>
         <code>                    string
     <strong>getModelName</strong>()
         </code>
@@ -499,7 +519,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 188</div>
+        <div class="location">at line         line 193</div>
         <code>                    
     <strong>__construct</strong>(array $data = null)
         </code>
@@ -531,7 +551,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_listInvalidProperties">
-        <div class="location">at line         line 200</div>
+        <div class="location">at line         line 206</div>
         <code>                    array
     <strong>listInvalidProperties</strong>()
         </code>
@@ -561,7 +581,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_valid">
-        <div class="location">at line         line 221</div>
+        <div class="location">at line         line 234</div>
         <code>                    bool
     <strong>valid</strong>()
         </code>
@@ -591,10 +611,10 @@ return true if all passed</p>                                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getMaxTransactionDataSize">
-        <div class="location">at line         line 239</div>
-        <code>                    int
-    <strong>getMaxTransactionDataSize</strong>()
+                    <h3 id="method_getSyncing">
+        <div class="location">at line         line 258</div>
+        <code>                    bool
+    <strong>getSyncing</strong>()
         </code>
     </h3>
     <div class="details">
@@ -602,14 +622,14 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets maxTransactionDataSize</p>                                </div>
+                                    <p>Gets syncing</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>int</td>
+            <td>bool</td>
             <td></td>
         </tr>
     </table>
@@ -621,10 +641,10 @@ return true if all passed</p>                                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_setMaxTransactionDataSize">
-        <div class="location">at line         line 251</div>
+                    <h3 id="method_setSyncing">
+        <div class="location">at line         line 270</div>
         <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
-    <strong>setMaxTransactionDataSize</strong>(int $maxTransactionDataSize)
+    <strong>setSyncing</strong>(bool $syncing)
         </code>
     </h3>
     <div class="details">
@@ -632,15 +652,15 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Sets maxTransactionDataSize</p>                                </div>
+                                    <p>Sets syncing</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>int</td>
-                <td>$maxTransactionDataSize</td>
-                <td>The maximum transaction size in bytes</td>
+                <td>bool</td>
+                <td>$syncing</td>
+                <td>Whether the node is syncing</td>
             </tr>
             </table>
 
@@ -661,10 +681,10 @@ return true if all passed</p>                                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getMinTransactionFee">
-        <div class="location">at line         line 263</div>
+                    <h3 id="method_getStartingHeight">
+        <div class="location">at line         line 282</div>
         <code>                    string
-    <strong>getMinTransactionFee</strong>()
+    <strong>getStartingHeight</strong>()
         </code>
     </h3>
     <div class="details">
@@ -672,7 +692,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets minTransactionFee</p>                                </div>
+                                    <p>Gets startingHeight</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -691,10 +711,10 @@ return true if all passed</p>                                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_setMinTransactionFee">
-        <div class="location">at line         line 275</div>
+                    <h3 id="method_setStartingHeight">
+        <div class="location">at line         line 294</div>
         <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
-    <strong>setMinTransactionFee</strong>(string $minTransactionFee)
+    <strong>setStartingHeight</strong>(string $startingHeight)
         </code>
     </h3>
     <div class="details">
@@ -702,15 +722,15 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Sets minTransactionFee</p>                                </div>
+                                    <p>Sets startingHeight</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$minTransactionFee</td>
-                <td>The minimum transaction fee in nano SEM</td>
+                <td>$startingHeight</td>
+                <td>The block height at which the sync started</td>
             </tr>
             </table>
 
@@ -731,10 +751,10 @@ return true if all passed</p>                                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getMinDelegateBurnAmount">
-        <div class="location">at line         line 292</div>
+                    <h3 id="method_getCurrentHeight">
+        <div class="location">at line         line 311</div>
         <code>                    string
-    <strong>getMinDelegateBurnAmount</strong>()
+    <strong>getCurrentHeight</strong>()
         </code>
     </h3>
     <div class="details">
@@ -742,7 +762,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets minDelegateBurnAmount</p>                                </div>
+                                    <p>Gets currentHeight</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -761,10 +781,10 @@ return true if all passed</p>                                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_setMinDelegateBurnAmount">
-        <div class="location">at line         line 304</div>
+                    <h3 id="method_setCurrentHeight">
+        <div class="location">at line         line 323</div>
         <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
-    <strong>setMinDelegateBurnAmount</strong>(string $minDelegateBurnAmount)
+    <strong>setCurrentHeight</strong>(string $currentHeight)
         </code>
     </h3>
     <div class="details">
@@ -772,15 +792,85 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Sets minDelegateBurnAmount</p>                                </div>
+                                    <p>Sets currentHeight</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$minDelegateBurnAmount</td>
-                <td>The amount of nano SEM required to burn for delegate registration</td>
+                <td>$currentHeight</td>
+                <td>The current block height</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Semux\Client\Model\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTargetHeight">
+        <div class="location">at line         line 340</div>
+        <code>                    string
+    <strong>getTargetHeight</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets targetHeight</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setTargetHeight">
+        <div class="location">at line         line 352</div>
+        <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
+    <strong>setTargetHeight</strong>(string $targetHeight)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets targetHeight</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$targetHeight</td>
+                <td>The target block height</td>
             </tr>
             </table>
 
@@ -802,7 +892,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetExists">
-        <div class="location">at line         line 322</div>
+        <div class="location">at line         line 370</div>
         <code>                    boolean
     <strong>offsetExists</strong>(integer $offset)
         </code>
@@ -842,7 +932,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetGet">
-        <div class="location">at line         line 334</div>
+        <div class="location">at line         line 382</div>
         <code>                    mixed
     <strong>offsetGet</strong>(integer $offset)
         </code>
@@ -882,7 +972,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetSet">
-        <div class="location">at line         line 347</div>
+        <div class="location">at line         line 395</div>
         <code>                    void
     <strong>offsetSet</strong>(integer $offset, mixed $value)
         </code>
@@ -927,7 +1017,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetUnset">
-        <div class="location">at line         line 363</div>
+        <div class="location">at line         line 411</div>
         <code>                    void
     <strong>offsetUnset</strong>(integer $offset)
         </code>
@@ -967,7 +1057,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at line         line 373</div>
+        <div class="location">at line         line 421</div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
