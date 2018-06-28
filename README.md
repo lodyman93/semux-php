@@ -1,9 +1,9 @@
 # Semux PHP SDK
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/semuxproject/semux-php-sdk.svg)](https://packagist.org/packages/semuxproject/semux-php-sdk)
-[![Build Status](https://travis-ci.org/semuxproject/semux-php-sdk.svg?branch=master)](https://travis-ci.org/semuxproject/semux-php-sdk)
+[![Latest Stable Version](https://img.shields.io/packagist/v/semuxproject/semux-php.svg)](https://packagist.org/packages/semuxproject/semux-php)
+[![Build Status](https://travis-ci.org/semuxproject/semux-php.svg?branch=master)](https://travis-ci.org/semuxproject/semux-php)
 
-Semux PHP SDK aims to provide necessary utilities for web developers to create 3rd party web services connecting to [Semux Wallet](https://github.com/semuxproject/semux). Currently the only supported feature is an API client.
+Semux PHP SDK aims to provide necessary utilities for web developers to create 3rd party web services connecting to [Semux Wallet](https://github.com/semuxproject/semux-core). Currently the only supported feature is an API client.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ PHP 5.6 and later
 To install the SDK via [Composer](http://getcomposer.org/), run:
 
 ```
-composer require semuxproject/semux-php-sdk
+composer require semuxproject/semux-php
 ```
 
 ## Getting Started
@@ -57,7 +57,7 @@ try {
 
 ## Documentation
 
-https://semuxproject.github.io/semux-php-sdk/Semux/Client/Api/SemuxApi.html
+https://semuxproject.github.io/semux-php/Semux/Client/Api/SemuxApi.html
 
 ## Examples
 
@@ -69,7 +69,7 @@ https://semuxproject.github.io/semux-php-sdk/Semux/Client/Api/SemuxApi.html
 To run the unit tests:
 
 ```
-docker-compose -f .travis/docker-compose.yml up -d && .travis/wait-for-it.sh -h 0.0.0.0 -p 5171 -t 30 -s
+docker-compose -f .travis/docker/docker-compose.yml up -d && .travis/wait-for-it.sh -h 0.0.0.0 -p 5171 -t 30 -s && sleep 15
 composer install
 cp phpunit.xml.dist phpunit.xml
 ./vendor/bin/phpunit

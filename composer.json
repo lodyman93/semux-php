@@ -1,6 +1,6 @@
 {
-    "homepage": "https://github.com/semuxproject/semux-php-sdk",
-    "name": "semuxproject/semux-php-sdk",
+    "homepage": "https://github.com/semuxproject/semux-php",
+    "name": "semuxproject/semux-php",
     "description": "Semux PHP SDK",
     "keywords": ["semux", "cryptocurrency"],
     "type": "library",
