@@ -1,6 +1,5 @@
 # Semux PHP SDK
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/semuxproject/semux-php.svg)](https://packagist.org/packages/semuxproject/semux-php)
 [![Build Status](https://travis-ci.org/semuxproject/semux-php.svg?branch=master)](https://travis-ci.org/semuxproject/semux-php)
 
 Semux PHP SDK aims to provide necessary utilities for web developers to create 3rd party web services connecting to [Semux Wallet](https://github.com/semuxproject/semux-core). Currently the only supported feature is an API client.
