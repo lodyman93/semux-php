@@ -80,4 +80,4 @@ cp phpunit.xml.dist phpunit.xml
 
 ## License
 
-[MIT](LICENSE) © [Semux Foundation](https://github.com/semuxproject)
+[MIT](LICENSE) © [The Semux Developers](https://github.com/semuxproject)
