@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,10 +66,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../Semux.html">Semux</a></li>
-                                        <li><a href="../../Semux/Client.html">Client</a></li>
-    
-                <li>ApiException</li>
+                        <li><a href="../../Semux.html">Semux</a></li><li class="backslash">\</li><li><a href="../../Semux/Client.html">Client</a></li><li class="backslash">\</li><li>ApiException</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -86,10 +86,39 @@
     
 
             <div class="description">
-            <p>ApiException Class Doc Comment</p>                    </div>
+            <p>ApiException Class Doc Comment</p>                                </div>
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_responseBody">
+                                        protected                                        mixed
+                </td>
+                <td>$responseBody</td>
+                <td class="last">The HTTP body of the server response either as Json or string.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_responseHeaders">
+                                        protected                                        string[]|null
+                </td>
+                <td>$responseHeaders</td>
+                <td class="last">The HTTP header of the server response.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_responseObject">
+                                        protected                                        
+                </td>
+                <td>$responseObject</td>
+                <td class="last">The deserialized response object</td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -99,7 +128,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $message = &#039;&#039;, int $code, string[]|null $responseHeaders = array(), mixed $responseBody = null)
+                    <a href="#method___construct">__construct</a>(string $message = &quot;&quot;, int $code = 0, string[]|null $responseHeaders = [], mixed $responseBody = null)
         
                                             <p>Constructor</p>                </div>
                 <div class="col-md-2"></div>
@@ -152,9 +181,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 73</div>
+        <div class="location">at         line 73</div>
         <code>                    
-    <strong>__construct</strong>(string $message = &#039;&#039;, int $code, string[]|null $responseHeaders = array(), mixed $responseBody = null)
+    <strong>__construct</strong>(string $message = &quot;&quot;, int $code = 0, string[]|null $responseHeaders = [], mixed $responseBody = null)
         </code>
     </h3>
     <div class="details">
@@ -162,7 +191,7 @@
     
 
                     <div class="method-description">
-                                    <p>Constructor</p>                                </div>
+                                    <p>Constructor</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -198,7 +227,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getResponseHeaders">
-        <div class="location">at line         line 85</div>
+        <div class="location">at         line 85</div>
         <code>                    string[]|null
     <strong>getResponseHeaders</strong>()
         </code>
@@ -208,7 +237,7 @@
     
 
                     <div class="method-description">
-                                    <p>Gets the HTTP response header</p>                                </div>
+                                    <p>Gets the HTTP response header</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -228,7 +257,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getResponseBody">
-        <div class="location">at line         line 95</div>
+        <div class="location">at         line 95</div>
         <code>                    mixed
     <strong>getResponseBody</strong>()
         </code>
@@ -238,7 +267,7 @@
     
 
                     <div class="method-description">
-                                    <p>Gets the HTTP body of the server response either as Json or string</p>                                </div>
+                                    <p>Gets the HTTP body of the server response either as Json or string</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -258,7 +287,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setResponseObject">
-        <div class="location">at line         line 107</div>
+        <div class="location">at         line 107</div>
         <code>                    void
     <strong>setResponseObject</strong>(mixed $obj)
         </code>
@@ -268,7 +297,7 @@
     
 
                     <div class="method-description">
-                                    <p>Sets the deseralized response object (during deserialization)</p>                                </div>
+                                    <p>Sets the deseralized response object (during deserialization)</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -298,7 +327,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getResponseObject">
-        <div class="location">at line         line 117</div>
+        <div class="location">at         line 117</div>
         <code>                    mixed
     <strong>getResponseObject</strong>()
         </code>
@@ -308,7 +337,7 @@
     
 
                     <div class="method-description">
-                                    <p>Gets the deseralized response object (during deserialization)</p>                                </div>
+                                    <p>Gets the deseralized response object (during deserialization)</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>

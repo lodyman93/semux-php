@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,10 +66,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../Semux.html">Semux</a></li>
-                                        <li><a href="../../Semux/Client.html">Client</a></li>
-    
-                <li>HeaderSelector</li>
+                        <li><a href="../../Semux.html">Semux</a></li><li class="backslash">\</li><li><a href="../../Semux/Client.html">Client</a></li><li class="backslash">\</li><li>HeaderSelector</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -86,7 +86,7 @@
     
 
             <div class="description">
-            <p>ApiException Class Doc Comment</p>                    </div>
+            <p>ApiException Class Doc Comment</p>                                </div>
     
     
     
@@ -124,7 +124,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_selectHeaders">
-        <div class="location">at line         line 49</div>
+        <div class="location">at         line 49</div>
         <code>                    array
     <strong>selectHeaders</strong>(string[] $accept, string[] $contentTypes)
         </code>
@@ -167,7 +167,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_selectHeadersForMultipart">
-        <div class="location">at line         line 66</div>
+        <div class="location">at         line 66</div>
         <code>                    array
     <strong>selectHeadersForMultipart</strong>(string[] $accept)
         </code>

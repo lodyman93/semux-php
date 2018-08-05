@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,11 +66,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../../Semux.html">Semux</a></li>
-                                        <li><a href="../../../Semux/Client.html">Client</a></li>
-                                        <li><a href="../../../Semux/Client/Model.html">Model</a></li>
-    
-                <li>SignMessageResponse</li>
+                        <li><a href="../../../Semux.html">Semux</a></li><li class="backslash">\</li><li><a href="../../../Semux/Client.html">Client</a></li><li class="backslash">\</li><li><a href="../../../Semux/Client/Model.html">Model</a></li><li class="backslash">\</li><li>SignMessageResponse</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -87,7 +86,7 @@
     
 
             <div class="description">
-            <p>SignMessageResponse Class Doc Comment</p>                    </div>
+            <p>SignMessageResponse Class Doc Comment</p>                                </div>
     
     
             <h2>Constants</h2>
@@ -103,6 +102,68 @@
             </table>
 
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_swaggerModelName">
+                    static                    protected                                        string
+                </td>
+                <td>$swaggerModelName</td>
+                <td class="last">The original name of the model.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_swaggerTypes">
+                    static                    protected                                        string[]
+                </td>
+                <td>$swaggerTypes</td>
+                <td class="last">Array of property to type mappings. Used for (de)serialization</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_swaggerFormats">
+                    static                    protected                                        string[]
+                </td>
+                <td>$swaggerFormats</td>
+                <td class="last">Array of property to format mappings. Used for (de)serialization</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_attributeMap">
+                    static                    protected                                        string[]
+                </td>
+                <td>$attributeMap</td>
+                <td class="last">Array of attributes where the key is the local name,
+and the value is the original name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_setters">
+                    static                    protected                                        string[]
+                </td>
+                <td>$setters</td>
+                <td class="last">Array of attributes to setter functions (for deserialization of responses)</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_getters">
+                    static                    protected                                        string[]
+                </td>
+                <td>$getters</td>
+                <td class="last">Array of attributes to getter functions (for serialization of requests)</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_container">
+                                        protected                                        mixed[]
+                </td>
+                <td>$container</td>
+                <td class="last">Associative array for storing property values</td>
+                <td><small>from&nbsp;<a href="../../../Semux/Client/Model/ApiHandlerResponse.html#property_container"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a></small></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -317,7 +378,7 @@ return true if all passed</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_swaggerTypes">
-        <div class="location">at line         line 75</div>
+        <div class="location">at         line 75</div>
         <code>        static            array
     <strong>swaggerTypes</strong>()
         </code>
@@ -327,7 +388,7 @@ return true if all passed</p>                </div>
     
 
                     <div class="method-description">
-                                    <p>Array of property to type mappings. Used for (de)serialization</p>                                </div>
+                                    <p>Array of property to type mappings. Used for (de)serialization</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -347,7 +408,7 @@ return true if all passed</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_swaggerFormats">
-        <div class="location">at line         line 85</div>
+        <div class="location">at         line 85</div>
         <code>        static            array
     <strong>swaggerFormats</strong>()
         </code>
@@ -357,7 +418,7 @@ return true if all passed</p>                </div>
     
 
                     <div class="method-description">
-                                    <p>Array of property to format mappings. Used for (de)serialization</p>                                </div>
+                                    <p>Array of property to format mappings. Used for (de)serialization</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -377,7 +438,7 @@ return true if all passed</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_attributeMap">
-        <div class="location">at line         line 124</div>
+        <div class="location">at         line 124</div>
         <code>        static            array
     <strong>attributeMap</strong>()
         </code>
@@ -388,7 +449,7 @@ return true if all passed</p>                </div>
 
                     <div class="method-description">
                                     <p>Array of attributes where the key is the local name,
-and the value is the original name</p>                                </div>
+and the value is the original name</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -408,7 +469,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setters">
-        <div class="location">at line         line 134</div>
+        <div class="location">at         line 134</div>
         <code>        static            array
     <strong>setters</strong>()
         </code>
@@ -418,7 +479,7 @@ and the value is the original name</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Array of attributes to setter functions (for deserialization of responses)</p>                                </div>
+                                    <p>Array of attributes to setter functions (for deserialization of responses)</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -438,7 +499,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getters">
-        <div class="location">at line         line 144</div>
+        <div class="location">at         line 144</div>
         <code>        static            array
     <strong>getters</strong>()
         </code>
@@ -448,7 +509,7 @@ and the value is the original name</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Array of attributes to getter functions (for serialization of requests)</p>                                </div>
+                                    <p>Array of attributes to getter functions (for serialization of requests)</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -468,7 +529,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getModelName">
-        <div class="location">at line         line 154</div>
+        <div class="location">at         line 154</div>
         <code>                    string
     <strong>getModelName</strong>()
         </code>
@@ -478,7 +539,7 @@ and the value is the original name</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>The original name of the model.</p>                                </div>
+                                    <p>The original name of the model.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -498,7 +559,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 170</div>
+        <div class="location">at         line 170</div>
         <code>                    
     <strong>__construct</strong>(array $data = null)
         </code>
@@ -508,7 +569,7 @@ and the value is the original name</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Constructor</p>                                </div>
+                                    <p>Constructor</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -530,7 +591,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_listInvalidProperties">
-        <div class="location">at line         line 182</div>
+        <div class="location">at         line 182</div>
         <code>                    array
     <strong>listInvalidProperties</strong>()
         </code>
@@ -540,7 +601,7 @@ and the value is the original name</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Show all the invalid properties with reasons.</p>                                </div>
+                                    <p>Show all the invalid properties with reasons.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -560,7 +621,7 @@ and the value is the original name</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_valid">
-        <div class="location">at line         line 199</div>
+        <div class="location">at         line 199</div>
         <code>                    bool
     <strong>valid</strong>()
         </code>
@@ -571,7 +632,7 @@ and the value is the original name</p>                                </div>
 
                     <div class="method-description">
                                     <p>Validate all the properties in the model
-return true if all passed</p>                                </div>
+return true if all passed</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -591,7 +652,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getSuccess">
-        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_getSuccess"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at line         line 229</div>
+        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_getSuccess"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at         line 229</div>
         <code>                    bool
     <strong>getSuccess</strong>()
         </code>
@@ -601,7 +662,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets success</p>                                </div>
+                                    <p>Gets success</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -621,7 +682,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setSuccess">
-        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_setSuccess"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at line         line 241</div>
+        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_setSuccess"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at         line 241</div>
         <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
     <strong>setSuccess</strong>(bool $success)
         </code>
@@ -631,7 +692,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Sets success</p>                                </div>
+                                    <p>Sets success</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -661,7 +722,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getMessage">
-        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_getMessage"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at line         line 253</div>
+        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_getMessage"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at         line 253</div>
         <code>                    string
     <strong>getMessage</strong>()
         </code>
@@ -671,7 +732,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets message</p>                                </div>
+                                    <p>Gets message</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -691,7 +752,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setMessage">
-        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_setMessage"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at line         line 265</div>
+        <div class="location">in <a href="../../../Semux/Client/Model/ApiHandlerResponse.html#method_setMessage"><abbr title="Semux\Client\Model\ApiHandlerResponse">ApiHandlerResponse</abbr></a> at         line 265</div>
         <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
     <strong>setMessage</strong>(string $message)
         </code>
@@ -701,7 +762,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Sets message</p>                                </div>
+                                    <p>Sets message</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -731,7 +792,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetExists">
-        <div class="location">at line         line 247</div>
+        <div class="location">at         line 247</div>
         <code>                    boolean
     <strong>offsetExists</strong>(integer $offset)
         </code>
@@ -741,7 +802,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Returns true if offset exists. False otherwise.</p>                                </div>
+                                    <p>Returns true if offset exists. False otherwise.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -771,7 +832,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetGet">
-        <div class="location">at line         line 259</div>
+        <div class="location">at         line 259</div>
         <code>                    mixed
     <strong>offsetGet</strong>(integer $offset)
         </code>
@@ -781,7 +842,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets offset.</p>                                </div>
+                                    <p>Gets offset.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -811,7 +872,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetSet">
-        <div class="location">at line         line 272</div>
+        <div class="location">at         line 272</div>
         <code>                    void
     <strong>offsetSet</strong>(integer $offset, mixed $value)
         </code>
@@ -821,7 +882,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Sets value based on offset.</p>                                </div>
+                                    <p>Sets value based on offset.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -856,7 +917,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetUnset">
-        <div class="location">at line         line 288</div>
+        <div class="location">at         line 288</div>
         <code>                    void
     <strong>offsetUnset</strong>(integer $offset)
         </code>
@@ -866,7 +927,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Unsets offset.</p>                                </div>
+                                    <p>Unsets offset.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -896,7 +957,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at line         line 298</div>
+        <div class="location">at         line 298</div>
         <code>                    string
     <strong>__toString</strong>()
         </code>
@@ -906,7 +967,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the string presentation of the object</p>                                </div>
+                                    <p>Gets the string presentation of the object</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -926,7 +987,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getResult">
-        <div class="location">at line         line 217</div>
+        <div class="location">at         line 217</div>
         <code>                    string
     <strong>getResult</strong>()
         </code>
@@ -936,7 +997,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Gets result</p>                                </div>
+                                    <p>Gets result</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -956,7 +1017,7 @@ return true if all passed</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setResult">
-        <div class="location">at line         line 229</div>
+        <div class="location">at         line 229</div>
         <code>                    <abbr title="Semux\Client\Model\$this">$this</abbr>
     <strong>setResult</strong>(string $result)
         </code>
@@ -966,7 +1027,7 @@ return true if all passed</p>                                </div>
     
 
                     <div class="method-description">
-                                    <p>Sets result</p>                                </div>
+                                    <p>Sets result</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 

@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,10 +66,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../Semux.html">Semux</a></li>
-                                        <li><a href="../../Semux/Client.html">Client</a></li>
-    
-                <li>Configuration</li>
+                        <li><a href="../../Semux.html">Semux</a></li><li class="backslash">\</li><li><a href="../../Semux/Client.html">Client</a></li><li class="backslash">\</li><li>Configuration</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -87,10 +87,95 @@
 
             <div class="description">
             <p>Configuration Class Doc Comment
-PHP version 5</p>                    </div>
+PHP version 5</p>                                </div>
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_apiKeys">
+                                        protected                                        string[]
+                </td>
+                <td>$apiKeys</td>
+                <td class="last">Associate array to store API key(s)</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_apiKeyPrefixes">
+                                        protected                                        string[]
+                </td>
+                <td>$apiKeyPrefixes</td>
+                <td class="last">Associate array to store API prefix (e.g. Bearer)</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_accessToken">
+                                        protected                                        string
+                </td>
+                <td>$accessToken</td>
+                <td class="last">Access token for OAuth</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_username">
+                                        protected                                        string
+                </td>
+                <td>$username</td>
+                <td class="last">Username for HTTP basic authentication</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_password">
+                                        protected                                        string
+                </td>
+                <td>$password</td>
+                <td class="last">Password for HTTP basic authentication</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_host">
+                                        protected                                        string
+                </td>
+                <td>$host</td>
+                <td class="last">The host</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_userAgent">
+                                        protected                                        string
+                </td>
+                <td>$userAgent</td>
+                <td class="last">User agent of the HTTP request, set to "PHP-Swagger" by default</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_debug">
+                                        protected                                        bool
+                </td>
+                <td>$debug</td>
+                <td class="last">Debug switch (default set to false)</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_debugFile">
+                                        protected                                        string
+                </td>
+                <td>$debugFile</td>
+                <td class="last">Debug file location (log to STDOUT by default)</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_tempFolderPath">
+                                        protected                                        string
+                </td>
+                <td>$tempFolderPath</td>
+                <td class="last">Debug file location (log to STDOUT by default)</td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -353,7 +438,7 @@ PHP version 5</p>                    </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         line 117</div>
+        <div class="location">at         line 117</div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -363,7 +448,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Constructor</p>                                </div>
+                                    <p>Constructor</p>                                                </div>
                 <div class="tags">
             
             
@@ -374,7 +459,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setApiKey">
-        <div class="location">at line         line 130</div>
+        <div class="location">at         line 130</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setApiKey</strong>(string $apiKeyIdentifier, string $key)
         </code>
@@ -384,7 +469,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets API key</p>                                </div>
+                                    <p>Sets API key</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -419,7 +504,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getApiKey">
-        <div class="location">at line         line 143</div>
+        <div class="location">at         line 143</div>
         <code>                    string
     <strong>getApiKey</strong>(string $apiKeyIdentifier)
         </code>
@@ -429,7 +514,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets API key</p>                                </div>
+                                    <p>Gets API key</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -459,7 +544,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setApiKeyPrefix">
-        <div class="location">at line         line 156</div>
+        <div class="location">at         line 156</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setApiKeyPrefix</strong>(string $apiKeyIdentifier, string $prefix)
         </code>
@@ -469,7 +554,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the prefix for API key (e.g. Bearer)</p>                                </div>
+                                    <p>Sets the prefix for API key (e.g. Bearer)</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -504,7 +589,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getApiKeyPrefix">
-        <div class="location">at line         line 169</div>
+        <div class="location">at         line 169</div>
         <code>                    string
     <strong>getApiKeyPrefix</strong>(string $apiKeyIdentifier)
         </code>
@@ -514,7 +599,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets API key prefix</p>                                </div>
+                                    <p>Gets API key prefix</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -544,7 +629,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setAccessToken">
-        <div class="location">at line         line 181</div>
+        <div class="location">at         line 181</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setAccessToken</strong>(string $accessToken)
         </code>
@@ -554,7 +639,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the access token for OAuth</p>                                </div>
+                                    <p>Sets the access token for OAuth</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -584,7 +669,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getAccessToken">
-        <div class="location">at line         line 192</div>
+        <div class="location">at         line 192</div>
         <code>                    string
     <strong>getAccessToken</strong>()
         </code>
@@ -594,7 +679,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the access token for OAuth</p>                                </div>
+                                    <p>Gets the access token for OAuth</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -614,7 +699,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setUsername">
-        <div class="location">at line         line 204</div>
+        <div class="location">at         line 204</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setUsername</strong>(string $username)
         </code>
@@ -624,7 +709,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the username for HTTP basic authentication</p>                                </div>
+                                    <p>Sets the username for HTTP basic authentication</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -654,7 +739,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getUsername">
-        <div class="location">at line         line 215</div>
+        <div class="location">at         line 215</div>
         <code>                    string
     <strong>getUsername</strong>()
         </code>
@@ -664,7 +749,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the username for HTTP basic authentication</p>                                </div>
+                                    <p>Gets the username for HTTP basic authentication</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -684,7 +769,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setPassword">
-        <div class="location">at line         line 227</div>
+        <div class="location">at         line 227</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setPassword</strong>(string $password)
         </code>
@@ -694,7 +779,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the password for HTTP basic authentication</p>                                </div>
+                                    <p>Sets the password for HTTP basic authentication</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -724,7 +809,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getPassword">
-        <div class="location">at line         line 238</div>
+        <div class="location">at         line 238</div>
         <code>                    string
     <strong>getPassword</strong>()
         </code>
@@ -734,7 +819,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the password for HTTP basic authentication</p>                                </div>
+                                    <p>Gets the password for HTTP basic authentication</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -754,7 +839,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setHost">
-        <div class="location">at line         line 250</div>
+        <div class="location">at         line 250</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setHost</strong>(string $host)
         </code>
@@ -764,7 +849,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the host</p>                                </div>
+                                    <p>Sets the host</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -794,7 +879,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getHost">
-        <div class="location">at line         line 261</div>
+        <div class="location">at         line 261</div>
         <code>                    string
     <strong>getHost</strong>()
         </code>
@@ -804,7 +889,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the host</p>                                </div>
+                                    <p>Gets the host</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -824,7 +909,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setUserAgent">
-        <div class="location">at line         line 274</div>
+        <div class="location">at         line 274</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setUserAgent</strong>(string $userAgent)
         </code>
@@ -834,7 +919,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the user agent of the api client</p>                                </div>
+                                    <p>Sets the user agent of the api client</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -873,7 +958,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getUserAgent">
-        <div class="location">at line         line 289</div>
+        <div class="location">at         line 289</div>
         <code>                    string
     <strong>getUserAgent</strong>()
         </code>
@@ -883,7 +968,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the user agent of the api client</p>                                </div>
+                                    <p>Gets the user agent of the api client</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -903,7 +988,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDebug">
-        <div class="location">at line         line 301</div>
+        <div class="location">at         line 301</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setDebug</strong>(bool $debug)
         </code>
@@ -913,7 +998,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets debug flag</p>                                </div>
+                                    <p>Sets debug flag</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -943,7 +1028,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getDebug">
-        <div class="location">at line         line 312</div>
+        <div class="location">at         line 312</div>
         <code>                    bool
     <strong>getDebug</strong>()
         </code>
@@ -953,7 +1038,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the debug flag</p>                                </div>
+                                    <p>Gets the debug flag</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -973,7 +1058,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDebugFile">
-        <div class="location">at line         line 324</div>
+        <div class="location">at         line 324</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setDebugFile</strong>(string $debugFile)
         </code>
@@ -983,7 +1068,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the debug file</p>                                </div>
+                                    <p>Sets the debug file</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -1013,7 +1098,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getDebugFile">
-        <div class="location">at line         line 335</div>
+        <div class="location">at         line 335</div>
         <code>                    string
     <strong>getDebugFile</strong>()
         </code>
@@ -1023,7 +1108,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the debug file</p>                                </div>
+                                    <p>Gets the debug file</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -1043,7 +1128,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setTempFolderPath">
-        <div class="location">at line         line 347</div>
+        <div class="location">at         line 347</div>
         <code>                    <abbr title="Semux\Client\$this">$this</abbr>
     <strong>setTempFolderPath</strong>(string $tempFolderPath)
         </code>
@@ -1053,7 +1138,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the temp folder path</p>                                </div>
+                                    <p>Sets the temp folder path</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -1083,7 +1168,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getTempFolderPath">
-        <div class="location">at line         line 358</div>
+        <div class="location">at         line 358</div>
         <code>                    string
     <strong>getTempFolderPath</strong>()
         </code>
@@ -1093,7 +1178,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the temp folder path</p>                                </div>
+                                    <p>Gets the temp folder path</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -1113,7 +1198,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getDefaultConfiguration">
-        <div class="location">at line         line 368</div>
+        <div class="location">at         line 368</div>
         <code>        static            <a href="../../Semux/Client/Configuration.html"><abbr title="Semux\Client\Configuration">Configuration</abbr></a>
     <strong>getDefaultConfiguration</strong>()
         </code>
@@ -1123,7 +1208,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the default configuration instance</p>                                </div>
+                                    <p>Gets the default configuration instance</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -1143,7 +1228,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setDefaultConfiguration">
-        <div class="location">at line         line 384</div>
+        <div class="location">at         line 384</div>
         <code>        static            void
     <strong>setDefaultConfiguration</strong>(<a href="../../Semux/Client/Configuration.html"><abbr title="Semux\Client\Configuration">Configuration</abbr></a> $config)
         </code>
@@ -1153,7 +1238,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Sets the detault configuration instance</p>                                </div>
+                                    <p>Sets the detault configuration instance</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -1183,7 +1268,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_toDebugReport">
-        <div class="location">at line         line 394</div>
+        <div class="location">at         line 394</div>
         <code>        static            string
     <strong>toDebugReport</strong>()
         </code>
@@ -1193,7 +1278,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Gets the essential information for debugging</p>                                </div>
+                                    <p>Gets the essential information for debugging</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -1213,7 +1298,7 @@ PHP version 5</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getApiKeyWithPrefix">
-        <div class="location">at line         line 412</div>
+        <div class="location">at         line 412</div>
         <code>                    string
     <strong>getApiKeyWithPrefix</strong>(string $apiKeyIdentifier)
         </code>
@@ -1223,7 +1308,7 @@ PHP version 5</p>                    </div>
     
 
                     <div class="method-description">
-                                    <p>Get API key (with prefix if set)</p>                                </div>
+                                    <p>Get API key (with prefix if set)</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
